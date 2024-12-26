@@ -1,10 +1,12 @@
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import {fileURLToPath} from 'node:url';
 
-import { FlatCompat } from '@eslint/eslintrc';
+import {FlatCompat} from '@eslint/eslintrc';
 import js from '@eslint/js';
 import prettier from 'eslint-plugin-prettier';
+import readableTailwind from 'eslint-plugin-readable-tailwind';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import eslintParserTypeScript from '@typescript-eslint/parser';
 import globals from 'globals';
 
 const filename = fileURLToPath(import.meta.url);
@@ -29,9 +31,30 @@ const eslintConfig = [
     plugins: {
       prettier,
       'simple-import-sort': simpleImportSort,
+      'readable-tailwind': readableTailwind,
     },
+  },
 
+  {
+    files: ["**/*.{ts,tsx,cts,mts}"],
     languageOptions: {
+      parser: eslintParserTypeScript,
+      parserOptions: {
+        project: true
+      },
+      globals: {
+        ...globals.node,
+      },
+    }
+  },
+  {
+    files: ["**/*.{jsx,tsx}"],
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
+      },
       globals: {
         ...globals.node,
       },
@@ -78,6 +101,9 @@ const eslintConfig = [
       'prefer-template': 'error',
       yoda: 'error',
       'no-unused-vars': 'off',
+
+      ...readableTailwind.configs.warning.rules,
+      "readable-tailwind/multiline": ["warn", { printWidth: 120 }]
     },
   },
 ];
