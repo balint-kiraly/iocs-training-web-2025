@@ -1,16 +1,85 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { FlatCompat } from '@eslint/eslintrc';
+import js from '@eslint/js';
+import prettier from 'eslint-plugin-prettier';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
 
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+  baseDirectory: dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    ignores: ['**/.prettierrc.js', '**/node_modules', '**/.idea', '**/.next'],
+  },
+  ...compat.extends(
+    'plugin:@typescript-eslint/recommended',
+    'eslint:recommended',
+    'plugin:@next/next/recommended',
+    'next/core-web-vitals'
+  ),
+  {
+    plugins: {
+      prettier,
+      'simple-import-sort': simpleImportSort,
+    },
+
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+
+    rules: {
+      'prettier/prettier': 'error',
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+
+      camelcase: [
+        'error',
+        {
+          properties: 'never',
+        },
+      ],
+
+      eqeqeq: 'error',
+      'max-depth': 'error',
+      'max-lines': 'error',
+      'no-alert': 'error',
+      'no-array-constructor': 'error',
+
+      'no-console': [
+        'error',
+        {
+          allow: ['warn', 'error'],
+        },
+      ],
+
+      'no-eval': 'error',
+      'no-implicit-coercion': 'error',
+      'no-lonely-if': 'error',
+      'no-nested-ternary': 'error',
+      'no-negated-condition': 'error',
+      'no-unneeded-ternary': 'error',
+      'no-undef-init': 'error',
+      'no-underscore-dangle': 'error',
+      'no-useless-concat': 'error',
+      'no-void': 'error',
+      'no-var': 'error',
+      'prefer-const': 'error',
+      'prefer-promise-reject-errors': 'error',
+      'prefer-template': 'error',
+      yoda: 'error',
+      'no-unused-vars': 'off',
+    },
+  },
 ];
 
 export default eslintConfig;
