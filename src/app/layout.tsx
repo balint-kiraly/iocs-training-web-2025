@@ -1,5 +1,6 @@
 import './globals.css';
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 // eslint-disable-next-line camelcase
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -35,6 +36,7 @@ export default function RootLayout({
           antialiased
         `}
       >
+        <SpeedInsights />
         {children}
       </body>
     </html>
