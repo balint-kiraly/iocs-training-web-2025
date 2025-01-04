@@ -14,10 +14,11 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   const [started, setStarted] = useState(false);
   const [isRightTime, setIsRightTime] = useState(false);
 
+  const target = new Date(targetDate).getTime();
+
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date().getTime();
-      const target = new Date(targetDate).getTime();
       const difference = target - now;
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -43,7 +44,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
       }
     }, 1000);
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [target]);
 
   return (
     <div className='grid w-fit min-w-96 max-w-xl grid-cols-4 grid-rows-2 justify-items-center gap-x-10'>

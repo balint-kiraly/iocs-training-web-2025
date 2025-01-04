@@ -16,7 +16,7 @@ const LandingSection = () => {
         />
       </div>
       <div className='absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/70 to-transparent' />
-      <Countdown targetDate='2025-02-13' />
+      <Countdown targetDate={process.env.COUNTDOWN_TARGET ?? new Date().toDateString()} />
       <button>Join Now</button>
     </section>
   );
