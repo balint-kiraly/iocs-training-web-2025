@@ -19,7 +19,7 @@ export default function Footer(){
           href="https://www.facebook.com/@instruktorok"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white-600 hover:text-blue-800"
+          className="text-white hover:text-blue-600"
           aria-label="Facebook"
         >
           <Facebook className="w-6 h-6" />
@@ -27,20 +27,20 @@ export default function Footer(){
 
   
         <a
-          href="https://www.instagram.com/iocs_official/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white-500 hover:text-orange-700"
-          aria-label="Instagram"
+        href="https://www.instagram.com/iocs_official/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white hover:text-orange-700"
+        aria-label="Instagram"
         >
-          <Instagram className="w-6 h-6" />
+          <Instagram className="w-6 h-6"/>
         </a>
 
         <a
           href="https://iocs.hu/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white-600 hover:text-yellow-700"
+          className="text-white hover:text-yellow-700"
           aria-label="Privacy Policy"
         >
           <img
