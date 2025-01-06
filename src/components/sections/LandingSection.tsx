@@ -15,9 +15,10 @@ const LandingSection = () => {
           alt='Background placeholder'
           style={{ objectFit: 'cover' }}
         />
+        <div className='absolute inset-0 bg-gradient-to-b from-teal-900 to-transparent to-30%' />
         <div className='absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent' />
       </div>
-      <h1 className='absolute left-5 top-20 max-w-3xl text-[5rem]/[1] font-bold'>
+      <h1 className='absolute left-5 top-28 max-w-3xl text-[5rem]/[1] font-bold'>
         Welcome to the <br />
         instructor training!
       </h1>

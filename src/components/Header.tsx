@@ -1,10 +1,35 @@
+import { Rocket } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
+
+import { Button } from '@/components/ui/button';
 
 const Header = () => {
   return (
-    <div className='absolute border'>
-      <h1>Header</h1>
-    </div>
+    <header className='absolute w-screen p-4 text-white'>
+      <div className='flex items-center justify-between'>
+        <Link href='/' className='text-2xl font-bold'>
+          IÖCS Training 2025
+        </Link>
+        <nav>
+          <ul className='flex space-x-8'>
+            <li>
+              <Link href='/'>Home</Link>
+            </li>
+            <li>
+              <Link href='/'>Rules</Link>
+            </li>
+            <li>
+              <Link href='/'>Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <Button>
+          Apply Now
+          <Rocket />
+        </Button>
+      </div>
+    </header>
   );
 };
 

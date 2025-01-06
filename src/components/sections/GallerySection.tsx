@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Gallery from '@/components/ui/Gallery';
+import HorizontalScrollCarousel from '@/components/ui/HorizontalScrollCarousel';
 
 const GallerySection = () => {
   return (
-    <section className='h-80'>
-      <Gallery />
+    <section className='bg-black py-32'>
+      <HorizontalScrollCarousel />
     </section>
   );
 };
