@@ -2,10 +2,10 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const HorizontalScrollCarousel = () => {
-  const imageWidth = 450;
+  const [offset, setOffset] = React.useState(0);
 
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
@@ -13,23 +13,20 @@ const HorizontalScrollCarousel = () => {
     offset: ['start end', 'end start'],
   });
 
-  const x = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ['0px', `-${cards.length * (imageWidth + 40) - window.innerWidth + 40}px`]
-  );
+  useEffect(() => {
+    if (targetRef.current) {
+      setOffset(targetRef.current.offsetWidth - window.innerWidth);
+    }
+  }, []);
+
+  const x = useTransform(scrollYProgress, [0, 1], ['0px', `-${offset}px`]);
 
   return (
     <div className='overflow-hidden'>
       <motion.div ref={targetRef} style={{ x }} className='inline-flex items-center gap-10 px-10'>
         {cards.map((card) => {
           return (
-            <div
-              key={card.id}
-              className={`
-                w-[${imageWidth}px]
-              `}
-            >
+            <div key={card.id} className={`w-[450px]`}>
               <Image
                 src='/landing-bg-placeholder.jpg'
                 width={5427}
