@@ -11,7 +11,10 @@ const ApplicationSection = () => {
   };
 
   return (
-    <div className='fixed right-4 top-4 z-50'>
+    <div className='flex flex-col items-center justify-center'>
+      <p className='mb-4 text-lg font-semibold text-black'>
+        Welcome to our application page. Please click the button below to proceed.
+      </p>
       <button
         onClick={handleButtonClick}
         className={`
