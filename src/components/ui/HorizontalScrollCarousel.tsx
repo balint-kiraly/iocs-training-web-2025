@@ -5,31 +5,43 @@ import Image from 'next/image';
 import React, { useRef } from 'react';
 
 const HorizontalScrollCarousel = () => {
+  const imageWidth = 450;
+
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
+    offset: ['start end', 'end start'],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ['1%', '-95%']);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ['0px', `-${cards.length * (imageWidth + 40) - window.innerWidth + 40}px`]
+  );
 
   return (
-    <section ref={targetRef} className='relative h-[300vh] bg-neutral-900'>
-      <div className='sticky top-0 flex h-screen items-center overflow-hidden'>
-        <motion.div style={{ x }} className='flex gap-4'>
-          {cards.map((card) => {
-            return (
+    <div className='overflow-hidden'>
+      <motion.div ref={targetRef} style={{ x }} className='inline-flex items-center gap-10 px-10'>
+        {cards.map((card) => {
+          return (
+            <div
+              key={card.id}
+              className={`
+                w-[${imageWidth}px]
+              `}
+            >
               <Image
-                key={card.id}
                 src='/landing-bg-placeholder.jpg'
                 width={5427}
                 height={3618}
+                className='rounded-md'
                 alt='Gallery Placeholder image'
               />
-            );
-          })}
-        </motion.div>
-      </div>
-    </section>
+            </div>
+          );
+        })}
+      </motion.div>
+    </div>
   );
 };
 
