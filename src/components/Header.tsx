@@ -1,4 +1,5 @@
 import { Rocket } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -8,9 +9,12 @@ const Header = () => {
   return (
     <header className='absolute w-screen p-4 text-white'>
       <div className='flex items-center justify-between'>
-        <Link href='/' className='text-2xl font-bold'>
-          IÖCS Training 2025
-        </Link>
+        <div className='flex items-center gap-4'>
+          <Image src='/logo.png' alt='IÖCS logo' width={35} height={35} className='relative bottom-0.5' />
+          <Link href='/' className='text-2xl font-bold'>
+            IÖCS Training 2025
+          </Link>
+        </div>
         <nav>
           <ul className='flex space-x-8'>
             <li>
