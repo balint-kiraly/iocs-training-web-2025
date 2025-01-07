@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Gallery from '@/components/ui/Gallery';
+
 const IntroductionSection = () => {
   return (
     <section className='h-80'>
-      <h1>Introduction</h1>
+      <Gallery />
     </section>
   );
 };
