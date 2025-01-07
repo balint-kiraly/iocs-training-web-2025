@@ -1,35 +1,38 @@
 import { Rocket } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
+  const text = useTranslations('Header');
+
   return (
     <header className='absolute w-screen p-4 text-white'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-4'>
           <Image src='/logo.png' alt='IÖCS logo' width={35} height={35} className='relative bottom-0.5' />
           <Link href='/' className='text-2xl font-bold'>
-            IÖCS Training 2025
+            {text('title')}
           </Link>
         </div>
         <nav>
           <ul className='flex space-x-8'>
             <li>
-              <Link href='/'>Home</Link>
+              <Link href='/'>{text('home')}</Link>
             </li>
             <li>
-              <Link href='/'>Rules</Link>
+              <Link href='/'>{text('rules')}</Link>
             </li>
             <li>
-              <Link href='/'>Contact</Link>
+              <Link href='/'>{text('contact')}</Link>
             </li>
           </ul>
         </nav>
         <Button>
-          Apply Now
+          {text('apply')}
           <Rocket />
         </Button>
       </div>
