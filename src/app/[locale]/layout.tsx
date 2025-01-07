@@ -6,12 +6,16 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import React from 'react';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { routing } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,6 +43,9 @@ export default async function RootLayout({
   if (!routing.locales.includes(locale as never)) {
     notFound();
   }
+
+  // Enable static rendering
+  setRequestLocale(locale);
 
   // Providing all translations to the client
   // side is the easiest way to get started
