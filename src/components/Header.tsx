@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
 const Header = () => {
   const text = useTranslations('Header');
@@ -31,10 +32,13 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <Button>
-          {text('apply')}
-          <Rocket />
-        </Button>
+        <div className='flex items-center gap-1'>
+          <LanguageSwitcher />
+          <Button>
+            {text('apply')}
+            <Rocket />
+          </Button>
+        </div>
       </div>
     </header>
   );

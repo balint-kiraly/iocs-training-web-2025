@@ -10,5 +10,9 @@
     "rules": "Rules",
     "contact": "Contact",
     "apply": "Apply Now"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "language": "{locale, select, hu {Magyar} en {English} other {}}"
   }
 }

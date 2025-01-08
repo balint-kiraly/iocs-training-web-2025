@@ -10,5 +10,9 @@
     "rules": "Szabályzat",
     "contact": "Kapcsolat",
     "apply": "Jelentkezés"
+  },
+  "LanguageSwitcher": {
+    "label": "Nyelv",
+    "language": "{locale, select, hu {Magyar} en {English} other {}}"
   }
 }
