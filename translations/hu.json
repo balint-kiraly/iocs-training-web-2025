@@ -1,0 +1,52 @@
+{
+  "Metadata": {
+    "title": "IÖCS Instruktorképzés 2025 | Légy részese az élménynek",
+    "description": "Vegyél részt a 2025-ös IÖCS Instruktorképzésen! Légy részese egy felejthetetlen élménynek, és építs életre szóló kapcsolatokat.",
+    "keywords": "IÖCS, Instruktor, Képzés, Instruktorképzés, 2025, Közösség, Jelentkezés, Semmelweis, Egyetem"
+  },
+  "Header": {
+    "title": "IÖCS Képzés 2025",
+    "home": "Főoldal",
+    "rules": "Szabályzat",
+    "contact": "Kapcsolat",
+    "apply": "Jelentkezés"
+  },
+  "LanguageSwitcher": {
+    "label": "Nyelv",
+    "language": "{locale, select, hu {Magyar} en {English} other {}}"
+  },
+  "HeroSection": {
+    "heading": "Várunk az\nInstruktorképzésen!",
+    "subheading": "Légy részese egy felejthetetlen élménynek, és építs életre szóló kapcsolatokat.",
+    "cta": "Jelentkezz Most"
+  },
+  "Countdown": {
+    "heading": "A képzésig hátra van",
+    "days": "nap",
+    "hours": "óra",
+    "minutes": "perc",
+    "seconds": "másodperc"
+  },
+  "ApplicationSection": {
+    "heading": "Várunk az Instruktorképzésen!",
+    "subheading": "Csatlakozz az IÖCS közösségéhez, és légy részese egy felejthetetlen élménynek!",
+    "cta": "Jelentkezz Most!"
+  },
+  "Footer": {
+    "iocs": {
+      "label": "IÖCS",
+      "name": "Instruktor Öntevékeny Csoport",
+      "privacy-policy": "Adatvédelmi Nyilatkozat"
+    },
+    "links": {
+      "label": "Linkek",
+      "home": "Főoldal",
+      "rules": "Szabályzat",
+      "contact": "Kapcsolat",
+      "apply": "Jelenkezés"
+    },
+    "social": {
+      "label": "Kövess Minket"
+    }
+  }
+}

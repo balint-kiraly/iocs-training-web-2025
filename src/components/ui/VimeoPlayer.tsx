@@ -10,7 +10,7 @@ export default function VimeoDefaultPlayer({ id }: Readonly<{ id: number }>) {
     const options = {
       id: id,
       loop: false,
-      autoplay: true,
+      autoplay: false,
       autopause: false,
       portrait: false,
       byline: false,

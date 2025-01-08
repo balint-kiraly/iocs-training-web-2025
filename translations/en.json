@@ -1,0 +1,52 @@
+{
+  "Metadata": {
+    "title": "IÖCS Instructor Training 2025 | Join the Experience",
+    "description": "Join the 2025 IÖCS Instructor Training! Be part of an unforgettable experience and make lifelong connections.",
+    "keywords": "IÖCS, Instructor, Training, 2025, Community, Application, Semmelweis, University"
+  },
+  "Header": {
+    "title": "IÖCS Training 2025",
+    "home": "Home",
+    "rules": "Rules",
+    "contact": "Contact",
+    "apply": "Apply Now"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "language": "{locale, select, hu {Magyar} en {English} other {}}"
+  },
+  "HeroSection": {
+    "heading": "Welcome to the\nInstructor Training!",
+    "subheading": "Be part of an unforgettable experience and make lifelong connections.",
+    "cta": "Apply Now"
+  },
+  "Countdown": {
+    "heading": "The training starts in",
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds"
+  },
+  "ApplicationSection": {
+    "heading": "We’re Excited to Welcome You to the Instructor Training!",
+    "subheading": "Join the IÖCS community and be part of an unforgettable experience!",
+    "cta": "Apply Now!"
+  },
+  "Footer": {
+    "iocs": {
+      "label": "IÖCS",
+      "name": "Instruktor Öntevékeny Csoport",
+      "privacy-policy": "Privacy Policy"
+    },
+    "links": {
+      "label": "Quick Links",
+      "home": "Home",
+      "rules": "Rules",
+      "contact": "Contact",
+      "apply": "Apply"
+    },
+    "social": {
+      "label": "Follow Us"
+    }
+  }
+}
