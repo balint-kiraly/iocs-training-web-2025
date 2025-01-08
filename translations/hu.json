@@ -14,5 +14,17 @@
   "LanguageSwitcher": {
     "label": "Nyelv",
     "language": "{locale, select, hu {Magyar} en {English} other {}}"
+  },
+  "HeroSection": {
+    "heading": "Várunk az\nInstruktorképzésen!",
+    "subheading": "Légy részese egy felejthetetlen élménynek, és építs életre szóló kapcsolatokat.",
+    "cta": "Jelentkezz Most"
+  },
+  "Countdown": {
+    "heading": "A képzésig hátra van",
+    "days": "nap",
+    "hours": "óra",
+    "minutes": "perc",
+    "seconds": "másodperc"
   }
 }

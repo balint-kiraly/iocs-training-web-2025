@@ -1,5 +1,6 @@
 'use client';
 
+import { useLocale, useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 
 interface CountdownProps {
@@ -15,6 +16,9 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   const [isRightTime, setIsRightTime] = useState(false);
 
   const target = new Date(targetDate).getTime();
+
+  const text = useTranslations('Countdown');
+  const locale = useLocale();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -47,33 +51,42 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   }, [target]);
 
   return (
-    <div className='grid w-fit min-w-96 max-w-xl grid-cols-4 grid-rows-2 justify-items-center gap-x-10'>
-      {started ? (
-        <div className='col-span-4 row-span-2'>The Training has begun!</div>
-      ) : (
-        <>
-          {isRightTime ? (
-            <>
-              <div className='text-7xl font-bold'>🌱</div>
-              <div className='text-7xl font-bold'>🌱</div>
-              <div className='text-7xl font-bold'>🌱</div>
-              <div className='text-7xl font-bold'>🌱</div>
-            </>
-          ) : (
-            <>
-              <div className='text-7xl font-bold'>{String(days).padStart(2, '0')}</div>
-              <div className='text-7xl font-bold'>{String(hours).padStart(2, '0')}</div>
-              <div className='text-7xl font-bold'>{String(minutes).padStart(2, '0')}</div>
-              <div className='text-7xl font-bold'>{String(seconds).padStart(2, '0')}</div>
-            </>
-          )}
+    <div className='flex flex-col items-center gap-4'>
+      <h3 className='text-4xl text-secondary'>{text('heading')}</h3>
+      <div
+        className={`
+          grid w-fit min-w-96 max-w-xl grid-cols-4 grid-rows-2 justify-items-center
 
-          <div className='text-base uppercase'>Days</div>
-          <div className='text-base uppercase'>Hours</div>
-          <div className='text-base uppercase'>Minutes</div>
-          <div className='text-base uppercase'>Seconds</div>
-        </>
-      )}
+          ${locale === 'hu' ? 'gap-x-5' : 'gap-x-10'}
+        `}
+      >
+        {started ? (
+          <div className='col-span-4 row-span-2'>The Training has begun!</div>
+        ) : (
+          <>
+            {isRightTime ? (
+              <>
+                <div className='text-7xl font-bold'>🌱</div>
+                <div className='text-7xl font-bold'>🌱</div>
+                <div className='text-7xl font-bold'>🌱</div>
+                <div className='text-7xl font-bold'>🌱</div>
+              </>
+            ) : (
+              <>
+                <div className='text-7xl font-bold'>{String(days).padStart(2, '0')}</div>
+                <div className='text-7xl font-bold'>{String(hours).padStart(2, '0')}</div>
+                <div className='text-7xl font-bold'>{String(minutes).padStart(2, '0')}</div>
+                <div className='text-7xl font-bold'>{String(seconds).padStart(2, '0')}</div>
+              </>
+            )}
+
+            <div className='text-base uppercase'>{text('days')}</div>
+            <div className='text-base uppercase'>{text('hours')}</div>
+            <div className='text-base uppercase'>{text('minutes')}</div>
+            <div className='text-base uppercase'>{text('seconds')}</div>
+          </>
+        )}
+      </div>
     </div>
   );
 };

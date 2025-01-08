@@ -14,5 +14,17 @@
   "LanguageSwitcher": {
     "label": "Language",
     "language": "{locale, select, hu {Magyar} en {English} other {}}"
+  },
+  "HeroSection": {
+    "heading": "Welcome to the\nInstructor Training!",
+    "subheading": "Be part of an unforgettable experience and make lifelong connections.",
+    "cta": "Apply Now"
+  },
+  "Countdown": {
+    "heading": "The training starts in",
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds"
   }
 }
