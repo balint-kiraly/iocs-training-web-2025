@@ -10,6 +10,8 @@ const formSchema = z.object({
   firstName: z.string().nonempty(),
   lastName: z.string().nonempty(),
   nickname: z.string().optional(),
+  email: z.string().email(),
+  phone: z.string().regex(/^[+]36-[0-9]{2}-[0-9]{3}-[0-9]{4}$/),
 });
 
 export const ApplicationForm = () => {
@@ -19,6 +21,8 @@ export const ApplicationForm = () => {
       firstName: '',
       lastName: '',
       nickname: '',
+      email: '',
+      phone: '+36',
     },
   });
 
@@ -74,6 +78,40 @@ export const ApplicationForm = () => {
                       <Input {...field} type='text' placeholder='Nickname' />
                     </FormControl>
                     <FormDescription>Optional</FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+          </div>
+          <hr className='my-6' />
+          <h2 className='text-xl font-semibold'>Contact Information</h2>
+          <div className={`grid grid-cols-2 gap-x-10 gap-y-2`}>
+            <FormField
+              control={form.control}
+              name='email'
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormLabel>Email Address</FormLabel>
+                    <FormControl>
+                      <Input {...field} type='email' placeholder='Email' />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+            <FormField
+              control={form.control}
+              name='phone'
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input {...field} type='tel' placeholder='+36-xx-xxx-xxxx' />
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 );
