@@ -31,5 +31,22 @@
     "heading": "Várunk az Instruktorképzésen!",
     "subheading": "Csatlakozz az IÖCS közösségéhez, és légy részese egy felejthetetlen élménynek!",
     "cta": "Jelentkezz Most!"
+  },
+  "Footer": {
+    "iocs": {
+      "label": "IÖCS",
+      "name": "Instruktor Öntevékeny Csoport",
+      "privacy-policy": "Adatvédelmi Nyilatkozat"
+    },
+    "links": {
+      "label": "Linkek",
+      "home": "Főoldal",
+      "rules": "Szabályzat",
+      "contact": "Kapcsolat",
+      "apply": "Jelenkezés"
+    },
+    "social": {
+      "label": "Kövess Minket"
+    }
   }
 }

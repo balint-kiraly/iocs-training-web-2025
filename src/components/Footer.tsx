@@ -1,8 +1,11 @@
 import { Facebook, Instagram, Mail } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 const Footer = () => {
+  const text = useTranslations('Footer');
+
   return (
     <footer className='bg-zinc-900 p-8 text-white'>
       <div className='container mx-auto flex flex-wrap justify-between'>
@@ -13,13 +16,13 @@ const Footer = () => {
             md:mb-0 md:w-1/3
           `}
         >
-          <h3 className='mb-4 text-xl font-bold'>IÖCS</h3>
+          <h3 className='mb-4 text-xl font-bold'>{text('iocs.label')}</h3>
           <ul>
             <li>
-              <Link href='https://iocs.hu'>Instruktor Öntevékeny Csoport</Link>
+              <Link href='https://iocs.hu'>{text('iocs.name')}</Link>
             </li>
             <li>
-              <Link href='/'>Privacy Policy</Link>
+              <Link href='/'>{text('iocs.privacy-policy')}</Link>
             </li>
           </ul>
         </div>
@@ -31,19 +34,19 @@ const Footer = () => {
             md:mb-0 md:w-1/3
           `}
         >
-          <h4 className='mb-4 text-xl font-bold'>Quick Links</h4>
+          <h4 className='mb-4 text-xl font-bold'>{text('links.label')}</h4>
           <ul>
             <li>
-              <Link href='/'>Home</Link>
+              <Link href='/'>{text('links.home')}</Link>
             </li>
             <li>
-              <Link href='/'>Rules</Link>
+              <Link href='/'>{text('links.rules')}</Link>
             </li>
             <li>
-              <Link href='/'>Contact</Link>
+              <Link href='/'>{text('links.contact')}</Link>
             </li>
             <li>
-              <Link href='/application-form'>Apply</Link>
+              <Link href='/application-form'>{text('links.apply')}</Link>
             </li>
           </ul>
         </div>
@@ -55,7 +58,7 @@ const Footer = () => {
             md:w-1/3
           `}
         >
-          <h4 className='mb-4 text-xl font-bold'>Follow Us</h4>
+          <h4 className='mb-4 text-xl font-bold'>{text('social.label')}</h4>
           <div className='flex space-x-4'>
             <a
               href='https://www.facebook.com/@instruktorok'
@@ -100,7 +103,7 @@ const Footer = () => {
         </div>
       </div>
       <div className='mt-20 text-center text-muted-foreground'>
-        <p>Made with ❤️ by Bálint Kiráy & Tamás Nagy</p>
+        <p>Developed with ❤️ by Bálint Kiráy & Tamás Nagy</p>
       </div>
     </footer>
   );
