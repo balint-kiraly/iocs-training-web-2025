@@ -67,6 +67,7 @@ export const ApplicationForm = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     // TODO Do something with the form values.
     // ✅ This will be type-safe and validated.
+    //eslint-disable-next-line no-console
     console.log(values);
   }
 
@@ -191,12 +192,11 @@ export const ApplicationForm = () => {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value='SE'>SE</SelectItem>
-                        <SelectItem value='BME'>BME</SelectItem>
-                        <SelectItem value='ELTE'>ELTE</SelectItem>
-                        <SelectItem value='Pázmány'>Pázmány</SelectItem>
-                        <SelectItem value='Corvinus'>Corvinus</SelectItem>
-                        <SelectItem value='else'>Else...</SelectItem>
+                        {universities.map((university) => (
+                          <SelectItem key={university} value={university}>
+                            {university}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                     <FormMessage />
