@@ -26,5 +26,10 @@
     "hours": "óra",
     "minutes": "perc",
     "seconds": "másodperc"
+  },
+  "ApplicationSection": {
+    "heading": "Várunk az Instruktorképzésen!",
+    "subheading": "Csatlakozz az IÖCS közösségéhez, és légy részese egy felejthetetlen élménynek!",
+    "cta": "Jelentkezz Most!"
   }
 }

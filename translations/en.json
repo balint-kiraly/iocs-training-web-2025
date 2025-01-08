@@ -26,5 +26,10 @@
     "hours": "hours",
     "minutes": "minutes",
     "seconds": "seconds"
+  },
+  "ApplicationSection": {
+    "heading": "We’re Excited to Welcome You to the Instructor Training!",
+    "subheading": "Join the IÖCS community and be part of an unforgettable experience!",
+    "cta": "Apply Now!"
   }
 }

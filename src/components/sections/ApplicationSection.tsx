@@ -1,10 +1,14 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import React from 'react';
+
+import { Button } from '@/components/ui/button';
 
 const ApplicationSection = () => {
   const router = useRouter();
+  const text = useTranslations('ApplicationSection');
 
   const handleButtonClick = (): void => {
     router.push('application-form');
@@ -12,21 +16,9 @@ const ApplicationSection = () => {
 
   return (
     <div className='flex flex-col items-center justify-center'>
-      <p className='mb-4 text-lg font-semibold text-black'>
-        Welcome to our application page. Please click the button below to proceed.
-      </p>
-      <button
-        onClick={handleButtonClick}
-        className={`
-          rounded bg-blue-500 px-4 py-2 font-bold text-white transition duration-300
-
-          focus:outline-none focus:shadow-outline
-
-          hover:bg-blue-700
-        `}
-      >
-        Apply Now
-      </button>
+      <h2 className='text-2xl font-bold'>{text('heading')}</h2>
+      <h4 className='text-lg font-semibold'>{text('subheading')}</h4>
+      <Button onClick={handleButtonClick}>{text('cta')}</Button>
     </div>
   );
 };
