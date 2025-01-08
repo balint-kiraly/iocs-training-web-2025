@@ -1,11 +1,11 @@
 import { Rocket } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { Link } from '@/i18n/routing';
 
 const Header = () => {
   const text = useTranslations('Header');
@@ -34,10 +34,12 @@ const Header = () => {
         </nav>
         <div className='flex items-center gap-1'>
           <LanguageSwitcher />
-          <Button>
-            {text('apply')}
-            <Rocket />
-          </Button>
+          <Link href='/apply'>
+            <Button>
+              {text('apply')}
+              <Rocket />
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

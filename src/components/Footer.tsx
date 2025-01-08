@@ -1,7 +1,8 @@
 import { Facebook, Instagram, Mail } from 'lucide-react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import React from 'react';
+
+import { Link } from '@/i18n/routing';
 
 const Footer = () => {
   const text = useTranslations('Footer');
@@ -46,7 +47,7 @@ const Footer = () => {
               <Link href='/'>{text('links.contact')}</Link>
             </li>
             <li>
-              <Link href='/application-form'>{text('links.apply')}</Link>
+              <Link href='/apply'>{text('links.apply')}</Link>
             </li>
           </ul>
         </div>
