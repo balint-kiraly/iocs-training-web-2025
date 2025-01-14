@@ -4,7 +4,7 @@ import HorizontalScrollCarousel from '@/components/ui/HorizontalScrollCarousel';
 
 const GallerySection = () => {
   return (
-    <section className='bg-black py-32'>
+    <section className='py-32'>
       <HorizontalScrollCarousel />
     </section>
   );

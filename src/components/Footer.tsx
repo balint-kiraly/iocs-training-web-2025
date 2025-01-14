@@ -8,7 +8,7 @@ const Footer = () => {
   const text = useTranslations('Footer');
 
   return (
-    <footer className='bg-zinc-900 p-8 text-white'>
+    <footer className='bg-primary/20 p-8'>
       <div className='container mx-auto flex flex-wrap justify-between'>
         <div
           className={`

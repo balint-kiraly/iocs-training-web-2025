@@ -18,6 +18,16 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: `
+          bg-accent text-accent-foreground shadow
+
+          hover:bg-accent/90
+        `,
+        light: `
+          light bg-background text-foreground shadow
+
+          hover:bg-accent/90
+        `,
+        primary: `
           bg-primary text-primary-foreground shadow
 
           hover:bg-primary/90

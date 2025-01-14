@@ -71,7 +71,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={translations}>
           <SpeedInsights />
           <Header />
-          {children}
+          <div className='relative'>{children}</div>
           <Footer />
         </NextIntlClientProvider>
       </body>

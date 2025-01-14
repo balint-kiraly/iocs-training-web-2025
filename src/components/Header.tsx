@@ -11,38 +11,41 @@ const Header = () => {
   const text = useTranslations('Header');
 
   return (
-    <header className='absolute w-screen p-4 text-white'>
-      <div className='flex items-center justify-between'>
-        <div className='flex items-center gap-4'>
-          <Image src='/logo.png' alt='IÖCS logo' width={35} height={35} className='relative bottom-0.5' />
-          <Link href='/' className='text-2xl font-bold'>
-            {text('title')}
-          </Link>
+    <>
+      <div className='absolute left-0 top-0 h-36 w-screen bg-gradient-to-b from-primary to-transparent' />
+      <header className='absolute w-screen p-4 text-white'>
+        <div className='flex items-center justify-between'>
+          <div className='flex items-center gap-4'>
+            <Image src='/logo.png' alt='IÖCS logo' width={35} height={35} className='relative bottom-0.5' />
+            <Link href='/' className='text-2xl font-bold'>
+              {text('title')}
+            </Link>
+          </div>
+          <nav>
+            <ul className='flex space-x-8'>
+              <li>
+                <Link href='/'>{text('home')}</Link>
+              </li>
+              <li>
+                <Link href='/'>{text('rules')}</Link>
+              </li>
+              <li>
+                <Link href='/'>{text('contact')}</Link>
+              </li>
+            </ul>
+          </nav>
+          <div className='flex items-center gap-1'>
+            <LanguageSwitcher />
+            <Link href='/apply'>
+              <Button className='bg-muted'>
+                {text('apply')}
+                <Rocket />
+              </Button>
+            </Link>
+          </div>
         </div>
-        <nav>
-          <ul className='flex space-x-8'>
-            <li>
-              <Link href='/'>{text('home')}</Link>
-            </li>
-            <li>
-              <Link href='/'>{text('rules')}</Link>
-            </li>
-            <li>
-              <Link href='/'>{text('contact')}</Link>
-            </li>
-          </ul>
-        </nav>
-        <div className='flex items-center gap-1'>
-          <LanguageSwitcher />
-          <Link href='/apply'>
-            <Button>
-              {text('apply')}
-              <Rocket />
-            </Button>
-          </Link>
-        </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 
