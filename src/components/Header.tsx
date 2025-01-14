@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <>
       <div className='absolute left-0 top-0 h-36 w-screen bg-gradient-to-b from-primary to-transparent' />
-      <header className='absolute w-screen p-4 text-white'>
+      <header className='absolute z-10 w-screen p-4 text-white'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-4'>
             <Image src='/logo.png' alt='IÖCS logo' width={35} height={35} className='relative bottom-0.5' />

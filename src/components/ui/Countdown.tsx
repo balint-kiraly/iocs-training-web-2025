@@ -59,7 +59,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
           <h3 className='text-2xl'>{text('heading')}</h3>
           <div
             className={`
-              grid w-fit min-w-96 max-w-xl grid-cols-4 grid-rows-2 justify-items-center
+              grid w-fit min-w-96 max-w-xl grid-cols-4 grid-rows-2 justify-items-center font-[Arial]
 
               ${locale === 'hu' ? 'gap-x-2' : 'gap-x-7'}
             `}
