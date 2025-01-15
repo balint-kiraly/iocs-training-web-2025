@@ -16,7 +16,6 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
 
   return (
     <>
-      <h2 className='text-xl font-semibold'>Personal Details</h2>
       <h2 className='text-xl font-semibold'>Studies</h2>
       <div
         className={`
