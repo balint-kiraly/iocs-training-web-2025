@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const universities = ['SE', 'BME', 'ELTE', 'Pázmány', 'Corvinus', 'else'] as const;
+export const universities = ['SE', 'BME', 'ELTE', 'PPKE', 'BCE', 'Other'] as const;
 export const faculties = ['ÁOK', 'FOK', 'GYTK', 'ETK', 'EKK', 'PAK'] as const;
 export const letters = [
   'A',
@@ -56,9 +56,19 @@ export const formSchema = z
     birthDate: z.date().max(new Date()),
     birthPlace: z.string().nonempty(),
     mothersName: z.string().nonempty(), // different from schema
-    university: z.string().nonempty(),
+    university: z.enum(universities),
+    otherUniversity: z
+      .string()
+      .optional()
+      .refine((value) => {
+        return value === undefined || !universities.includes(value as (typeof universities)[number]);
+      }),
     faculty: z.enum(faculties).optional(),
-    startYear: z.number().int().min(2000).max(new Date().getFullYear()),
+    startYear: z
+      .number()
+      .int()
+      .min(2000)
+      .max(new Date().getFullYear() - 1),
     academicYear: z.number().int().min(1).max(6),
     letter: z.enum(letters),
     drivingLicense: z.boolean(),
@@ -69,15 +79,19 @@ export const formSchema = z
     customDiet: z.string().optional(),
     internationalTraining: InternationalTrainingSchema.optional(),
   })
-  .refine((data) => data.university !== 'SE' || (data.university === 'SE' && data.faculty !== null), {
+  .refine((data) => data.university !== 'Other' || data.otherUniversity !== undefined, {
+    message: 'Please provide your university.',
+    path: ['otherUniversity'],
+  })
+  .refine((data) => data.university !== 'SE' || data.faculty !== undefined, {
     message: 'Faculty must be provided for the university of SE.',
     path: ['faculty'],
   })
-  .refine((data) => !data.drivingLicense || data.likesDriving !== null, {
+  .refine((data) => !data.drivingLicense || data.likesDriving !== undefined, {
     message: 'Please provide your opinion about driving.',
     path: ['likesDriving'],
   })
-  .refine((data) => data.diet !== 'Other' || data.customDiet !== null, {
+  .refine((data) => data.diet !== 'Other' || data.customDiet !== undefined, {
     message: 'Please provide your custom diet.',
     path: ['customDiet'],
   });
