@@ -9,11 +9,14 @@
     "lint": "next lint",
     "lint:fix": "eslint --fix",
     "format": "prettier --write src",
-    "format:check": "prettier --check src"
+    "format:check": "prettier --check src",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "dependencies": {
+    "@prisma/client": "^6.2.1",
     "@vercel/speed-insights": "^1.1.0",
     "next": "15.1.2",
+    "prisma": "^6.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

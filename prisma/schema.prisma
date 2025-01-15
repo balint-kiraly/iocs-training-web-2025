@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+enum Faculty {
+  AOK
+  FOK
+  GYTK
+  ETK
+  EKK
+  PAK
+}
+
+enum Letter {
+  A
+  B
+  C
+  D
+  E
+  F
+  G
+  H
+  EKK
+  K
+  L
+  M
+  N
+  R
+  S
+  T
+  U
+  FOK1
+  FOK2
+  GYOK1
+  GYOK2
+  GYOK3
+  PAK
+  International
+}
+
+enum LanguageCertificateLevel {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
+}
+
+model Application {
+  id                    Int                    @id @default(autoincrement())
+  firstName             String
+  lastName              String
+  nickname              String?
+  email                 String                 @unique
+  phone                 String                 @unique
+  zipCode               Int
+  city                  String
+  address               String
+  idNumber              String
+  studentId             String
+  birthDate             DateTime
+  birthPlace            String
+  motherName            String
+  university            String
+  faculty               Faculty?
+  startYear             Int
+  academicYear          Int
+  letter                Letter?
+  drivingLicence        Boolean
+  likesDriving          Boolean
+  languages             String[]
+  availableAtWeekend1   Boolean
+  availableAtWeekend2   Boolean
+  diet                  String?
+  internationalTraining InternationalTraining?
+  createdAt             DateTime               @default(now())
+}
+
+model InternationalTraining {
+  id            Int                   @id @default(autoincrement())
+  certificates  LanguageCertificate[]
+  motivation    String
+  application   Application           @relation(fields: [applicationId], references: [id])
+  applicationId Int                   @unique
+}
+
+model LanguageCertificate {
+  id                      Int                      @id @default(autoincrement())
+  language                String
+  level                   LanguageCertificateLevel
+  internationalTraining   InternationalTraining    @relation(fields: [internationalTrainingId], references: [id])
+  internationalTrainingId Int
+}
