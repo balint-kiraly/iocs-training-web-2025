@@ -15,7 +15,7 @@ export const FormNameSection: React.FC<FormNameSectionProps> = ({ form }) => {
     <>
       <div
         className={`
-          grid grid-cols-1 gap-x-10 gap-y-2
+          grid grid-cols-1 gap-x-10 gap-y-5
 
           sm:grid-cols-2
         `}

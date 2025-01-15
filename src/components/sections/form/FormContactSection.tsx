@@ -13,10 +13,10 @@ interface FormContactSectionProps {
 export const FormContactSection: React.FC<FormContactSectionProps> = ({ form }) => {
   return (
     <>
-      <h2 className='text-xl font-semibold'>Contact Information</h2>
+      <h2 className='mb-4 text-xl font-semibold'>Contact Information</h2>
       <div
         className={`
-          grid grid-cols-1 gap-x-10 gap-y-2
+          grid grid-cols-1 gap-x-10 gap-y-5
 
           sm:grid-cols-2
         `}
