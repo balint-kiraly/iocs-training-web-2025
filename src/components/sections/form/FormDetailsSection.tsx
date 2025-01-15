@@ -112,6 +112,7 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
               <FormControl>
                 <DatePicker {...field} />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />

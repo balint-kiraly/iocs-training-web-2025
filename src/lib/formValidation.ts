@@ -73,10 +73,10 @@ export const formSchema = z
     letter: z.enum(letters),
     drivingLicense: z.boolean(),
     likesDriving: z.boolean().optional(),
-    availableAtWeekend1: z.boolean(),
-    availableAtWeekend2: z.boolean(),
     diet: z.enum(diets),
     customDiet: z.string().optional(),
+    availableAtWeekend1: z.boolean(),
+    availableAtWeekend2: z.boolean(),
     internationalTraining: InternationalTrainingSchema.optional(),
   })
   .refine((data) => data.university !== 'Other' || data.otherUniversity !== undefined, {
@@ -94,4 +94,15 @@ export const formSchema = z
   .refine((data) => data.diet !== 'Other' || data.customDiet !== undefined, {
     message: 'Please provide your custom diet.',
     path: ['customDiet'],
-  });
+  })
+  .refine(
+    (data) => {
+      if (!data.availableAtWeekend1) {
+        return data.availableAtWeekend2;
+      }
+    },
+    {
+      message: 'At least one weekend must be selected.',
+      path: ['availableAtWeekend1'],
+    }
+  );

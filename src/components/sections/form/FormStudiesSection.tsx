@@ -180,6 +180,7 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
           }}
         />
       </div>
+      <hr className='my-6' />
     </>
   );
 };

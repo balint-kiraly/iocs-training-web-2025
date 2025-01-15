@@ -2,6 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { FormAvailabilitySection } from '@/components/sections/form/FormAvailabilitySection';
 import { FormContactSection } from '@/components/sections/form/FormContactSection';
 import { FormDetailsSection } from '@/components/sections/form/FormDetailsSection';
 import { FormNameSection } from '@/components/sections/form/FormNameSection';
@@ -34,8 +35,8 @@ export const ApplicationForm = () => {
       letter: undefined,
       drivingLicense: undefined,
       likesDriving: undefined,
-      availableAtWeekend1: undefined,
-      availableAtWeekend2: undefined,
+      availableAtWeekend1: false,
+      availableAtWeekend2: false,
       diet: undefined,
       customDiet: undefined,
       internationalTraining: undefined,
@@ -57,6 +58,7 @@ export const ApplicationForm = () => {
           <FormContactSection form={form} />
           <FormDetailsSection form={form} />
           <FormStudiesSection form={form} />
+          <FormAvailabilitySection form={form} />
           <Button type='submit' className='mt-5'>
             Submit
           </Button>
