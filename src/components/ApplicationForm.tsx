@@ -13,14 +13,31 @@ export const ApplicationForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: '',
-      lastName: '',
-      nickname: '',
-      email: '',
-      phone: '+36-',
-      university: '',
-      faculty: 'ÁOK',
-      academicYear: 1,
+      firstName: undefined,
+      lastName: undefined,
+      nickname: undefined,
+      email: undefined,
+      phone: undefined,
+      zipCode: undefined,
+      city: undefined,
+      address: undefined,
+      idNumber: undefined,
+      studentId: undefined,
+      birthDate: undefined,
+      birthPlace: undefined,
+      mothersName: undefined,
+      university: undefined,
+      faculty: undefined,
+      startYear: undefined,
+      academicYear: undefined,
+      letter: undefined,
+      drivingLicense: undefined,
+      likesDriving: undefined,
+      availableAtWeekend1: undefined,
+      availableAtWeekend2: undefined,
+      diet: undefined,
+      customDiet: undefined,
+      internationalTraining: undefined,
     },
   });
 
@@ -30,6 +47,8 @@ export const ApplicationForm = () => {
     //eslint-disable-next-line no-console
     console.log(values);
   }
+
+  const university = form.watch('university');
 
   return (
     <div className='mx-auto w-full min-w-60 max-w-4xl p-10'>
@@ -89,6 +108,7 @@ export const ApplicationForm = () => {
               }}
             />
           </div>
+
           <hr className='my-6' />
           <h2 className='text-xl font-semibold'>Contact Information</h2>
           <div
@@ -129,6 +149,69 @@ export const ApplicationForm = () => {
               }}
             />
           </div>
+
+          <hr className='my-6' />
+          <h2 className='text-xl font-semibold'>Personal Details</h2>
+          <div
+            className={`
+              grid grid-cols-1 gap-x-10 gap-y-2
+
+              sm:grid-cols-2
+            `}
+          >
+            <div className='flex justify-between gap-x-10'>
+              <div className='grow'>
+                <FormField
+                  control={form.control}
+                  name='city'
+                  render={({ field }) => {
+                    return (
+                      <FormItem>
+                        <FormLabel>City</FormLabel>
+                        <FormControl>
+                          <Input {...field} type='text' placeholder='City' />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    );
+                  }}
+                />
+              </div>
+              <div className='w-28'>
+                <FormField
+                  control={form.control}
+                  name='zipCode'
+                  render={({ field }) => {
+                    return (
+                      <FormItem>
+                        <FormLabel>Zip Code</FormLabel>
+                        <FormControl>
+                          <Input {...field} type='number' placeholder='1234' />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    );
+                  }}
+                />
+              </div>
+            </div>
+            <FormField
+              control={form.control}
+              name='address'
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormLabel>Address</FormLabel>
+                    <FormControl>
+                      <Input {...field} type='text' placeholder='Street and house number' />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+          </div>
+
           <hr className='my-6' />
           <h2 className='text-xl font-semibold'>Studies</h2>
           <div
@@ -164,32 +247,34 @@ export const ApplicationForm = () => {
                 );
               }}
             />
-            <FormField
-              control={form.control}
-              name='faculty'
-              render={({ field }) => {
-                return (
-                  <FormItem>
-                    <FormLabel>Faculty</FormLabel>
-                    <Select onValueChange={field.onChange}>
-                      <FormControl>
-                        <SelectTrigger {...field}>
-                          <SelectValue placeholder='Your Faculty' />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {faculties.map((faculty) => (
-                          <SelectItem key={faculty} value={faculty}>
-                            {faculty}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                );
-              }}
-            />
+            {university === 'SE' && (
+              <FormField
+                control={form.control}
+                name='faculty'
+                render={({ field }) => {
+                  return (
+                    <FormItem>
+                      <FormLabel>Faculty</FormLabel>
+                      <Select onValueChange={field.onChange}>
+                        <FormControl>
+                          <SelectTrigger {...field}>
+                            <SelectValue placeholder='Your Faculty' />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {faculties.map((faculty) => (
+                            <SelectItem key={faculty} value={faculty}>
+                              {faculty}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  );
+                }}
+              />
+            )}
             <FormField
               control={form.control}
               name='academicYear'
