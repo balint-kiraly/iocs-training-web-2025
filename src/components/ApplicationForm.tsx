@@ -6,6 +6,7 @@ import { FormAvailabilitySection } from '@/components/sections/form/FormAvailabi
 import { FormContactSection } from '@/components/sections/form/FormContactSection';
 import { FormDetailsSection } from '@/components/sections/form/FormDetailsSection';
 import { FormNameSection } from '@/components/sections/form/FormNameSection';
+import { FormOtherSection } from '@/components/sections/form/FormOtherSection';
 import { FormStudiesSection } from '@/components/sections/form/FormStudiesSection';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
@@ -33,8 +34,8 @@ export const ApplicationForm = () => {
       startYear: undefined,
       academicYear: undefined,
       letter: undefined,
-      drivingLicense: undefined,
-      likesDriving: undefined,
+      drivingLicense: false,
+      likesDriving: false,
       availableAtWeekend1: false,
       availableAtWeekend2: false,
       diet: undefined,
@@ -58,6 +59,7 @@ export const ApplicationForm = () => {
           <FormContactSection form={form} />
           <FormDetailsSection form={form} />
           <FormStudiesSection form={form} />
+          <FormOtherSection form={form} />
           <FormAvailabilitySection form={form} />
           <Button type='submit' className='mt-5'>
             Submit

@@ -29,7 +29,7 @@ export const FormAvailabilitySection: React.FC<FormAvailabilitySectionProps> = (
             return (
               <FormItem className='flex flex-row items-center space-x-4 space-y-0'>
                 <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={(checked) => field.onChange(checked)} />
+                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <FormLabel>March 1-3</FormLabel>
                 <FormMessage />
@@ -44,7 +44,7 @@ export const FormAvailabilitySection: React.FC<FormAvailabilitySectionProps> = (
             return (
               <FormItem className='flex flex-row items-center space-x-4 space-y-0'>
                 <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={(checked) => field.onChange(checked)} />
+                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <FormLabel>March 22-24</FormLabel>
                 <FormMessage />
