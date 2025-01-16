@@ -41,7 +41,7 @@ const Header = () => {
             <ul className='flex space-x-8'>
               {navItems.map((item) => (
                 <li key={item}>
-                  <Link href={`/{item}`}>{text(item)}</Link>
+                  <Link href={item === 'home' ? '/' : `/${item}`}>{text(item)}</Link>
                 </li>
               ))}
             </ul>
