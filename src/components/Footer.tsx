@@ -41,10 +41,10 @@ const Footer = () => {
               <Link href='/'>{text('links.home')}</Link>
             </li>
             <li>
-              <Link href='/'>{text('links.rules')}</Link>
+              <Link href='/rules'>{text('links.rules')}</Link>
             </li>
             <li>
-              <Link href='/'>{text('links.contact')}</Link>
+              <Link href='/contact'>{text('links.contact')}</Link>
             </li>
             <li>
               <Link href='/apply'>{text('links.apply')}</Link>
