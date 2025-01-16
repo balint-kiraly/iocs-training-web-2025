@@ -68,5 +68,11 @@
       "ending": "The aim of the IÖCS is to support students during their studies while giving them the opportunity to become part of a supportive community. Following the rules will help ensure that everyone can benefit from the cooperative and contribute to its success",
       "button": "Download the rules"
     }
+  },
+  "ContactCardSection": {
+    "heading": "Contacts",
+    "title-training-organizer": "Training organizer",
+    "title-FEB": "President of the Supervisory Board",
+    "title-IOCS": "President of the IÖCS"
   }
 }
