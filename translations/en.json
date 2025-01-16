@@ -50,6 +50,18 @@
       "label": "Follow Us"
     }
   },
+  "Details": {
+    "title-databox1": "Training's duration",
+    "title-databox2": "Reminder",
+    "title-databox3": "Advice",
+    "title-databox4": "Curiosity",
+    "title-databox5": "Capacity",
+    "desc-databox1": "2025. january 20. - 2025. february 12.",
+    "desc-databox2": "Don't forget to let us know which weekend you are available!",
+    "desc-databox3": "Apply as soon as possible to make sure there is a place for you.",
+    "desc-databox4": "Did you know that the team includes people who already have families?",
+    "desc-databox5": "A capacity of around 300 people!"
+  },
   "Rules": {
     "header": "Rules",
     "headings": {

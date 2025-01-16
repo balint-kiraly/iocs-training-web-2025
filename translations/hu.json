@@ -50,6 +50,18 @@
       "label": "Kövess Minket"
     }
   },
+  "Details": {
+    "title-databox1": "Képzés időtartama",
+    "title-databox2": "Emlékeztető",
+    "title-databox3": "Tanács",
+    "title-databox4": "Érdekesség",
+    "title-databox5": "Létszám",
+    "desc-databox1": "2025. január 20. - 2025. február 12.",
+    "desc-databox2": "Ne felejtsd el jelezni, hogy melyik hétvégén érsz rá!",
+    "desc-databox3": "Jelentkezz minél hamarabb, hogy biztosan legyen hely számodra.",
+    "desc-databox4": "Tudtad, hogy a csapatban találhatóak olyanok is, akik már családdal rendelkeznek.",
+    "desc-databox5": "Körülbelül 300 fő a befogadó képesség!"
+  },
   "Rules": {
     "header": "Szabályzat",
     "headings": {
