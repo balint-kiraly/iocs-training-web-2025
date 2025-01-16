@@ -79,6 +79,8 @@ export const formSchema = z
     availableAtWeekend1: z.boolean(),
     availableAtWeekend2: z.boolean(),
     internationalTraining: InternationalTrainingSchema.optional(),
+    acceptPrivacyPolicy: z.boolean(),
+    acceptRules: z.boolean(),
   })
   .refine((data) => data.university !== 'Other' || data.otherUniversity !== undefined, {
     message: 'Please provide your university.',

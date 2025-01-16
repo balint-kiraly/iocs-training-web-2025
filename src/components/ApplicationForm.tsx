@@ -2,6 +2,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { FormAcceptanceSection } from '@/components/sections/form/FormAcceptanceSection';
 import { FormAvailabilitySection } from '@/components/sections/form/FormAvailabilitySection';
 import { FormContactSection } from '@/components/sections/form/FormContactSection';
 import { FormDetailsSection } from '@/components/sections/form/FormDetailsSection';
@@ -64,6 +65,7 @@ export const ApplicationForm = () => {
           <FormOtherSection form={form} />
           <FormAvailabilitySection form={form} />
           <FormInternationalSection form={form} />
+          <FormAcceptanceSection form={form} />
           <Button type='submit' className='mt-5'>
             Submit
           </Button>
