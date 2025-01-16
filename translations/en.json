@@ -17,6 +17,7 @@
   },
   "HeroSection": {
     "heading": "Welcome to the\nInstructor Training!",
+    "heading-sm": "Welcome to the Instructor Training!",
     "subheading": "Be part of an unforgettable experience and make lifelong connections.",
     "cta": "Apply Now"
   },

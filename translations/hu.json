@@ -17,6 +17,7 @@
   },
   "HeroSection": {
     "heading": "Várunk az\nInstruktorképzésen!",
+    "heading-sm": "Várunk az Instruktor képzésen!",
     "subheading": "Légy részese egy felejthetetlen élménynek, és építs életre szóló kapcsolatokat.",
     "cta": "Jelentkezz Most"
   },
@@ -25,7 +26,7 @@
     "days": "nap",
     "hours": "óra",
     "minutes": "perc",
-    "seconds": "másodperc"
+    "seconds": "sec"
   },
   "ApplicationSection": {
     "heading": "Várunk az Instruktorképzésen!",

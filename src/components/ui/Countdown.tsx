@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 
 interface CountdownProps {
@@ -18,7 +18,6 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   const target = new Date(targetDate).getTime();
 
   const text = useTranslations('Countdown');
-  const locale = useLocale();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -59,31 +58,62 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
           <h3 className='text-2xl'>{text('heading')}</h3>
           <div
             className={`
-              grid w-fit min-w-96 max-w-xl grid-cols-4 grid-rows-2 justify-items-center font-[Arial]
+              grid w-fit min-w-80 max-w-screen-xs grid-cols-4 grid-rows-2 justify-items-center font-[Arial] text-4xl
 
-              ${locale === 'hu' ? 'gap-x-2' : 'gap-x-7'}
+              xs:gap-x-7 xs:text-6xl
             `}
           >
             {isRightTime ? (
               <>
-                <div className='text-5xl font-bold'>🌱</div>
-                <div className='text-7xl font-bold'>🌱</div>
-                <div className='text-7xl font-bold'>🌱</div>
-                <div className='text-7xl font-bold'>🌱</div>
+                <div className='font-bold'>🌱</div>
+                <div className='font-bold'>🌱</div>
+                <div className='font-bold'>🌱</div>
+                <div className='font-bold'>🌱</div>
               </>
             ) : (
               <>
-                <div className='text-6xl font-bold'>{String(days).padStart(2, '0')}</div>
-                <div className='text-6xl font-bold'>{String(hours).padStart(2, '0')}</div>
-                <div className='text-6xl font-bold'>{String(minutes).padStart(2, '0')}</div>
-                <div className='text-6xl font-bold'>{String(seconds).padStart(2, '0')}</div>
+                <div className='font-bold'>{String(days).padStart(2, '0')}</div>
+                <div className='font-bold'>{String(hours).padStart(2, '0')}</div>
+                <div className='font-bold'>{String(minutes).padStart(2, '0')}</div>
+                <div className='font-bold'>{String(seconds).padStart(2, '0')}</div>
               </>
             )}
+            <div
+              className={`
+                text-sm uppercase
 
-            <div className='uppercase'>{text('days')}</div>
-            <div className='text-base uppercase'>{text('hours')}</div>
-            <div className='text-base uppercase'>{text('minutes')}</div>
-            <div className='text-base uppercase'>{text('seconds')}</div>
+                xs:text-base
+              `}
+            >
+              {text('days')}
+            </div>
+            <div
+              className={`
+                text-sm uppercase
+
+                xs:text-base
+              `}
+            >
+              {text('hours')}
+            </div>
+            <div
+              className={`
+                text-sm uppercase
+
+                xs:text-base
+              `}
+            >
+              {text('minutes')}
+            </div>
+            <div
+              className={`
+                text-sm uppercase
+
+                xs:text-base
+              `}
+            >
+              {text('seconds')}
+            </div>
           </div>
         </>
       )}
