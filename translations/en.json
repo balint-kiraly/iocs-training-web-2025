@@ -49,6 +49,26 @@
       "label": "Follow Us"
     }
   },
+  "Rules": {
+    "header": "Rules",
+    "headings": {
+      "goal": "1. Our goal",
+      "apply": "2. Membership conditions"
+    },
+    "subheadings": {
+      "apply-1": "Who can be a member",
+      "apply-2": "How to join",
+      "apply-3": "Membership obligations"
+    },
+    "text": {
+      "goal": "The aim of the IÖCS is to make you part of a super community. We also give them the opportunity to gain experience and contribute to different projects",
+      "apply-1": "Any student who is at least 16 years old and a full-time student. Membership is voluntary and free of charge",
+      "apply-2": "Students can register through the cooperative's website and apply online for the various programmes",
+      "apply-3": "Members are obliged to participate in the programmes organised by the cooperative and to respect the rules of employment",
+      "ending": "The aim of the IÖCS is to support students during their studies while giving them the opportunity to become part of a supportive community. Following the rules will help ensure that everyone can benefit from the cooperative and contribute to its success",
+      "button": "Download the rules"
+    }
+  },
   "ContactCardSection": {
     "heading": "Contacts",
     "title-training-organizer": "Training organizer",
