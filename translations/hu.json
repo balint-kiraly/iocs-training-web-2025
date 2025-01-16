@@ -48,5 +48,25 @@
     "social": {
       "label": "Kövess Minket"
     }
+  },
+  "Rules": {
+    "header": "Szabályzat",
+    "headings": {
+      "goal": "1. Célunk",
+      "apply": "2. A tagság feltételei"
+    },
+    "subheadings": {
+      "apply-1": "Kik lehetnek tagok?",
+      "apply-2": "Hogyan lehet csatlakozni?",
+      "apply-3": "Tagi kötelezettségek"
+    },
+    "text": {
+      "goal": " Az IÖCS célja, hogy egy szuper közösség része legyél. Emellett lehetőséget biztosítunk számukra, hogy tapasztalatot szerezzenek és hozzájáruljanak különböző projektekhez.",
+      "apply-1": "Bármely diák, aki legalább 16 éves és nappali tagozatos tanuló. A tagság önkéntes és ingyenes.",
+      "apply-2": "A diákok a szövetkezet honlapján keresztül regisztrálhatnak és online jelentkezhetnek a különböző programokra.",
+      "apply-3": "A tagok kötelesek részt venni a szövetkezet által szervezett programokon és betartani a munkavégzésre vonatkozó szabályokat.",
+      "ending": "Az IÖCS célja, hogy segítse a diákokat tanulmányaik alatt, miközben lehetőséget biztosít számukra, hogy egy támogató közösség részévé váljanak. A szabályok betartása segít abban, hogy mindenki élvezhesse a szövetkezet előnyeit és hozzájáruljon közösen a sikeres működéshez.",
+      "button": "Szabályzat letöltése"
+    }
   }
 }
