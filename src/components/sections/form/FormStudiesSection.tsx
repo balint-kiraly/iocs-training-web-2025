@@ -169,7 +169,7 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
               <FormItem>
                 <FormLabel>Academic Year</FormLabel>
                 <FormControl>
-                  <div className='flex gap-4'>
+                  <div className='flex h-9 items-center gap-4'>
                     <Slider min={1} max={6} step={1} onValueChange={(v) => field.onChange(v[0])} />
                     <span className='px-4'>{field.value ?? ' '}</span>
                   </div>

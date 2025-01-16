@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Send } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -66,9 +67,12 @@ export const ApplicationForm = () => {
           <FormAvailabilitySection form={form} />
           <FormInternationalSection form={form} />
           <FormAcceptanceSection form={form} />
-          <Button type='submit' className='mt-5'>
-            Submit
-          </Button>
+          <div className='mt-10 flex justify-end'>
+            <Button type='submit'>
+              Submit
+              <Send />
+            </Button>
+          </div>
         </form>
       </Form>
     </div>

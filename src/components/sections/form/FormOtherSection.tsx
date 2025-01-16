@@ -111,19 +111,19 @@ export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Languages</FormLabel>
+                <FormLabel>What languages do you speak?</FormLabel>
                 <FormControl>
                   <TagsInput
                     {...field}
                     placeHolder='Enter languages'
                     separators={[',', 'Enter']}
                     classNames={{
-                      input: 'text-sm border border-input',
+                      input: 'text-sm border border-input placeholder:text-muted-foreground',
                       tag: 'text-sm px-2',
                     }}
                   />
                 </FormControl>
-                <FormDescription>Enter the languages you speak, separated by commas.</FormDescription>
+                <FormDescription>Enter the languages, separated by commas.</FormDescription>
                 <FormMessage />
               </FormItem>
             );
