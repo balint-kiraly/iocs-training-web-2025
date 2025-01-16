@@ -1,0 +1,91 @@
+{
+  "Metadata": {
+    "title": "IÖCS Instruktorképzés 2025 | Légy részese az élménynek",
+    "description": "Vegyél részt a 2025-ös IÖCS Instruktorképzésen! Légy részese egy felejthetetlen élménynek, és építs életre szóló kapcsolatokat.",
+    "keywords": "IÖCS, Instruktor, Képzés, Instruktorképzés, 2025, Közösség, Jelentkezés, Semmelweis, Egyetem"
+  },
+  "Header": {
+    "title": "IÖCS Képzés 2025",
+    "home": "Főoldal",
+    "rules": "Szabályzat",
+    "contact": "Kapcsolat",
+    "apply": "Jelentkezés"
+  },
+  "LanguageSwitcher": {
+    "label": "Nyelv",
+    "language": "{locale, select, hu {Magyar} en {English} other {}}"
+  },
+  "HeroSection": {
+    "heading": "Várunk az\nInstruktorképzésen!",
+    "heading-sm": "Várunk az Instruktor képzésen!",
+    "subheading": "Légy részese egy felejthetetlen élménynek, és építs életre szóló kapcsolatokat.",
+    "cta": "Jelentkezz Most"
+  },
+  "Countdown": {
+    "heading": "A képzésig hátra van",
+    "days": "nap",
+    "hours": "óra",
+    "minutes": "perc",
+    "seconds": "sec"
+  },
+  "ApplicationSection": {
+    "heading": "Várunk az Instruktorképzésen!",
+    "subheading": "Csatlakozz az IÖCS közösségéhez, és légy részese egy felejthetetlen élménynek!",
+    "cta": "Jelentkezz Most!"
+  },
+  "Footer": {
+    "iocs": {
+      "label": "IÖCS",
+      "name": "Instruktor Öntevékeny Csoport",
+      "privacy-policy": "Adatvédelmi Nyilatkozat"
+    },
+    "links": {
+      "label": "Linkek",
+      "home": "Főoldal",
+      "rules": "Szabályzat",
+      "contact": "Kapcsolat",
+      "apply": "Jelenkezés"
+    },
+    "social": {
+      "label": "Kövess Minket"
+    }
+  },
+  "Details": {
+    "title-databox1": "Képzés időtartama",
+    "title-databox2": "Emlékeztető",
+    "title-databox3": "Tanács",
+    "title-databox4": "Érdekesség",
+    "title-databox5": "Létszám",
+    "desc-databox1": "2025. január 20. - 2025. február 12.",
+    "desc-databox2": "Ne felejtsd el jelezni, hogy melyik hétvégén érsz rá!",
+    "desc-databox3": "Jelentkezz minél hamarabb, hogy biztosan legyen hely számodra.",
+    "desc-databox4": "Tudtad, hogy a csapatban találhatóak olyanok is, akik már családdal rendelkeznek.",
+    "desc-databox5": "Körülbelül 300 fő a befogadó képesség!"
+  },
+  "Rules": {
+    "header": "Szabályzat",
+    "headings": {
+      "goal": "1. Célunk",
+      "apply": "2. A tagság feltételei"
+    },
+    "subheadings": {
+      "apply-1": "Kik lehetnek tagok?",
+      "apply-2": "Hogyan lehet csatlakozni?",
+      "apply-3": "Tagi kötelezettségek"
+    },
+    "text": {
+      "goal": " Az IÖCS célja, hogy egy szuper közösség része legyél. Emellett lehetőséget biztosítunk számukra, hogy tapasztalatot szerezzenek és hozzájáruljanak különböző projektekhez.",
+      "apply-1": "Bármely diák, aki legalább 16 éves és nappali tagozatos tanuló. A tagság önkéntes és ingyenes.",
+      "apply-2": "A diákok a szövetkezet honlapján keresztül regisztrálhatnak és online jelentkezhetnek a különböző programokra.",
+      "apply-3": "A tagok kötelesek részt venni a szövetkezet által szervezett programokon és betartani a munkavégzésre vonatkozó szabályokat.",
+      "ending": "Az IÖCS célja, hogy segítse a diákokat tanulmányaik alatt, miközben lehetőséget biztosít számukra, hogy egy támogató közösség részévé váljanak. A szabályok betartása segít abban, hogy mindenki élvezhesse a szövetkezet előnyeit és hozzájáruljon közösen a sikeres működéshez.",
+      "button": "Szabályzat letöltése"
+    }
+  },
+  "ContactCardSection": {
+    "heading": "Kapcsolatok",
+    "title-training-organizer": "Képzésszervező",
+    "title-FEB": "Felügyelőbizottság Elnöke",
+    "title-IOCS": "Instruktor Öntevékeny Csoport Elnöke"
+  }
+}
