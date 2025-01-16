@@ -33,7 +33,13 @@ export const FormInternationalSection: React.FC<FormInternationalSectionProps> =
                   sm:grid-cols-2
                 `}
               >
-                <FormItem className='col-span-2 flex flex-row items-center space-x-4 space-y-0'>
+                <FormItem
+                  className={`
+                    flex flex-row items-center space-x-4 space-y-0
+
+                    sm:col-span-2
+                  `}
+                >
                   <FormLabel>Would you like to participate in English?</FormLabel>
                   <FormControl>
                     <Switch
@@ -68,7 +74,7 @@ export const FormInternationalSection: React.FC<FormInternationalSectionProps> =
                       <FormLabel>Language Certificates</FormLabel>
                       {/* Render Existing Certificates */}
                       {form.watch('internationalTraining.certificates')?.map((_, index) => (
-                        <div key={index} className='flex items-end gap-x-4'>
+                        <div key={index} className='flex items-start gap-x-4'>
                           <div className='flex grow gap-x-2'>
                             {/* Language Field */}
                             <FormField
@@ -132,7 +138,7 @@ export const FormInternationalSection: React.FC<FormInternationalSectionProps> =
                             const currentCertificates = form.getValues('internationalTraining.certificates') || [];
                             form.setValue('internationalTraining.certificates', [
                               ...currentCertificates,
-                              { language: '', level: 'A1' },
+                              { language: '', level: undefined },
                             ]);
                           }}
                         >

@@ -31,10 +31,15 @@ export const letters = [
 export const diets = ['Normal', 'Vegetarian', 'Lactose-Free', 'Gluten-Free', 'Vegan', 'Other'] as const;
 export const languageCertificateLevels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'] as const;
 
-const LanguageCertificateSchema = z.object({
-  language: z.string().nonempty(),
-  level: z.enum(languageCertificateLevels),
-});
+const LanguageCertificateSchema = z
+  .object({
+    language: z.string().nonempty(),
+    level: z.enum(languageCertificateLevels).optional(),
+  })
+  .refine((data) => data.level !== undefined, {
+    message: 'Provide the level.',
+    path: ['level'],
+  });
 
 const InternationalTrainingSchema = z.object({
   certificates: z.array(LanguageCertificateSchema).optional(),
