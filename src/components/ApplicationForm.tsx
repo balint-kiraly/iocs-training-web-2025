@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { FormAvailabilitySection } from '@/components/sections/form/FormAvailabilitySection';
 import { FormContactSection } from '@/components/sections/form/FormContactSection';
 import { FormDetailsSection } from '@/components/sections/form/FormDetailsSection';
+import { FormInternationalSection } from '@/components/sections/form/FormInternationalSection';
 import { FormNameSection } from '@/components/sections/form/FormNameSection';
 import { FormOtherSection } from '@/components/sections/form/FormOtherSection';
 import { FormStudiesSection } from '@/components/sections/form/FormStudiesSection';
@@ -62,6 +63,7 @@ export const ApplicationForm = () => {
           <FormStudiesSection form={form} />
           <FormOtherSection form={form} />
           <FormAvailabilitySection form={form} />
+          <FormInternationalSection form={form} />
           <Button type='submit' className='mt-5'>
             Submit
           </Button>
