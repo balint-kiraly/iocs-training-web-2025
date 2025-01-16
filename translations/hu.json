@@ -48,5 +48,11 @@
     "social": {
       "label": "Kövess Minket"
     }
+  },
+  "ContactCardSection": {
+    "heading": "Kapcsolatok",
+    "title-training-organizer": "Képzésszervező",
+    "title-FEB": "Felügyelőbizottság Elnöke",
+    "title-IOCS": "Instruktor Öntevékeny Csoport Elnöke"
   }
 }
