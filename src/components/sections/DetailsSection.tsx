@@ -15,7 +15,7 @@ export default function DetailsSection() {
   ];
 
   return (
-    <div className={`flex min-h-screen flex-col items-center bg-gradient-to-t from-primary to-transparent pt-10`}>
+    <div className={`flex flex-col items-center bg-gradient-to-t from-primary to-transparent pb-24 pt-24`}>
       <div
         className={`
           relative grid grid-cols-1 gap-8 px-6
