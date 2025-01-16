@@ -74,6 +74,7 @@ export const formSchema = z
     drivingLicense: z.boolean(),
     likesDriving: z.boolean().optional(),
     diet: z.enum(diets),
+    languages: z.array(z.string().nonempty()),
     customDiet: z.string().optional(),
     availableAtWeekend1: z.boolean(),
     availableAtWeekend2: z.boolean(),

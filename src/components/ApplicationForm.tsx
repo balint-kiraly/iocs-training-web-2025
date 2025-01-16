@@ -40,6 +40,7 @@ export const ApplicationForm = () => {
       availableAtWeekend2: false,
       diet: undefined,
       customDiet: undefined,
+      languages: [],
       internationalTraining: undefined,
     },
   });

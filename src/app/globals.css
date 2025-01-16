@@ -70,3 +70,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.rti--input {
+  width: 100% !important;
+  font-size: revert !important;
+}

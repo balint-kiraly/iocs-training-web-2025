@@ -1,8 +1,9 @@
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
+import { TagsInput } from 'react-tag-input-component';
 import { z } from 'zod';
 
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
@@ -104,6 +105,30 @@ export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
         ) : (
           <div></div>
         )}
+        <FormField
+          control={form.control}
+          name='languages'
+          render={({ field }) => {
+            return (
+              <FormItem>
+                <FormLabel>Languages</FormLabel>
+                <FormControl>
+                  <TagsInput
+                    {...field}
+                    placeHolder='Enter languages'
+                    separators={[',', 'Enter']}
+                    classNames={{
+                      input: 'text-sm border border-input',
+                      tag: 'text-sm px-2',
+                    }}
+                  />
+                </FormControl>
+                <FormDescription>Enter the languages you speak, separated by commas.</FormDescription>
+                <FormMessage />
+              </FormItem>
+            );
+          }}
+        />
       </div>
       <hr className='my-6' />
     </>
