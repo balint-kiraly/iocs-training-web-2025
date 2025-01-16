@@ -30,7 +30,7 @@ const Header = () => {
                 <Link href='/'>{text('rules')}</Link>
               </li>
               <li>
-                <Link href='/'>{text('contact')}</Link>
+                <Link href='/contact'>{text('contact')}</Link>
               </li>
             </ul>
           </nav>
