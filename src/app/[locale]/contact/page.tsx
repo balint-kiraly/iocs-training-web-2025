@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-import ContactCard from '@/components/sections/ContactCard';
+import ContactCard from '@/components/ui/ContactCard';
 
 export default function ContactPage() {
   const text = useTranslations('ContactCardSection');
