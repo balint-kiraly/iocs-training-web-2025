@@ -44,7 +44,7 @@ export const FormContactSection: React.FC<FormContactSectionProps> = ({ form }) 
               <FormItem>
                 <FormLabel>Phone Number</FormLabel>
                 <FormControl>
-                  <Input {...field} type='tel' placeholder='+36-xx-xxx-xxxx' />
+                  <Input {...field} type='tel' placeholder='+36 xx xxx xxxx' />
                 </FormControl>
                 <FormMessage />
               </FormItem>

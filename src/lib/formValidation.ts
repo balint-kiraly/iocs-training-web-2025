@@ -47,9 +47,9 @@ export const formSchema = z
     lastName: z.string().nonempty(),
     nickname: z.string().optional(),
     email: z.string().email(),
-    phone: z.string().regex(/^[+]36-[0-9]{2}-[0-9]{3}-[0-9]{4}$/),
+    phone: z.string().regex(/^[+]36 [0-9]{2} [0-9]{3} [0-9]{4}$/),
     city: z.string().nonempty(),
-    zipCode: z.number().int().min(1000).max(9999),
+    zipCode: z.string().regex(/^[0-9]{4}$/), // different from schema
     address: z.string().nonempty(),
     idNumber: z.string().regex(/^[0-9]{6}[A-Z]{2}$/),
     studentId: z.string().regex(/^1[0-9]{9}$/),
@@ -64,13 +64,13 @@ export const formSchema = z
         return value === undefined || !universities.includes(value as (typeof universities)[number]);
       }),
     faculty: z.enum(faculties).optional(),
+    letter: z.enum(letters),
     startYear: z
       .number()
       .int()
       .min(2000)
       .max(new Date().getFullYear() - 1),
     academicYear: z.number().int().min(1).max(6),
-    letter: z.enum(letters),
     drivingLicense: z.boolean(),
     likesDriving: z.boolean().optional(),
     diet: z.enum(diets),
@@ -90,22 +90,15 @@ export const formSchema = z
     message: 'Faculty must be provided for the university of SE.',
     path: ['faculty'],
   })
-  .refine((data) => !data.drivingLicense || data.likesDriving !== undefined, {
-    message: 'Please provide your opinion about driving.',
+  .refine((data) => data.drivingLicense || data.likesDriving === undefined, {
+    message: "You shouldn't like driving without having a driving license.",
     path: ['likesDriving'],
   })
   .refine((data) => data.diet !== 'Other' || data.customDiet !== undefined, {
     message: 'Please provide your custom diet.',
     path: ['customDiet'],
   })
-  .refine(
-    (data) => {
-      if (!data.availableAtWeekend1) {
-        return data.availableAtWeekend2;
-      }
-    },
-    {
-      message: 'At least one weekend must be selected.',
-      path: ['availableAtWeekend1'],
-    }
-  );
+  .refine((data) => data.availableAtWeekend1 || data.availableAtWeekend2, {
+    message: 'At least one weekend must be selected.',
+    path: ['availableAtWeekend1'],
+  });

@@ -14,6 +14,8 @@ interface FormStudiesSectionProps {
 
 export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) => {
   const university = form.watch('university');
+  const faculty = form.watch('faculty');
+  const otherUniversity = form.watch('otherUniversity');
 
   let universitySecondaryInput;
   if (university === 'SE') {
@@ -27,7 +29,7 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
               <FormLabel>Faculty</FormLabel>
               <Select onValueChange={field.onChange}>
                 <FormControl>
-                  <SelectTrigger {...field}>
+                  <SelectTrigger value={field.value ?? ''}>
                     <SelectValue placeholder='Your Faculty' />
                   </SelectTrigger>
                 </FormControl>
@@ -55,7 +57,12 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
             <FormItem>
               <FormLabel>Other University</FormLabel>
               <FormControl>
-                <Input {...field} type='text' placeholder='Name Your University' />
+                <Input
+                  value={field.value ?? ''}
+                  onChange={field.onChange}
+                  type='text'
+                  placeholder='Name Your University'
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -84,7 +91,17 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
             return (
               <FormItem>
                 <FormLabel>University</FormLabel>
-                <Select onValueChange={field.onChange}>
+                <Select
+                  onValueChange={(value) => {
+                    if (value !== 'Other' && otherUniversity !== undefined) {
+                      form.setValue('otherUniversity', undefined);
+                    }
+                    if (value !== 'SE' && faculty !== undefined) {
+                      form.setValue('faculty', undefined);
+                    }
+                    field.onChange(value);
+                  }}
+                >
                   <FormControl>
                     <SelectTrigger {...field}>
                       <SelectValue placeholder='Your University' />
@@ -104,7 +121,7 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
           }}
         />
         {universitySecondaryInput}
-        <div className='flex justify-between gap-x-10'>
+        <div className='grid grid-cols-2 gap-x-10'>
           <FormField
             control={form.control}
             name='letter'
@@ -138,7 +155,7 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
               return (
                 <FormItem className='grow'>
                   <FormLabel>Start Year</FormLabel>
-                  <Select onValueChange={field.onChange}>
+                  <Select onValueChange={(value) => field.onChange(Number(value))}>
                     <FormControl>
                       <SelectTrigger {...field}>
                         <SelectValue placeholder='Choose' />

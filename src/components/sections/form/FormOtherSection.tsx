@@ -15,6 +15,7 @@ interface FormOtherSectionProps {
 
 export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
   const drivingLicense = form.watch('drivingLicense');
+  const customDiet = form.watch('customDiet');
 
   return (
     <>
@@ -66,8 +67,15 @@ export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Diet</FormLabel>
-                <Select onValueChange={field.onChange}>
+                <FormLabel>What is your diet?</FormLabel>
+                <Select
+                  onValueChange={(value) => {
+                    if (value !== 'Other' && customDiet !== undefined) {
+                      form.setValue('customDiet', undefined);
+                    }
+                    field.onChange(value);
+                  }}
+                >
                   <FormControl>
                     <SelectTrigger {...field}>
                       <SelectValue placeholder='Select your diet' />
@@ -95,7 +103,12 @@ export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
                 <FormItem>
                   <FormLabel>Custom Diet</FormLabel>
                   <FormControl>
-                    <Input {...field} type='text' placeholder='Please provide your custom diet' />
+                    <Input
+                      value={field.value ?? ''}
+                      onChange={field.onChange}
+                      type='text'
+                      placeholder='Please provide your custom diet'
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
