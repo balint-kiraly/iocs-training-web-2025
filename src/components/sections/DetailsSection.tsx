@@ -12,10 +12,11 @@ export default function DetailsSection() {
       description: text('desc-databox4'),
     },
     { title: text('title-databox5'), description: text('desc-databox5') },
+    { title: text('title-databox5'), description: text('desc-databox5') },
   ];
 
   return (
-    <div className={`flex flex-col items-center bg-gradient-to-t from-primary to-transparent pb-24 pt-24`}>
+    <div className={`flex flex-col items-center pb-24 pt-24`}>
       <div
         className={`
           relative grid grid-cols-1 gap-8 px-6

@@ -14,11 +14,11 @@ export default async function Home({ params }: Readonly<{ params: Promise<{ loca
   return (
     <main>
       <HeroSection />
-      <GallerySection />
+      <DetailsSection />
       <ApplicationSection />
+      <GallerySection />
       <PromoVideoSection />
       <IntroductionSection />
-      <DetailsSection />
     </main>
   );
 }
