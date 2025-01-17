@@ -8,6 +8,15 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
+enum University {
+  SE
+  BME
+  ELTE
+  PPKE
+  BCE
+  OTHER
+}
+
 enum Faculty {
   AOK
   FOK
@@ -44,6 +53,15 @@ enum Letter {
   International
 }
 
+enum Diet {
+  Normal
+  Vegetarian
+  Vegan
+  LactoseFree
+  GlutenFree
+  Other
+}
+
 enum LanguageCertificateLevel {
   A1
   A2
@@ -67,26 +85,28 @@ model Application {
   studentId             String
   birthDate             DateTime
   birthPlace            String
-  motherName            String
-  university            String
+  mothersName           String
+  university            University
+  otherUniversity       String?
   faculty               Faculty?
+  letter                Letter?
   startYear             Int
   academicYear          Int
-  letter                Letter?
   drivingLicence        Boolean
-  likesDriving          Boolean
+  likesDriving          Boolean?
+  diet                  Diet
+  customDiet            String?
   languages             String[]
   availableAtWeekend1   Boolean
   availableAtWeekend2   Boolean
-  diet                  String?
   internationalTraining InternationalTraining?
   createdAt             DateTime               @default(now())
 }
 
 model InternationalTraining {
   id            Int                   @id @default(autoincrement())
-  certificates  LanguageCertificate[]
   motivation    String
+  certificates  LanguageCertificate[]
   application   Application           @relation(fields: [applicationId], references: [id])
   applicationId Int                   @unique
 }

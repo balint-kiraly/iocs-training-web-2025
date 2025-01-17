@@ -28,7 +28,7 @@ export const letters = [
   'International',
   "Don't have one", // should be converted to null
 ] as const;
-export const diets = ['Normal', 'Vegetarian', 'Lactose-Free', 'Gluten-Free', 'Vegan', 'Other'] as const;
+export const diets = ['Normal', 'Vegetarian', 'Vegan', 'LactoseFree', 'GlutenFree', 'Other'] as const;
 export const languageCertificateLevels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'] as const;
 
 const LanguageCertificateSchema = z
@@ -42,8 +42,8 @@ const LanguageCertificateSchema = z
   });
 
 const InternationalTrainingSchema = z.object({
-  certificates: z.array(LanguageCertificateSchema).optional(),
   motivation: z.string().nonempty(),
+  certificates: z.array(LanguageCertificateSchema).optional(),
 });
 
 export const formSchema = z
@@ -79,13 +79,17 @@ export const formSchema = z
     drivingLicense: z.boolean(),
     likesDriving: z.boolean().optional(),
     diet: z.enum(diets),
-    languages: z.array(z.string().nonempty()),
     customDiet: z.string().optional(),
+    languages: z.array(z.string().nonempty()),
     availableAtWeekend1: z.boolean(),
     availableAtWeekend2: z.boolean(),
     internationalTraining: InternationalTrainingSchema.optional(),
-    acceptPrivacyPolicy: z.boolean(),
-    acceptRules: z.boolean(),
+    acceptPrivacyPolicy: z.boolean().refine((data) => data, {
+      message: 'Privacy policy must be accepted.',
+    }),
+    acceptRules: z.boolean().refine((data) => data, {
+      message: 'Rules must be accepted.',
+    }),
   })
   .refine((data) => data.university !== 'Other' || data.otherUniversity !== undefined, {
     message: 'Please provide your university.',
