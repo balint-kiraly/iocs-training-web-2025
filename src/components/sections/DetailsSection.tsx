@@ -1,5 +1,7 @@
 import { useTranslations } from 'next-intl';
 
+import { Reveal } from '@/components/ui/Reveal';
+
 export default function DetailsSection() {
   const text = useTranslations('Details');
 
@@ -27,37 +29,38 @@ export default function DetailsSection() {
         `}
       >
         {infoCards.map((card, index) => (
-          <div
-            key={index}
-            className={`
-              group relative transform rounded-lg bg-white from-secondary to-fuchsia-500 p-4 shadow-md
-              transition-transform
-
-              hover:scale-105 hover:bg-gradient-to-r
-            `}
-            style={{
-              transform: `rotate(${getRandomRotation()}deg) translate(${getRandomOffset()}px, ${getRandomOffset()}px)`,
-            }}
-          >
-            <h2
+          <Reveal key={index} delay={index * 0.1}>
+            <div
               className={`
-                text-lg font-semibold text-gray-800
+                group relative transform rounded-lg bg-white from-secondary to-fuchsia-500 p-4 shadow-md
+                transition-transform
 
-                group-hover:text-white
+                hover:scale-105 hover:bg-gradient-to-r
               `}
+              style={{
+                transform: `rotate(${getRandomRotation()}deg) translate(${getRandomOffset()}px, ${getRandomOffset()}px)`,
+              }}
             >
-              {card.title}
-            </h2>
-            <p
-              className={`
-                mt-2 text-gray-600
+              <h2
+                className={`
+                  text-lg font-semibold text-gray-800
 
-                group-hover:text-white
-              `}
-            >
-              {card.description}
-            </p>
-          </div>
+                  group-hover:text-white
+                `}
+              >
+                {card.title}
+              </h2>
+              <p
+                className={`
+                  mt-2 text-gray-600
+
+                  group-hover:text-white
+                `}
+              >
+                {card.description}
+              </p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </div>
