@@ -1,8 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Send } from 'lucide-react';
+import { startTransition, useActionState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import submitApplication from '@/actions/submitApplication';
 import { FormAcceptanceSection } from '@/components/sections/form/FormAcceptanceSection';
 import { FormAvailabilitySection } from '@/components/sections/form/FormAvailabilitySection';
 import { FormContactSection } from '@/components/sections/form/FormContactSection';
@@ -16,6 +18,8 @@ import { Form } from '@/components/ui/form';
 import { formSchema } from '@/lib/formValidation';
 
 export const ApplicationForm = () => {
+  const [state, action, isPending] = useActionState(submitApplication, null);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -54,7 +58,15 @@ export const ApplicationForm = () => {
     // ✅ This will be type-safe and validated.
     //eslint-disable-next-line no-console
     console.log(values);
+    startTransition(() => {
+      action(values);
+    });
   }
+
+  useEffect(() => {
+    //eslint-disable-next-line no-console
+    console.log(state);
+  }, [state]);
 
   return (
     <div className='mx-auto w-full min-w-60 max-w-4xl p-10'>

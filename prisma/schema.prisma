@@ -83,7 +83,7 @@ model Application {
   address               String
   idNumber              String
   studentId             String
-  birthDate             DateTime
+  birthDate             DateTime               @db.Date
   birthPlace            String
   mothersName           String
   university            University
@@ -107,7 +107,7 @@ model InternationalTraining {
   id            Int                   @id @default(autoincrement())
   motivation    String
   certificates  LanguageCertificate[]
-  application   Application           @relation(fields: [applicationId], references: [id])
+  application   Application           @relation(fields: [applicationId], references: [id], onDelete: Cascade)
   applicationId Int                   @unique
 }
 
@@ -115,6 +115,6 @@ model LanguageCertificate {
   id                      Int                      @id @default(autoincrement())
   language                String
   level                   LanguageCertificateLevel
-  internationalTraining   InternationalTraining    @relation(fields: [internationalTrainingId], references: [id])
+  internationalTraining   InternationalTraining    @relation(fields: [internationalTrainingId], references: [id], onDelete: Cascade)
   internationalTrainingId Int
 }
