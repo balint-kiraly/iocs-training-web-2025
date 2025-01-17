@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Send } from 'lucide-react';
+import { LoaderCircle, Send } from 'lucide-react';
 import { startTransition, useActionState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -81,9 +81,10 @@ export const ApplicationForm = () => {
           <FormInternationalSection form={form} />
           <FormAcceptanceSection form={form} />
           <div className='mt-10 flex justify-end'>
-            <Button type='submit'>
+            <Button type='submit' disabled={isPending}>
               Submit
-              <Send />
+              {!isPending && <Send />}
+              {isPending && <LoaderCircle className='animate-spin' />}
             </Button>
           </div>
         </form>
