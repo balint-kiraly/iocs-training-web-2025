@@ -11,7 +11,7 @@ export const letters = [
   'F',
   'G',
   'H',
-  'J/EKK', // should be converted to EKK
+  'J/EKK',
   'K',
   'L',
   'M',
@@ -26,7 +26,7 @@ export const letters = [
   'GYOK3',
   'PAK',
   'International',
-  "Don't have one", // should be converted to null
+  "Don't have one",
 ] as const;
 export const diets = ['Normal', 'Vegetarian', 'Vegan', 'LactoseFree', 'GlutenFree', 'Other'] as const;
 export const languageCertificateLevels = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'] as const;
@@ -54,13 +54,13 @@ export const formSchema = z
     email: z.string().email(),
     phone: z.string().regex(/^[+]36 [0-9]{2} [0-9]{3} [0-9]{4}$/),
     city: z.string().nonempty(),
-    zipCode: z.string().regex(/^[0-9]{4}$/), // different from schema
+    zipCode: z.string().regex(/^[0-9]{4}$/),
     address: z.string().nonempty(),
     idNumber: z.string().regex(/^[0-9]{6}[A-Z]{2}$/),
     studentId: z.string().regex(/^1[0-9]{9}$/),
     birthDate: z.date().max(new Date()),
     birthPlace: z.string().nonempty(),
-    mothersName: z.string().nonempty(), // different from schema
+    mothersName: z.string().nonempty(),
     university: z.enum(universities),
     otherUniversity: z
       .string()
