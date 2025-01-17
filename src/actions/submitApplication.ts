@@ -5,23 +5,36 @@ import { formSchema } from '@/lib/formValidation';
 import { Diet, Prisma, University } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 
-export default async function submitApplication(previousState: any, formData: z.infer<typeof formSchema>) {
+type State =
+  | {
+      status: 'success' | 'error';
+      message?: string;
+    }
+  | null
+  | undefined;
+
+export default async function submitApplication(
+  previousState: State,
+  formData: z.infer<typeof formSchema>
+): Promise<State> {
   try {
     const parsedApplication = await parseApplicationData(formData);
-    const application = await createApplication(parsedApplication);
+    await createApplication(parsedApplication);
     return {
-      success: application,
+      status: 'success',
     };
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       console.error('Error creating application:', error.message);
       return {
-        error: error.message,
+        status: 'error',
+        message: error.message,
       };
     }
     console.error('Unknown error creating application');
     return {
-      error: 'An unknown error occurred',
+      status: 'error',
+      message: 'An unknown error occurred',
     };
   }
 }
