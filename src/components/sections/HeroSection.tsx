@@ -42,7 +42,7 @@ const HeroSection = () => {
           {text('heading-sm')}
         </h1>
         <div className='absolute inset-0 bg-gradient-to-b from-primary/80 to-transparent to-30%' />
-        <div className='absolute inset-0 bg-gradient-to-t from-background via-black/60 to-transparent' />
+        <div className='absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent' />
       </div>
 
       <Countdown targetDate={process.env.COUNTDOWN_TARGET ?? new Date().toDateString()} />

@@ -16,10 +16,10 @@ export default function DetailsSection() {
   ];
 
   return (
-    <div className={`flex flex-col items-center pb-24 pt-24`}>
+    <div className={`flex flex-col items-center bg-gradient-to-b from-black to-background py-32`}>
       <div
         className={`
-          relative grid grid-cols-1 gap-8 px-6
+          relative grid grid-cols-1 gap-10 px-6
 
           md:grid-cols-3
 
