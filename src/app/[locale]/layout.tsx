@@ -10,6 +10,7 @@ import React from 'react';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { Toaster } from '@/components/ui/toaster';
 import { routing } from '@/i18n/routing';
 
 export function generateStaticParams() {
@@ -72,6 +73,7 @@ export default async function RootLayout({
           <SpeedInsights />
           <Header />
           <div className='relative'>{children}</div>
+          <Toaster />
           <Footer />
         </NextIntlClientProvider>
       </body>
