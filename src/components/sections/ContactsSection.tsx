@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 
 import ContactCard from '@/components/ui/ContactCard';
+import { Reveal } from '@/components/ui/Reveal';
 
 export const ContactsSection = () => {
   const text = useTranslations('ContactsSection');
@@ -36,28 +37,27 @@ export const ContactsSection = () => {
   ];
 
   return (
-    <div className={`flex select-none flex-col items-center py-10`}>
-      <h1 className='mb-6 mt-20 pl-10 text-3xl font-bold'>{text('heading')}</h1>
+    <div className={`mx-auto w-fit max-w-screen-2xl select-none items-center px-4 py-10`}>
+      <h1 className='mb-6 text-3xl font-bold'>{text('heading')}</h1>
       <div
         className={`
-          grid grid-cols-1 gap-6 px-4
+          grid grid-cols-1 gap-4
 
-          lg:grid-cols-4 lg:px-25
-
-          md:grid-cols-2
+          lg:grid-cols-4
 
           sm:grid-cols-2
         `}
       >
         {contacts.map((contact, index) => (
-          <ContactCard
-            key={index}
-            name={contact.name}
-            role={contact.role}
-            email={contact.email}
-            phone={contact.phone}
-            image={contact.image}
-          />
+          <Reveal key={index} delay={index * 0.2}>
+            <ContactCard
+              name={contact.name}
+              role={contact.role}
+              email={contact.email}
+              phone={contact.phone}
+              image={contact.image}
+            />
+          </Reveal>
         ))}
       </div>
     </div>
