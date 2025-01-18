@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 export const FAQSection = () => {
   const text = useTranslations('FAQSection');
   return (
-    <div className='mx-auto mb-6 max-w-screen-xl p-4'>
+    <section id='faq' className='mx-auto mb-6 max-w-screen-xl p-4'>
       <h1 className='mb-6 text-3xl font-bold'>{text('heading')}</h1>
       <Accordion type='single' collapsible>
         {Array.from({ length: 10 }).map((_, index) => (
@@ -15,6 +15,6 @@ export const FAQSection = () => {
           </AccordionItem>
         ))}
       </Accordion>
-    </div>
+    </section>
   );
 };

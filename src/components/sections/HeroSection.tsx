@@ -66,7 +66,7 @@ const HeroSection = () => {
           </Link>
         </Reveal>
         <Reveal delay={0.5}>
-          <Link href='/'>
+          <Link href='/#promo-video'>
             <Button variant='light' size='lg' className='bg-background/50'>
               <Play />
               {text('cta-video')}

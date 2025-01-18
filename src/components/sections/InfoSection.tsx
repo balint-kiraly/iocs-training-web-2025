@@ -18,7 +18,7 @@ export default function InfoSection() {
   ];
 
   return (
-    <div className={`flex flex-col items-center bg-gradient-to-b from-black to-background py-32`}>
+    <section id='info' className={`flex flex-col items-center bg-gradient-to-b from-black to-background py-32`}>
       <div
         className={`
           relative grid grid-cols-1 gap-16 px-6
@@ -63,7 +63,7 @@ export default function InfoSection() {
           </Reveal>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

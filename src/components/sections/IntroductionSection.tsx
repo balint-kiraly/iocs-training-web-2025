@@ -7,7 +7,7 @@ const IntroductionSection = () => {
   const text = useTranslations('IntroductionSection');
 
   return (
-    <section className=''>
+    <section id='groups' className=''>
       <h1 className='pl-10 text-3xl font-bold'>{text('heading')}</h1>
       <Gallery />
     </section>

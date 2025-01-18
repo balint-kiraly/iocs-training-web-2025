@@ -37,7 +37,7 @@ export const ContactsSection = () => {
   ];
 
   return (
-    <div className={`mx-auto w-fit max-w-screen-2xl select-none items-center px-4 py-10`}>
+    <section id='contacts' className={`mx-auto w-fit max-w-screen-2xl select-none items-center px-4 py-10`}>
       <h1 className='mb-6 text-3xl font-bold'>{text('heading')}</h1>
       <div
         className={`
@@ -60,6 +60,6 @@ export const ContactsSection = () => {
           </Reveal>
         ))}
       </div>
-    </div>
+    </section>
   );
 };

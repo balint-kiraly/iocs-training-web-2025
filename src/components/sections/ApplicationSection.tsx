@@ -11,7 +11,7 @@ const ApplicationSection = () => {
   const text = useTranslations('ApplicationSection');
 
   return (
-    <div className='px-10 py-40'>
+    <section className='px-10 py-40'>
       <Reveal>
         <Card
           className={`
@@ -34,7 +34,7 @@ const ApplicationSection = () => {
           </CardContent>
         </Card>
       </Reveal>
-    </div>
+    </section>
   );
 };
 
