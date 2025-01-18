@@ -69,13 +69,15 @@
 }
 
 @keyframes stretch {
-  0%, 20%, 40% {
+  0%,
+  20%,
+  40% {
     transform: translateY(0);
   }
-  10%{
+  10% {
     transform: translateY(10px);
   }
-  30%{
+  30% {
     transform: translateY(5px);
   }
   100% {
@@ -93,5 +95,7 @@
 }
 
 .animation-bouncing-arrow {
-  animation: stretch 5s ease-in-out infinite, reveal 2s ease-in-out;
+  animation:
+    stretch 5s ease-in-out infinite,
+    reveal 2s ease-in-out;
 }
