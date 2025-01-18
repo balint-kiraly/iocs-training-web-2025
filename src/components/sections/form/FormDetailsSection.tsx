@@ -49,7 +49,7 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
                   <FormItem>
                     <FormLabel>Zip Code</FormLabel>
                     <FormControl>
-                      <Input {...field} type='number' placeholder='1234' />
+                      <Input {...field} type='text' placeholder='1234' />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

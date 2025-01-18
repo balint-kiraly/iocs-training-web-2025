@@ -1,8 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Send } from 'lucide-react';
+import { AlertCircle, Check, LoaderCircle, Send } from 'lucide-react';
+import { startTransition, useActionState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import submitApplication from '@/actions/submitApplication';
 import { FormAcceptanceSection } from '@/components/sections/form/FormAcceptanceSection';
 import { FormAvailabilitySection } from '@/components/sections/form/FormAvailabilitySection';
 import { FormContactSection } from '@/components/sections/form/FormContactSection';
@@ -11,11 +13,19 @@ import { FormInternationalSection } from '@/components/sections/form/FormInterna
 import { FormNameSection } from '@/components/sections/form/FormNameSection';
 import { FormOtherSection } from '@/components/sections/form/FormOtherSection';
 import { FormStudiesSection } from '@/components/sections/form/FormStudiesSection';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
+import { ToastAction } from '@/components/ui/toast';
+import { useToast } from '@/hooks/use-toast';
+import { useRouter } from '@/i18n/routing';
 import { formSchema } from '@/lib/formValidation';
 
 export const ApplicationForm = () => {
+  const [state, action, isPending] = useActionState(submitApplication, null);
+  const router = useRouter();
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,9 +45,9 @@ export const ApplicationForm = () => {
       university: undefined,
       otherUniversity: undefined,
       faculty: undefined,
+      letter: undefined,
       startYear: undefined,
       academicYear: undefined,
-      letter: undefined,
       drivingLicense: false,
       likesDriving: false,
       diet: undefined,
@@ -54,7 +64,29 @@ export const ApplicationForm = () => {
     // ✅ This will be type-safe and validated.
     //eslint-disable-next-line no-console
     console.log(values);
+    startTransition(() => {
+      action(values);
+    });
   }
+
+  useEffect(() => {
+    //eslint-disable-next-line no-console
+    console.log(state);
+    if (state?.status === 'success') {
+      router.push('/');
+      setTimeout(() => {
+        toast({
+          title: 'Application Submitted Successfully!',
+          description: 'Save the date: February 13th, 2025',
+          action: (
+            <ToastAction altText='Dismiss toast'>
+              <Check />
+            </ToastAction>
+          ),
+        });
+      }, 1000);
+    }
+  }, [router, state, toast]);
 
   return (
     <div className='mx-auto w-full min-w-60 max-w-4xl p-10'>
@@ -68,10 +100,18 @@ export const ApplicationForm = () => {
           <FormAvailabilitySection form={form} />
           <FormInternationalSection form={form} />
           <FormAcceptanceSection form={form} />
+          {state?.status === 'error' && (
+            <Alert variant='destructive' className='mt-10'>
+              <AlertCircle className='h-4 w-4' />
+              <AlertTitle>Error submitting your application</AlertTitle>
+              <AlertDescription>{state.message}</AlertDescription>
+            </Alert>
+          )}
           <div className='mt-10 flex justify-end'>
-            <Button type='submit'>
+            <Button type='submit' disabled={isPending}>
               Submit
-              <Send />
+              {!isPending && <Send />}
+              {isPending && <LoaderCircle className='animate-spin' />}
             </Button>
           </div>
         </form>
