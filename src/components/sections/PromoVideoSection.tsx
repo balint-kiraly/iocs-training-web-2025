@@ -4,7 +4,7 @@ import VimeoDefaultPlayer from '@/components/ui/VimeoPlayer';
 
 const PromoVideoSection = () => {
   return (
-    <section className='py-32'>
+    <section className='my-20'>
       <VimeoDefaultPlayer id={Number(process.env.PROMO_VIDEO_VIMEO_ID)} />
     </section>
   );

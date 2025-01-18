@@ -16,10 +16,10 @@ export default async function Home({ params }: Readonly<{ params: Promise<{ loca
     <main>
       <HeroSection />
       <InfoSection />
-      <ApplicationSection />
-      <GallerySection />
       <PromoVideoSection />
       <DetailsSection />
+      <GallerySection />
+      <ApplicationSection />
       <IntroductionSection />
     </main>
   );

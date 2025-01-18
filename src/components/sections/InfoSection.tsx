@@ -21,7 +21,7 @@ export default function InfoSection() {
     <div className={`flex flex-col items-center bg-gradient-to-b from-black to-background py-32`}>
       <div
         className={`
-          relative grid grid-cols-1 gap-10 px-6
+          relative grid grid-cols-1 gap-16 px-6
 
           md:grid-cols-3
 
