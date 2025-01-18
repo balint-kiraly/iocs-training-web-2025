@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Link } from '@/i18n/routing';
 
 const Header = () => {
@@ -40,19 +40,17 @@ const Header = () => {
         `}
       >
         <div className='flex items-center justify-between'>
-          <div className='flex items-center gap-4'>
-            <Image src='/logo.png' alt='IÖCS logo' width={35} height={35} className='relative bottom-0.5' />
-            <Link
-              href='/'
-              className={`
-                text-xl font-bold
+          <Link
+            href='/'
+            className={`
+              flex items-center gap-4 text-xl font-bold
 
-                sm:text-2xl
-              `}
-            >
-              {text('title')}
-            </Link>
-          </div>
+              sm:text-2xl
+            `}
+          >
+            <Image src='/logo.png' alt='IÖCS logo' width={35} height={35} className='relative bottom-0.5' />
+            {text('title')}
+          </Link>
           <nav
             className={`
               hidden
@@ -95,15 +93,21 @@ const Header = () => {
                   <ul className='ml-2 flex flex-col justify-center gap-5'>
                     {navItems.map((item) => (
                       <li key={item}>
-                        <Link href={`/{item}`}>{text(item)}</Link>
+                        <SheetClose asChild>
+                          <Link href={item === 'home' ? '/' : `/${item}`}>{text(item)}</Link>
+                        </SheetClose>
                       </li>
                     ))}
                   </ul>
                 </nav>
-                <Button variant='primary'>
-                  {text('apply')}
-                  <Rocket />
-                </Button>
+                <SheetClose asChild>
+                  <Link href='/apply'>
+                    <Button variant='primary'>
+                      {text('apply')}
+                      <Rocket />
+                    </Button>
+                  </Link>
+                </SheetClose>
               </SheetContent>
             </Sheet>
           </div>
