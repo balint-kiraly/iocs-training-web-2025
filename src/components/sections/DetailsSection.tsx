@@ -3,7 +3,7 @@ import { Reveal } from '@/components/ui/Reveal';
 
 const DetailsSection = () => {
   return (
-    <section className='mx-auto mb-20 mt-20 flex w-fit flex-wrap gap-10 p-10'>
+    <section className='mx-auto mb-20 mt-20 flex w-fit flex-wrap justify-center gap-10 p-10'>
       <Reveal>
         <Card className='max-w-screen-sm'>
           <CardHeader>
