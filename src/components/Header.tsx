@@ -1,7 +1,9 @@
+'use client';
+
 import { MenuIcon, Rocket } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
@@ -13,10 +15,30 @@ const Header = () => {
 
   const navItems = ['home', 'rules', 'contact'];
 
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className='absolute left-0 top-0 h-36 w-screen bg-gradient-to-b from-primary to-transparent' />
-      <header className='absolute z-10 w-screen min-w-[300px] p-4 text-white'>
+      <div className='absolute left-0 top-0 z-20 h-36 w-screen bg-gradient-to-b from-primary to-transparent' />
+      <header
+        className={`
+          fixed z-30 w-screen min-w-[300px] p-4 text-white transition-all duration-1000
+
+          ${scrolled ? 'bg-primary shadow-lg' : `bg-transparent`}
+        `}
+      >
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-4'>
             <Image src='/logo.png' alt='IÖCS logo' width={35} height={35} className='relative bottom-0.5' />
