@@ -1,72 +1,49 @@
-import { useTranslations } from 'next-intl';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Reveal } from '@/components/ui/Reveal';
 
-export default function DetailsSection() {
-  const text = useTranslations('Details');
-
-  const infoCards = [
-    { title: text('title-databox1'), description: text('desc-databox1') },
-    { title: text('title-databox2'), description: text('desc-databox2') },
-    { title: text('title-databox3'), description: text('desc-databox3') },
-    {
-      title: text('title-databox4'),
-      description: text('desc-databox4'),
-    },
-    { title: text('title-databox5'), description: text('desc-databox5') },
-  ];
-
+const DetailsSection = () => {
   return (
-    <div className={`flex flex-col items-center bg-gradient-to-t from-primary to-transparent pb-24 pt-24`}>
-      <div
-        className={`
-          relative grid grid-cols-1 gap-8 px-6
-
-          md:grid-cols-3
-
-          sm:grid-cols-2
-        `}
-      >
-        {infoCards.map((card, index) => (
-          <div
-            key={index}
-            className={`
-              group relative transform rounded-lg bg-white from-secondary to-fuchsia-500 p-4 shadow-md
-              transition-transform
-
-              hover:scale-105 hover:bg-gradient-to-r
-            `}
-            style={{
-              transform: `rotate(${getRandomRotation()}deg) translate(${getRandomOffset()}px, ${getRandomOffset()}px)`,
-            }}
-          >
-            <h2
-              className={`
-                text-lg font-semibold text-gray-800
-
-                group-hover:text-white
-              `}
-            >
-              {card.title}
-            </h2>
-            <p
-              className={`
-                mt-2 text-gray-600
-
-                group-hover:text-white
-              `}
-            >
-              {card.description}
+    <section id='details' className='mx-auto mb-20 mt-20 flex w-fit flex-wrap justify-center gap-10 p-10'>
+      <Reveal>
+        <Card className='max-w-screen-sm'>
+          <CardHeader>
+            <CardTitle className='text-2xl font-bold text-primary'>Mire számíts?</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className='mb-2'>
+              Képzésünk során izgalmas programok, elméleti és gyakorlati modulok várnak, amelyek segítenek fejleszteni
+              készségeidet.
             </p>
-          </div>
-        ))}
-      </div>
-    </div>
+            <p className='mb-2'>
+              Inspiráló közösség, tapasztalt mentorok és egy támogató környezet, ahol te lehetsz a középpontban.
+            </p>
+            <p className=''>Töltsd ki a jelentkezési lapot, és légy részese valami igazán különlegesnek!</p>
+          </CardContent>
+        </Card>
+      </Reveal>
+      <Reveal delay={0.3}>
+        <Card className='max-w-screen-sm'>
+          <CardHeader>
+            <CardTitle className='text-2xl font-bold text-primary'>Mi az az IÖCS?</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className='mb-2'>
+              Az Instruktor Öntevékeny Csoport (IÖCS) egy lelkes és elkötelezett közösség, amely segíti az elsőéves
+              hallgatók beilleszkedését az egyetemi életbe.
+            </p>
+            <p className='mb-2'>
+              Az IÖCS tagjai önkéntes alapon szerveznek táborokat, tréningeket és eseményeket, hogy támogassák a diákok
+              közösségbe való integrálódását.
+            </p>
+            <p>
+              Célunk, hogy barátságos és inspiráló környezetet teremtsünk, ahol mindenki megtalálhatja a helyét és
+              kibontakoztathatja képességeit.
+            </p>
+          </CardContent>
+        </Card>
+      </Reveal>
+    </section>
   );
-}
+};
 
-function getRandomRotation() {
-  return Math.random() * 6 - 3;
-}
-
-function getRandomOffset() {
-  return Math.random() * 10 - 5;
-}
+export default DetailsSection;

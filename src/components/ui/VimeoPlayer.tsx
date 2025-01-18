@@ -28,7 +28,13 @@ export default function VimeoDefaultPlayer({ id }: Readonly<{ id: number }>) {
   }, [id]);
 
   return (
-    <div className='relative mx-auto w-1/2 overflow-hidden rounded-2xl'>
+    <div
+      className={`
+        relative mx-auto overflow-hidden rounded-2xl
+
+        md:w-3/4
+      `}
+    >
       <div ref={playerRef} className=''></div>
     </div>
   );

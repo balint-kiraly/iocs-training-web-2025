@@ -67,3 +67,35 @@
   width: 100% !important;
   font-size: revert !important;
 }
+
+@keyframes stretch {
+  0%,
+  20%,
+  40% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(10px);
+  }
+  30% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.animation-bouncing-arrow {
+  animation:
+    stretch 5s ease-in-out infinite,
+    reveal 2s ease-in-out;
+}

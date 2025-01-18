@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 
+import { Reveal } from '@/components/ui/Reveal';
+
 const HorizontalScrollCarousel = () => {
   const [offset, setOffset] = React.useState(0);
 
@@ -24,17 +26,19 @@ const HorizontalScrollCarousel = () => {
   return (
     <div className='overflow-hidden'>
       <motion.div ref={targetRef} style={{ x }} className='inline-flex items-center gap-10 px-10'>
-        {cards.map((card) => {
+        {cards.map((card, index) => {
           return (
-            <div key={card.id} className={`w-[450px]`}>
-              <Image
-                src='/landing-bg-placeholder.jpg'
-                width={5427}
-                height={3618}
-                className='rounded-md'
-                alt='Gallery Placeholder image'
-              />
-            </div>
+            <Reveal key={card.id} delay={index * 0.1}>
+              <div className={`w-[450px]`}>
+                <Image
+                  src='/landing-bg-placeholder.jpg'
+                  width={5427}
+                  height={3618}
+                  className='rounded-md'
+                  alt='Gallery Placeholder image'
+                />
+              </div>
+            </Reveal>
           );
         })}
       </motion.div>

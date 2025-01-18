@@ -14,10 +14,10 @@ export default function ContactCard({
   image: string;
 }) {
   return (
-    <div className='flex w-full flex-col items-center rounded-lg bg-white p-6 shadow-md'>
+    <div className='flex w-72 flex-col items-center rounded-lg bg-white p-6 shadow-md'>
       <Image src={image} alt={name} height={140} width={140} className='mb-4 rounded-full object-cover' />
       <h2 className='text-xl font-bold text-gray-800'>{name}</h2>
-      <p className='text-gray-600'>{role}</p>
+      <p className='text-center text-gray-600'>{role}</p>
       <a
         href={`mailto:${email}`}
         className={`

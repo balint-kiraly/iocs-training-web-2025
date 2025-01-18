@@ -19,7 +19,8 @@
     "heading": "Várunk az\nInstruktorképzésen!",
     "heading-sm": "Várunk az Instruktor képzésen!",
     "subheading": "Légy részese egy felejthetetlen élménynek, és építs életre szóló kapcsolatokat.",
-    "cta": "Jelentkezz Most"
+    "cta": "Jelentkezz Most",
+    "cta-video": "Nézd Meg a Videót"
   },
   "Countdown": {
     "heading": "A képzésig hátra van",
@@ -33,6 +34,9 @@
     "subheading": "Csatlakozz az IÖCS közösségéhez, és légy részese egy felejthetetlen élménynek!",
     "cta": "Jelentkezz Most!"
   },
+  "IntroductionSection": {
+    "heading": "A képzéscsoportok csak rád várnak!"
+  },
   "Footer": {
     "iocs": {
       "label": "IÖCS",
@@ -44,7 +48,7 @@
       "home": "Főoldal",
       "rules": "Szabályzat",
       "contact": "Kapcsolat",
-      "apply": "Jelenkezés"
+      "apply": "Jelentkezés"
     },
     "social": {
       "label": "Kövess Minket"
@@ -82,10 +86,37 @@
       "button": "Szabályzat letöltése"
     }
   },
-  "ContactCardSection": {
+  "ContactsSection": {
     "heading": "Kapcsolatok",
     "title-training-organizer": "Képzésszervező",
     "title-FEB": "Felügyelőbizottság Elnöke",
     "title-IOCS": "Instruktor Öntevékeny Csoport Elnöke"
+  },
+  "FAQSection": {
+    "heading": "Gyakran Ismételt Kérdések",
+    "questions": {
+      "question1": "Mi az IÖCS?",
+      "question2": "Hogyan lehet csatlakozni az IÖCS-hez?",
+      "question3": "Mik az IÖCS tagságának előnyei?",
+      "question4": "Hogyan lehet jelentkezni a képzésre?",
+      "question5": "Mikor lesz a képzés?",
+      "question6": "Mekkora a képzés befogadóképessége?",
+      "question7": "Mi a korhatár a képzésre való jelentkezéshez?",
+      "question8": "Mi a jelentkezési határidő?",
+      "question9": "Milyen a közösség az IÖCS-ben?",
+      "question10": "Mi az IÖCS célja?"
+    },
+    "answers": {
+      "answer1": "Az IÖCS egy diák szövetkezet, amelynek célja a diákok támogatása tanulmányaik alatt és lehetőséget biztosít számukra, hogy egy támogató közösség részévé váljanak.",
+      "answer2": "A diákok a szövetkezet honlapján keresztül regisztrálhatnak és online jelentkezhetnek a különböző programokra.",
+      "answer3": "Az IÖCS tagságának előnyei közé tartozik a közösség támogatása, a különböző programokon való részvétel lehetősége és a szövetkezet sikereinek támogatása.",
+      "answer4": "A képzésre való jelentkezéshez a diákoknak regisztrálniuk kell a szövetkezet honlapján és online jelentkezniük kell a képzésre.",
+      "answer5": "A képzés időtartama 2025. január 20. és 2025. február 12. között lesz.",
+      "answer6": "A képzés befogadóképessége körülbelül 300 fő.",
+      "answer7": "A képzésre való jelentkezéshez nincs korhatár.",
+      "answer8": "A jelentkezési határidőt a szövetkezet honlapján található információk alapján kell figyelembe venni.",
+      "answer9": "Az IÖCS közössége támogató és barátságos. A tagok segítik, támogatják és inspirálják egymást.",
+      "answer10": "Az IÖCS célja, hogy támogassa a diákokat tanulmányaik alatt és lehetőséget biztosítson számukra, hogy egy támogató közösség részévé váljanak."
+    }
   }
 }
