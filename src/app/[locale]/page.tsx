@@ -4,6 +4,7 @@ import ApplicationSection from '@/components/sections/ApplicationSection';
 import DetailsSection from '@/components/sections/DetailsSection';
 import GallerySection from '@/components/sections/GallerySection';
 import HeroSection from '@/components/sections/HeroSection';
+import InfoSection from '@/components/sections/InfoSection';
 import IntroductionSection from '@/components/sections/IntroductionSection';
 import PromoVideoSection from '@/components/sections/PromoVideoSection';
 
@@ -14,10 +15,11 @@ export default async function Home({ params }: Readonly<{ params: Promise<{ loca
   return (
     <main>
       <HeroSection />
-      <DetailsSection />
+      <InfoSection />
       <ApplicationSection />
       <GallerySection />
       <PromoVideoSection />
+      <DetailsSection />
       <IntroductionSection />
     </main>
   );
