@@ -1,4 +1,4 @@
-import { ChevronDown, Play, Rocket } from 'lucide-react';
+import { Play, Rocket } from 'lucide-react';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import React from 'react';
@@ -6,6 +6,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import Countdown from '@/components/ui/Countdown';
 import { Reveal } from '@/components/ui/Reveal';
+import ScrollButton from '@/components/ui/ScrollButton';
 import { Link } from '@/i18n/routing';
 
 const HeroSection = () => {
@@ -75,9 +76,9 @@ const HeroSection = () => {
         </Reveal>
       </div>
 
-      <div className='animation-bouncing-arrow mb-4'>
-        <ChevronDown />
-      </div>
+      <Reveal delay={3}>
+        <ScrollButton />
+      </Reveal>
     </section>
   );
 };

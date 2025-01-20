@@ -85,17 +85,7 @@
   }
 }
 
-@keyframes reveal {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
-
 .animation-bouncing-arrow {
-  animation:
-    stretch 5s ease-in-out infinite,
-    reveal 2s ease-in-out;
+  animation: stretch 5s ease-in-out infinite;
+  animation-delay: 5s;
 }
