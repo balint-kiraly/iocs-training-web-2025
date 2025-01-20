@@ -1,4 +1,4 @@
-import { Play, Rocket } from 'lucide-react';
+import { ChevronDown, Play, Rocket } from 'lucide-react';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import React from 'react';
@@ -67,17 +67,21 @@ const HeroSection = () => {
           </Link>
         </Reveal>
         <Reveal delay={0.5}>
-          <Link href='/#promo-video'>
+          <ScrollButton to='promo-video'>
             <Button variant='light' size='lg' className='bg-background/50'>
               <Play />
               {text('cta-video')}
             </Button>
-          </Link>
+          </ScrollButton>
         </Reveal>
       </div>
 
       <Reveal delay={3}>
-        <ScrollButton />
+        <ScrollButton to='info'>
+          <Button variant='ghost' className='animation-bouncing-arrow mb-4'>
+            <ChevronDown />
+          </Button>
+        </ScrollButton>
       </Reveal>
     </section>
   );

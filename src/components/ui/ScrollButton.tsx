@@ -1,20 +1,11 @@
 'use client';
 
-import { ChevronDown } from 'lucide-react';
 import React from 'react';
 
-import { Button } from '@/components/ui/button';
+import { scrollToAnchor } from '@/lib/utils';
 
-const ScrollButton = () => {
-  const handleScroll = () => {
-    document.getElementById('info')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  return (
-    <Button variant='ghost' className='animation-bouncing-arrow mb-4' onClick={handleScroll}>
-      <ChevronDown />
-    </Button>
-  );
+const ScrollButton = ({ to, children }: { to: string; children: React.ReactNode }) => {
+  return <div onClick={() => scrollToAnchor(to)}>{children}</div>;
 };
 
 export default ScrollButton;
