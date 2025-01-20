@@ -70,7 +70,8 @@ export async function writeToSpreadsheet(
   }
 ) {
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
-    throw new Error('Missing Google credentials');
+    console.error('Missing Google credentials');
+    return;
   }
 
   const auth = new google.auth.GoogleAuth({
@@ -100,7 +101,7 @@ export async function writeToSpreadsheet(
     });
   }
 
-  const response = await service.spreadsheets.values.append({
+  await service.spreadsheets.values.append({
     spreadsheetId: process.env.GOOGLE_SHEET_ID!,
     range: 'Jelentkezések',
     valueInputOption: 'USER_ENTERED',
@@ -108,8 +109,6 @@ export async function writeToSpreadsheet(
       values: [Object.values(parsedApplication)],
     },
   });
-
-  console.log(response.data);
 }
 
 async function isSheetEmpty(service: sheets_v4.Sheets) {
