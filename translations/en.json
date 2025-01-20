@@ -1,0 +1,122 @@
+{
+  "Metadata": {
+    "title": "IÖCS Instructor Training 2025 | Join the Experience",
+    "description": "Join the 2025 IÖCS Instructor Training! Be part of an unforgettable experience and make lifelong connections.",
+    "keywords": "IÖCS, Instructor, Training, 2025, Community, Application, Semmelweis, University"
+  },
+  "Header": {
+    "title": "IÖCS Training 2025",
+    "home": "Home",
+    "rules": "Rules",
+    "contact": "Contact",
+    "apply": "Apply Now"
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "language": "{locale, select, hu {Magyar} en {English} other {}}"
+  },
+  "HeroSection": {
+    "heading": "Welcome to the\nInstructor Training!",
+    "heading-sm": "Welcome to the Instructor Training!",
+    "subheading": "Be part of an unforgettable experience and make lifelong connections.",
+    "cta": "Apply Now",
+    "cta-video": "Watch the Video"
+  },
+  "Countdown": {
+    "heading": "The training starts in",
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds"
+  },
+  "ApplicationSection": {
+    "heading": "We’re Excited to Welcome You to the Instructor Training!",
+    "subheading": "Join the IÖCS community and be part of an unforgettable experience!",
+    "cta": "Apply Now!"
+  },
+  "IntroductionSection": {
+    "heading": "The training groups are just waiting for you!"
+  },
+  "Footer": {
+    "iocs": {
+      "label": "IÖCS",
+      "name": "Instruktor Öntevékeny Csoport",
+      "privacy-policy": "Privacy Policy"
+    },
+    "links": {
+      "label": "Quick Links",
+      "home": "Home",
+      "rules": "Rules",
+      "contact": "Contact",
+      "apply": "Apply"
+    },
+    "social": {
+      "label": "Follow Us"
+    }
+  },
+  "Details": {
+    "title-databox1": "Training's duration",
+    "title-databox2": "Reminder",
+    "title-databox3": "Advice",
+    "title-databox4": "Curiosity",
+    "title-databox5": "Capacity",
+    "desc-databox1": "2025. january 20. - 2025. february 12.",
+    "desc-databox2": "Don't forget to let us know which weekend you are available!",
+    "desc-databox3": "Apply as soon as possible to make sure there is a place for you.",
+    "desc-databox4": "Did you know that the team includes people who already have families?",
+    "desc-databox5": "A capacity of around 300 people!"
+  },
+  "Rules": {
+    "header": "Rules",
+    "headings": {
+      "goal": "1. Our goal",
+      "apply": "2. Membership conditions"
+    },
+    "subheadings": {
+      "apply-1": "Who can be a member",
+      "apply-2": "How to join",
+      "apply-3": "Membership obligations"
+    },
+    "text": {
+      "goal": "The aim of the IÖCS is to make you part of a super community. We also give them the opportunity to gain experience and contribute to different projects",
+      "apply-1": "Any student who is at least 16 years old and a full-time student. Membership is voluntary and free of charge",
+      "apply-2": "Students can register through the cooperative's website and apply online for the various programmes",
+      "apply-3": "Members are obliged to participate in the programmes organised by the cooperative and to respect the rules of employment",
+      "ending": "The aim of the IÖCS is to support students during their studies while giving them the opportunity to become part of a supportive community. Following the rules will help ensure that everyone can benefit from the cooperative and contribute to its success",
+      "button": "Download the rules"
+    }
+  },
+  "ContactsSection": {
+    "heading": "Contacts",
+    "title-training-organizer": "Training organizer",
+    "title-FEB": "President of the Supervisory Board",
+    "title-IOCS": "President of the IÖCS"
+  },
+  "FAQSection": {
+    "heading": "Frequently Asked Questions",
+    "questions": {
+      "question1": "What is the IÖCS?",
+      "question2": "How can I join the IÖCS?",
+      "question3": "What are the benefits of being a member?",
+      "question4": "How can I apply for the training?",
+      "question5": "What is the duration of the training?",
+      "question6": "How many people can participate in the training?",
+      "question7": "What is the age limit for the training?",
+      "question8": "What is the deadline for applying?",
+      "question9": "What is the IÖCS community like?",
+      "question10": "What are the goals of the IÖCS?"
+    },
+    "answers": {
+      "answer1": "The IÖCS is a student cooperative that aims to support students during their studies and provide them with opportunities to become part of a supportive community.",
+      "answer2": "You can join the IÖCS by registering on the cooperative's website and applying for the various programmes.",
+      "answer3": "The benefits of being a member include gaining experience, contributing to different projects, and being part of a super community.",
+      "answer4": "You can apply for the training by filling out the online application form on the cooperative's website.",
+      "answer5": "The training will take place from January 20th to February 12th, 2025.",
+      "answer6": "The training has a capacity of around 300 people.",
+      "answer7": "The age limit for the training is 16 years old.",
+      "answer8": "The deadline for applying is January 10th, 2025.",
+      "answer9": "The IÖCS community is supportive, inclusive, and diverse, with members from different backgrounds and experiences.",
+      "answer10": "The goals of the IÖCS are to support students during their studies, provide opportunities for personal and professional development, and create a sense of community among members."
+    }
+  }
+}
