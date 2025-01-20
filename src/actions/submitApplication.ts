@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { formSchema } from '@/lib/formValidation';
 import { Diet, Prisma, University } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
+import { writeToSpreadsheet } from '@/actions/spreadsheetSync';
 
 type State =
   | {
@@ -19,7 +20,17 @@ export default async function submitApplication(
 ): Promise<State> {
   try {
     const parsedApplication = await parseApplicationData(formData);
-    await createApplication(parsedApplication);
+    const application = await createApplication(parsedApplication);
+    prisma.application
+      .findFirst({
+        where: { id: application.id },
+        include: { internationalTraining: { include: { certificates: true } } },
+      })
+      .then((application) => {
+        if (application) {
+          writeToSpreadsheet(application);
+        }
+      });
     return {
       status: 'success',
     };
