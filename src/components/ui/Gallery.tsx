@@ -90,7 +90,7 @@ export const SwipeCarousel = () => {
   };
 
   return (
-    <div className='relative overflow-hidden bg-neutral-950 py-8'>
+    <div className='relative overflow-hidden py-8'>
       <motion.div
         drag='x'
         dragConstraints={{
@@ -101,12 +101,12 @@ export const SwipeCarousel = () => {
           x: dragX,
         }}
         animate={{
-          translateX: `-${imgIndex * 70}%`,
+          translateX: `${-1 * (imgIndex * 70 - 15)}%`,
         }}
         transition={SPRING_OPTIONS}
         onDragEnd={onDragEnd}
         className={`
-          flex cursor-grab items-center justify-center
+          flex cursor-grab items-center
 
           active:cursor-grabbing
         `}
