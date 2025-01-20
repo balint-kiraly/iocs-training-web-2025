@@ -2,13 +2,13 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Reveal } from '@/components/ui/Reveal';
 
 const HorizontalScrollCarousel = () => {
   const [offset, setOffset] = React.useState(0);
-
+  const [currentIndex, setCurrentIndex] = useState(0);
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -23,8 +23,32 @@ const HorizontalScrollCarousel = () => {
 
   const x = useTransform(scrollYProgress, [0, 1], ['0px', `-${offset}px`]);
 
+  const handleNext = () => {
+    if (targetRef.current) {
+      const totalItems = cards.length;
+      const newIndex = (currentIndex + 1) % totalItems;
+      setCurrentIndex(newIndex);
+      targetRef.current.scrollTo({
+        left: newIndex * 3618,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const handlePrev = () => {
+    if (targetRef.current) {
+      const totalItems = cards.length;
+      const newIndex = (currentIndex - 1 + totalItems) % totalItems;
+      setCurrentIndex(newIndex);
+      targetRef.current.scrollTo({
+        left: newIndex * 3618,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
-    <div className='overflow-hidden'>
+    <div className='relative overflow-hidden'>
       <motion.div ref={targetRef} style={{ x }} className='inline-flex items-center gap-10 px-10'>
         {cards.map((card, index) => {
           return (
@@ -35,13 +59,35 @@ const HorizontalScrollCarousel = () => {
                   width={5427}
                   height={3618}
                   className='rounded-md'
-                  alt='Gallery Placeholder image'
+                  alt={card.title}
                 />
               </div>
             </Reveal>
           );
         })}
       </motion.div>
+      <button
+        onClick={handlePrev}
+        className={`
+          absolute left-5 top-1/2 -translate-y-1/2 rounded-full bg-gray-700 p-3 text-white
+
+          hover:bg-gray-800
+        `}
+        aria-label='Previous'
+      >
+        ◀
+      </button>
+      <button
+        onClick={handleNext}
+        className={`
+          absolute right-5 top-1/2 -translate-y-1/2 rounded-full bg-gray-700 p-3 text-white
+
+          hover:bg-gray-800
+        `}
+        aria-label='Next'
+      >
+        ▶
+      </button>
     </div>
   );
 };

@@ -41,7 +41,8 @@
     "iocs": {
       "label": "IÖCS",
       "name": "Instruktor Öntevékeny Csoport",
-      "privacy-policy": "Adatvédelmi Nyilatkozat"
+      "privacy-policy": "Adatvédelmi Nyilatkozat",
+      "house-rules": "Házirend"
     },
     "links": {
       "label": "Linkek",
@@ -89,8 +90,9 @@
   "ContactsSection": {
     "heading": "Kapcsolatok",
     "title-training-organizer": "Képzésszervező",
-    "title-FEB": "Felügyelőbizottság Elnöke",
-    "title-IOCS": "Instruktor Öntevékeny Csoport Elnöke"
+    "title-FEB": "Felügyelőbizottság Elnök",
+    "title-IOCS": "Instruktor Öntevékeny Csoport Elnök",
+    "mailto": "Üzenj nekünk"
   },
   "FAQSection": {
     "heading": "Gyakran Ismételt Kérdések",
