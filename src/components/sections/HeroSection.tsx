@@ -28,7 +28,7 @@ const HeroSection = () => {
         <Reveal>
           <h1
             className={`
-              absolute left-5 top-28 z-10 hidden max-w-3xl text-4xl font-bold
+              absolute top-48 z-10 hidden w-screen text-center text-4xl font-bold
 
               md:text-[5rem]/[1]
 
@@ -39,7 +39,7 @@ const HeroSection = () => {
           </h1>
           <h1
             className={`
-              absolute left-5 top-28 z-10 max-w-3xl text-4xl font-bold
+              absolute top-48 z-10 w-screen text-center text-4xl font-bold
 
               sm:hidden
 
@@ -68,7 +68,7 @@ const HeroSection = () => {
         </Reveal>
         <Reveal delay={0.5}>
           <ScrollButton to='promo-video'>
-            <Button variant='light' size='lg' className='bg-background/50'>
+            <Button variant='outline' size='lg' className='bg-accent'>
               <Play />
               {text('cta-video')}
             </Button>
