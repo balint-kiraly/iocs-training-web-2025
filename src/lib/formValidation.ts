@@ -113,7 +113,17 @@ export const formSchema = z
     message: 'Please provide your custom diet.',
     path: ['customDiet'],
   })
-  .refine((data) => data.availableAtWeekend1 || data.availableAtWeekend2, {
-    message: 'At least one weekend must be selected.',
-    path: ['availableAtWeekend1'],
+  .superRefine((data, ctx) => {
+    if (!data.availableAtWeekend1 && !data.availableAtWeekend2) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'At least one weekend must be selected.',
+        path: ['availableAtWeekend1'],
+      });
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'At least one weekend must be selected.',
+        path: ['availableAtWeekend2'],
+      });
+    }
   });
