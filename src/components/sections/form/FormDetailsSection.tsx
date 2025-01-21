@@ -6,6 +6,7 @@ import { DatePicker } from '@/components/ui/date-picker';
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { formSchema } from '@/lib/formValidation';
+import { dateToString, stringToDate } from '@/lib/utils';
 
 interface FormDetailsSectionProps {
   form: UseFormReturn<z.infer<typeof formSchema>>;
@@ -110,7 +111,10 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
             <FormItem>
               <FormLabel>Date of Birth</FormLabel>
               <FormControl>
-                <DatePicker {...field} />
+                <DatePicker
+                  value={field.value ? stringToDate(field.value) : undefined}
+                  onChange={(value) => value && field.onChange(dateToString(value))}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

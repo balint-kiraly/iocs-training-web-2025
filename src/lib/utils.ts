@@ -17,3 +17,14 @@ export function dateToString(date: Date) {
     '0'
   )}-${String(date.getDate()).padStart(2, '0')}`;
 }
+
+/**
+ * Convert a string in the format 'YYYY-MM-DD' to a Date object.
+ * @param dateString
+ */
+export function stringToDate(dateString: string): Date {
+  'use client';
+
+  const [year, month, day] = dateString.split('-').map(Number);
+  return new Date(year, month - 1, day);
+}

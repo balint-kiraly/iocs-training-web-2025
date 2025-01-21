@@ -8,7 +8,13 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
 
-export const DatePicker = ({ value, onChange }: { value: Date; onChange: (newDate: Date | undefined) => void }) => {
+export const DatePicker = ({
+  value,
+  onChange,
+}: {
+  value: Date | undefined;
+  onChange: (newDate: Date | undefined) => void;
+}) => {
   const years = Array.from({ length: new Date().getFullYear() - 1900 + 1 }, (_, i) => 1900 + i);
   const today = new Date();
 
