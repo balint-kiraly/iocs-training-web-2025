@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { dateToString } from '@/lib/utils';
 
 export const universities = ['SE', 'BME', 'ELTE', 'PPKE', 'BCE', 'Other'] as const;
 export const faculties = ['ÁOK', 'FOK', 'GYTK', 'ETK', 'EKK', 'PAK'] as const;
@@ -58,7 +59,7 @@ export const formSchema = z
     address: z.string().nonempty(),
     idNumber: z.string().regex(/^[0-9]{6}[A-Z]{2}$/),
     studentId: z.string().regex(/^1[0-9]{9}$/),
-    birthDate: z.date().max(new Date()),
+    birthDate: z.date().transform(dateToString),
     birthPlace: z.string().nonempty(),
     mothersName: z.string().nonempty(),
     university: z.enum(universities),

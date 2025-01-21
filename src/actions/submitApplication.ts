@@ -84,10 +84,7 @@ export async function parseApplicationData(
     address: formData.address,
     idNumber: formData.idNumber,
     studentId: formData.studentId,
-    birthDate: `${formData.birthDate.getFullYear()}-${String(formData.birthDate.getMonth() + 1).padStart(
-      2,
-      '0'
-    )}-${String(formData.birthDate.getDate()).padStart(2, '0')}`,
+    birthDate: formData.birthDate,
     birthPlace: formData.birthPlace,
     mothersName: formData.mothersName,
     university: formData.university as University,
