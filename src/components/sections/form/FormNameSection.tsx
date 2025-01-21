@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
@@ -11,6 +12,8 @@ interface FormNameSectionProps {
 }
 
 export const FormNameSection: React.FC<FormNameSectionProps> = ({ form }) => {
+  const text = useTranslations('ApplicationForm');
+
   return (
     <>
       <div
@@ -26,9 +29,9 @@ export const FormNameSection: React.FC<FormNameSectionProps> = ({ form }) => {
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>First Name</FormLabel>
+                <FormLabel>{text('labels.firstName')}</FormLabel>
                 <FormControl>
-                  <Input {...field} type='text' placeholder='First Name' />
+                  <Input {...field} type='text' placeholder={text('placeholders.firstName')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -41,9 +44,9 @@ export const FormNameSection: React.FC<FormNameSectionProps> = ({ form }) => {
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Last Name</FormLabel>
+                <FormLabel>{text('labels.lastName')}</FormLabel>
                 <FormControl>
-                  <Input {...field} type='text' placeholder='Last Name' />
+                  <Input {...field} type='text' placeholder={text('placeholders.lastName')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -56,11 +59,11 @@ export const FormNameSection: React.FC<FormNameSectionProps> = ({ form }) => {
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Nickname</FormLabel>
+                <FormLabel>{text('labels.nickname')}</FormLabel>
                 <FormControl>
-                  <Input {...field} type='text' placeholder='Nickname' />
+                  <Input {...field} type='text' placeholder={text('placeholders.nickname')} />
                 </FormControl>
-                <FormDescription>Optional</FormDescription>
+                <FormDescription>{text('descriptions.optional')}</FormDescription>
                 <FormMessage />
               </FormItem>
             );

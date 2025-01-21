@@ -90,7 +90,7 @@ export async function parseApplicationData(
     university: formData.university as University,
     otherUniversity: formData.university === 'Other' ? formData.otherUniversity : null,
     faculty: formData.university === 'SE' ? (formData.faculty === 'ÁOK' ? 'AOK' : formData.faculty) : null,
-    letter: formData.letter === 'J/EKK' ? 'EKK' : formData.letter === "Don't have one" ? null : formData.letter,
+    letter: formData.letter === 'J/EKK' ? 'EKK' : formData.letter === 'none' ? null : formData.letter,
     startYear: formData.startYear,
     academicYear: formData.academicYear,
     drivingLicence: formData.drivingLicense,

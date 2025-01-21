@@ -1,4 +1,5 @@
 import { Plus, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
@@ -16,10 +17,12 @@ interface FormInternationalSectionProps {
 }
 
 export const FormInternationalSection: React.FC<FormInternationalSectionProps> = ({ form }) => {
+  const text = useTranslations('ApplicationForm');
+
   return (
     <>
-      <h2 className='text-xl font-semibold'>International Training</h2>
-      <p>In our training, one group will be conducted in English.</p>
+      <h2 className='text-xl font-semibold'>{text('sections.international')}</h2>
+      <p>{text('descriptions.international')}</p>
       <div className={`mt-4`}>
         <FormField
           control={form.control}
@@ -40,7 +43,7 @@ export const FormInternationalSection: React.FC<FormInternationalSectionProps> =
                     sm:col-span-2
                   `}
                 >
-                  <FormLabel>Would you like to participate in English?</FormLabel>
+                  <FormLabel>{text('labels.international')}</FormLabel>
                   <FormControl>
                     <Switch
                       checked={field.value !== undefined}
@@ -60,9 +63,9 @@ export const FormInternationalSection: React.FC<FormInternationalSectionProps> =
                       name='internationalTraining.motivation'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Motivation</FormLabel>
+                          <FormLabel>{text('labels.motivation')}</FormLabel>
                           <FormControl>
-                            <Textarea {...field} placeholder='Why do you want to participate?' />
+                            <Textarea {...field} placeholder={text('placeholders.motivation')} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -71,7 +74,7 @@ export const FormInternationalSection: React.FC<FormInternationalSectionProps> =
 
                     {/* Add Certificate Button */}
                     <div className='space-y-2'>
-                      <FormLabel>Language Certificates</FormLabel>
+                      <FormLabel>{text('labels.certificates')}</FormLabel>
                       {/* Render Existing Certificates */}
                       {form.watch('internationalTraining.certificates')?.map((_, index) => (
                         <div key={index} className='flex items-start gap-x-4'>
@@ -83,7 +86,7 @@ export const FormInternationalSection: React.FC<FormInternationalSectionProps> =
                               render={({ field }) => (
                                 <FormItem className='grow'>
                                   <FormControl>
-                                    <Input {...field} placeholder='Language' />
+                                    <Input {...field} placeholder={text('placeholders.language')} />
                                   </FormControl>
                                   <FormMessage />
                                 </FormItem>
@@ -98,7 +101,7 @@ export const FormInternationalSection: React.FC<FormInternationalSectionProps> =
                                   <Select onValueChange={field.onChange}>
                                     <FormControl>
                                       <SelectTrigger {...field}>
-                                        <SelectValue placeholder='Level' />
+                                        <SelectValue placeholder={text('placeholders.level')} />
                                       </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -142,7 +145,7 @@ export const FormInternationalSection: React.FC<FormInternationalSectionProps> =
                             ]);
                           }}
                         >
-                          Add Certificate
+                          {text('labels.add-certificate')}
                           <Plus />
                         </Button>
                       </FormItem>

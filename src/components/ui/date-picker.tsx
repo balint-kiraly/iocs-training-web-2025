@@ -11,9 +11,11 @@ import { cn } from '@/lib/utils';
 export const DatePicker = ({
   value,
   onChange,
+  placeholder = 'Pick a date',
 }: {
   value: Date | undefined;
   onChange: (newDate: Date | undefined) => void;
+  placeholder?: string;
 }) => {
   const years = Array.from({ length: new Date().getFullYear() - 1900 + 1 }, (_, i) => 1900 + i);
   const today = new Date();
@@ -51,7 +53,7 @@ export const DatePicker = ({
           variant={'outline'}
           className={cn('w-full pl-3 text-left font-normal', !value && 'text-muted-foreground')}
         >
-          {value ? format(value, 'PPP') : <span>Pick a date</span>}
+          {value ? format(value, 'PPP') : <span>{placeholder}</span>}
           <CalendarIcon className='ml-auto h-4 w-4 opacity-50' />
         </Button>
       </PopoverTrigger>

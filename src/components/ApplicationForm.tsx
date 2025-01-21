@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AlertCircle, Check, LoaderCircle, Send } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { startTransition, useActionState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -9,10 +10,10 @@ import { FormAcceptanceSection } from '@/components/sections/form/FormAcceptance
 import { FormAvailabilitySection } from '@/components/sections/form/FormAvailabilitySection';
 import { FormContactSection } from '@/components/sections/form/FormContactSection';
 import { FormDetailsSection } from '@/components/sections/form/FormDetailsSection';
+import { FormEducationSection } from '@/components/sections/form/FormEducationSection';
 import { FormInternationalSection } from '@/components/sections/form/FormInternationalSection';
 import { FormNameSection } from '@/components/sections/form/FormNameSection';
-import { FormOtherSection } from '@/components/sections/form/FormOtherSection';
-import { FormStudiesSection } from '@/components/sections/form/FormStudiesSection';
+import { FormPreferencesSection } from '@/components/sections/form/FormPreferencesSection';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
@@ -22,6 +23,8 @@ import { useRouter } from '@/i18n/routing';
 import { formSchema } from '@/lib/formValidation';
 
 export const ApplicationForm = () => {
+  const text = useTranslations('ApplicationForm');
+
   const [state, action, isPending] = useActionState(submitApplication, null);
   const router = useRouter();
   const { toast } = useToast();
@@ -89,8 +92,8 @@ export const ApplicationForm = () => {
           <FormNameSection form={form} />
           <FormContactSection form={form} />
           <FormDetailsSection form={form} />
-          <FormStudiesSection form={form} />
-          <FormOtherSection form={form} />
+          <FormEducationSection form={form} />
+          <FormPreferencesSection form={form} />
           <FormAvailabilitySection form={form} />
           <FormInternationalSection form={form} />
           <FormAcceptanceSection form={form} />
@@ -103,7 +106,7 @@ export const ApplicationForm = () => {
           )}
           <div className='mt-10 flex justify-end'>
             <Button type='submit' disabled={isPending}>
-              Submit
+              {text('labels.submit')}
               {!isPending && <Send />}
               {isPending && <LoaderCircle className='animate-spin' />}
             </Button>

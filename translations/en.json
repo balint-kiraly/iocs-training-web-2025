@@ -118,5 +118,97 @@
       "answer9": "The IÖCS community is supportive, inclusive, and diverse, with members from different backgrounds and experiences.",
       "answer10": "The goals of the IÖCS are to support students during their studies, provide opportunities for personal and professional development, and create a sense of community among members."
     }
+  },
+  "ApplicationForm": {
+    "heading": "Application",
+    "sections": {
+      "contact": "Contact Information",
+      "details": "Personal Details",
+      "education": "Education",
+      "preferences": "Lifestyle and Skills",
+      "availability": "Your Availability",
+      "international": "International Training"
+    },
+    "labels": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "nickname": "Nickname",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "city": "City",
+      "zipCode": "Zip Code",
+      "address": "Address",
+      "idNumber": "ID Number",
+      "studentId": "Student ID Number",
+      "birthDate": "Date of Birth",
+      "birthPlace": "Place of Birth",
+      "mothersName": "Mother's Name",
+      "university": "University",
+      "faculty": "Faculty",
+      "otherUniversity": "Other University",
+      "letter": "Letter",
+      "startYear": "Start Year",
+      "academicYear": "Academic Year",
+      "drivingLicense": "Do you have a driving license?",
+      "likesDriving": "Do you like driving?",
+      "diet": "Dietary Preferences",
+      "customDiet": "Custom Dietary Preferences",
+      "languages": "What languages do you speak?",
+      "availableAtWeekend1": "March 1-3",
+      "availableAtWeekend2": "March 22-24",
+      "international": "Would you like to participate in english?",
+      "motivation": "Motivation",
+      "certificates": "Language Certificates",
+      "add-certificate": "Add Certificate",
+      "acceptRules": "I accept the rules of the training",
+      "acceptPrivacyPolicy": "I accept the Privacy Policy",
+      "submit": "Submit"
+    },
+    "descriptions": {
+      "optional": "Optional",
+      "languages": "Enter the languages, separated by spaces.",
+      "availability": "Please let us know on which weekends you are available.",
+      "international": "In the training one group will be conducted in English.",
+      "acceptRules": "I declare that I have read and accepted the 2025 Instructor Training <link>Rules</link> and consider them binding upon myself.",
+      "acceptPrivacyPolicy": "By submitting my application, I confirm that I have read and accepted the <link>Data Protection Notice</link> for the 2025 Instructor Training, the Instructor Volunteer Group, and the IÖCS Association."
+    },
+    "placeholders": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "nickname": "Nickname",
+      "email": "Email",
+      "phone": "+36 xx xxx xxxx",
+      "city": "City",
+      "zipCode": "1234",
+      "address": "Street and Number",
+      "idNumber": "xxxxxxAB",
+      "studentId": "1xxxxxxxxx",
+      "birthDate": "Pick a date",
+      "birthPlace": "Place of Birth",
+      "mothersName": "Mother's maiden name",
+      "university": "Select your university",
+      "faculty": "Select your faculty",
+      "otherUniversity": "Enter the name of your university",
+      "letter": "Select",
+      "startYear": "Select",
+      "diet": "Select your dietary preferences",
+      "customDiet": "Enter your custom dietary preferences",
+      "languages": "Enter the languages you speak",
+      "motivation": "Why do you want to participate in english?",
+      "language": "Language",
+      "level": "Level"
+    },
+    "options": {
+      "Other": "Other",
+      "None": "Don't have one",
+      "diet": {
+        "Normal": "Normal",
+        "Vegetarian": "Vegetarian",
+        "Vegan": "Vegan",
+        "LactoseFree": "Lactose Free",
+        "GlutenFree": "Gluten Free",
+        "Other": "Other"
+      }
+    }
   }
 }
