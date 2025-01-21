@@ -1,11 +1,11 @@
 import { ChevronDown, Play, Rocket } from 'lucide-react';
-import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
 import Countdown from '@/components/ui/Countdown';
 import { Reveal } from '@/components/ui/Reveal';
+import VimeoPlayer from '@/components/ui/VimeoPlayer';
 import { Link } from '@/i18n/routing';
 
 const HeroSection = () => {
@@ -17,13 +17,22 @@ const HeroSection = () => {
       className={`relative flex h-screen w-screen flex-col items-center justify-end gap-8 overflow-clip text-white`}
     >
       <div className='absolute -z-10 h-screen w-screen overflow-hidden'>
-        <Image
-          className='relative -top-20'
-          src='/landing-bg-placeholder.jpg'
-          fill={true}
-          alt='Background placeholder'
-          style={{ objectFit: 'cover' }}
-        />
+        {/*<Image
+         className='relative -top-20'
+         src='/landing-bg-placeholder.jpg'
+         fill={true}
+         alt='Background placeholder'
+         style={{ objectFit: 'cover' }}
+         />*/}
+        <div
+          className={`
+            absolute left-1/2 top-1/2 h-[calc(100vw*9/16)] min-h-screen w-screen min-w-[calc(100vh*16/9)]
+            -translate-x-1/2 -translate-y-1/2
+          `}
+        >
+          <VimeoPlayer id={Number(process.env.PROMO_VIDEO_VIMEO_ID)} autoplay={true} />
+        </div>
+
         <Reveal>
           <h1
             className={`

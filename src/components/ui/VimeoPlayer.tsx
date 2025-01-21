@@ -3,14 +3,15 @@
 import Player from '@vimeo/player';
 import React, { useEffect, useRef } from 'react';
 
-export default function VimeoDefaultPlayer({ id }: Readonly<{ id: number }>) {
+export default function VimeoPlayer({ id, autoplay }: Readonly<{ id: number; autoplay: boolean }>) {
   const playerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const options = {
       id: id,
-      loop: false,
-      autoplay: false,
+      loop: autoplay,
+      autoplay: autoplay,
+      muted: autoplay,
       autopause: false,
       portrait: false,
       byline: false,
@@ -20,22 +21,13 @@ export default function VimeoDefaultPlayer({ id }: Readonly<{ id: number }>) {
       color: 'FFFFFF',
       dnt: true,
       responsive: true,
+      controls: !autoplay,
     };
 
     if (playerRef.current !== null) {
       new Player(playerRef.current, options);
     }
-  }, [id]);
+  }, [autoplay, id]);
 
-  return (
-    <div
-      className={`
-        relative mx-auto overflow-hidden rounded-2xl
-
-        md:w-3/4
-      `}
-    >
-      <div ref={playerRef} className=''></div>
-    </div>
-  );
+  return <div ref={playerRef}></div>;
 }
