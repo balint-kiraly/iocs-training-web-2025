@@ -1,43 +1,60 @@
+import { Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
+
+import { Card } from '@/components/ui/card';
 
 export default function ContactCard({
-  name,
+  title,
+  firstName,
+  lastName,
   role,
   email,
   phone,
   image,
 }: {
-  name: string;
+  title: string;
+  firstName: string;
+  lastName: string;
   role: string;
   email: string;
   phone: string;
   image: string;
 }) {
+  const locale = useLocale();
+  const name = `${title} ${locale === 'hu' ? `${lastName} ${firstName}` : `${firstName} ${lastName}`}`;
   return (
-    <div className='flex w-72 flex-col items-center rounded-lg bg-white p-6 shadow-md'>
-      <Image src={image} alt={name} height={140} width={140} className='mb-4 rounded-full object-cover' />
-      <h2 className='text-xl font-bold text-gray-800'>{name}</h2>
-      <p className='text-center text-gray-600'>{role}</p>
-      <a
-        href={`mailto:${email}`}
-        className={`
-          mt-2 text-blue-500
+    <Card
+      className={`
+        relative mt-[20px] flex w-80 flex-col items-center rounded-lg bg-gradient-to-br from-primary to-secondary p-8
+        pt-[180px] text-center shadow-md transition-transform duration-300
 
-          hover:underline
-        `}
-      >
-        {email}
-      </a>
-      <a
-        href={`tel:${phone}`}
-        className={`
-          mt-1 text-blue-500
-
-          hover:underline
-        `}
-      >
-        {phone}
-      </a>
-    </div>
+        hover:-translate-y-2 hover:shadow-lg
+      `}
+    >
+      <Image
+        src={image}
+        alt={name}
+        height={200}
+        width={200}
+        className='absolute -top-[20px] rounded-full object-cover shadow-lg'
+      />
+      <h2 className='mt-6 text-xl font-bold'>{name}</h2>
+      <p className='h-12 text-accent-foreground/80'>{role}</p>
+      <div className='mt-10 flex w-full flex-col items-center gap-4'>
+        <a href={`mailto:${email}`} className='hover:'>
+          <span className='flex gap-4'>
+            <Mail />
+            {email}
+          </span>
+        </a>
+        <a href={`tel:${phone}`}>
+          <span className='flex gap-4'>
+            <Phone />
+            {phone}
+          </span>
+        </a>
+      </div>
+    </Card>
   );
 }

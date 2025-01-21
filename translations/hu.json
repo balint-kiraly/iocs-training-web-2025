@@ -87,8 +87,8 @@
       "button": "Szabályzat letöltése"
     }
   },
-  "ContactsSection": {
-    "heading": "Kapcsolatok",
+  "ContactSection": {
+    "heading": "Kapcsolat",
     "title-training-organizer": "Képzésszervező",
     "title-FEB": "Felügyelőbizottság Elnök",
     "title-IOCS": "Instruktor Öntevékeny Csoport Elnök",
