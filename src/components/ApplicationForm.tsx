@@ -60,18 +60,12 @@ export const ApplicationForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // TODO Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    //eslint-disable-next-line no-console
-    console.log(values);
     startTransition(() => {
       action(values);
     });
   }
 
   useEffect(() => {
-    //eslint-disable-next-line no-console
-    console.log(state);
     if (state?.status === 'success') {
       router.push('/');
       setTimeout(() => {
