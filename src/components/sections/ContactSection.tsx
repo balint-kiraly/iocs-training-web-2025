@@ -2,6 +2,8 @@ import { Mail } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ContactCard from '@/components/ui/ContactCard';
 import { Reveal } from '@/components/ui/Reveal';
 
@@ -72,22 +74,27 @@ export const ContactSection = () => {
           </Reveal>
         ))}
       </div>
-      <div className='mt-20 flex items-center justify-center gap-6 text-3xl font-bold'>
-        {text('mailto')}
-        <a
-          href='mailto:kepzes@iocs.hu'
-          target='_blank'
-          rel='noopener noreferrer'
+      <Reveal>
+        <Card
           className={`
-            text-white
+            mx-auto mt-10 flex w-fit flex-col items-center gap-8 p-6
 
-            hover:text-yellow-500
+            sm:flex-row
           `}
-          aria-label='Mail'
         >
-          <Mail className='h-8 w-8' />
-        </a>
-      </div>
+          <CardHeader className='p-0'>
+            <CardTitle className='text-2xl'>{text('send-message')}</CardTitle>
+          </CardHeader>
+          <CardContent className='w-fit p-0'>
+            <a href='mailto:kepzes@iocs.hu' target='_blank' rel='noopener noreferrer' aria-label='Mail'>
+              <Button variant='secondary' size='lg' className='text-lg'>
+                <Mail />
+                kepzes@iocs.hu
+              </Button>
+            </a>
+          </CardContent>
+        </Card>
+      </Reveal>
     </section>
   );
 };
