@@ -84,7 +84,10 @@ export async function parseApplicationData(
     address: formData.address,
     idNumber: formData.idNumber,
     studentId: formData.studentId,
-    birthDate: new Date(Date.parse(formData.birthDate.toUTCString()) - formData.birthDate.getTimezoneOffset() * 60000), // Convert to UTC
+    birthDate: `${formData.birthDate.getFullYear()}-${String(formData.birthDate.getMonth() + 1).padStart(
+      2,
+      '0'
+    )}-${String(formData.birthDate.getDate()).padStart(2, '0')}`,
     birthPlace: formData.birthPlace,
     mothersName: formData.mothersName,
     university: formData.university as University,
