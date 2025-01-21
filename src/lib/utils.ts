@@ -28,3 +28,12 @@ export function stringToDate(dateString: string): Date {
   const [year, month, day] = dateString.split('-').map(Number);
   return new Date(year, month - 1, day);
 }
+
+/**
+ * Format a date string in the format 'YYYY-MM-DD' to 'YYYY. MM. DD.'.
+ * @param dateString
+ */
+export function formatDateString(dateString: string): string {
+  const [year, month, day] = dateString.split('-');
+  return `${year}. ${String(month).padStart(2, '0')}. ${String(day).padStart(2, '0')}.`;
+}
