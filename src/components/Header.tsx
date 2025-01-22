@@ -31,10 +31,10 @@ const Header = () => {
 
   return (
     <>
-      <div className='absolute left-0 top-0 z-20 h-36 w-screen bg-gradient-to-b from-primary to-transparent' />
+      <div className='absolute left-0 top-0 z-20 h-36 w-[100%] bg-gradient-to-b from-primary to-transparent' />
       <header
         className={`
-          fixed z-30 w-screen min-w-[300px] p-4 text-white transition-all duration-1000
+          fixed z-30 w-[100%] min-w-[300px] p-4 text-white transition-all duration-1000
 
           ${scrolled ? 'bg-primary shadow-lg' : `bg-transparent`}
         `}

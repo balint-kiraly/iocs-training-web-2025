@@ -15,12 +15,12 @@ const HeroSection = () => {
 
   return (
     <section
-      className={`relative flex h-screen w-screen flex-col items-center justify-between gap-8 overflow-clip text-white`}
+      className={`relative flex h-screen w-[100%] flex-col items-center justify-between gap-8 overflow-clip text-white`}
     >
-      <div className='absolute -z-10 h-screen w-screen overflow-hidden'>
+      <div className='absolute -z-10 h-screen w-[100%] overflow-hidden'>
         <div
           className={`
-            absolute left-1/2 top-1/2 h-[calc(100vw*9/16)] min-h-screen w-screen min-w-[calc(100vh*16/9)]
+            absolute left-1/2 top-1/2 h-[calc(100vw*9/16)] min-h-screen w-[100%] min-w-[calc(100vh*16/9)]
             -translate-x-1/2 -translate-y-1/2
           `}
         >
