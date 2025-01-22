@@ -23,7 +23,14 @@ const Footer = () => {
               <Link href='https://iocs.hu'>{text('iocs.name')}</Link>
             </li>
             <li>
-              <Link href='/'>{text('iocs.privacy-policy')}</Link>
+              <a href='/privacy-policy.pdf' download>
+                {text('iocs.privacy-policy')}
+              </a>
+            </li>
+            <li>
+              <a href='/house-rules.pdf' download>
+                {text('iocs.house-rules')}
+              </a>
             </li>
           </ul>
         </div>

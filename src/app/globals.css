@@ -12,7 +12,7 @@
     --popover-foreground: 0 0% 98%;
     --primary: 175.9 60.8% 19%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 265, 61%, 19%;
+    --secondary: 265 61% 19%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
@@ -85,17 +85,7 @@
   }
 }
 
-@keyframes reveal {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
-
 .animation-bouncing-arrow {
-  animation:
-    stretch 5s ease-in-out infinite,
-    reveal 2s ease-in-out;
+  animation: stretch 5s ease-in-out infinite;
+  animation-delay: 5s;
 }
