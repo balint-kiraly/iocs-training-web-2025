@@ -9,7 +9,7 @@ import { writeToSpreadsheet } from '@/actions/spreadsheetSync';
 type State =
   | {
       status: 'success' | 'error';
-      message?: string;
+      error?: number;
     }
   | null
   | undefined;
@@ -40,14 +40,14 @@ export default async function submitApplication(
         console.error('Error creating application (Unique constraint failed):', error.message);
         return {
           status: 'error',
-          message: 'This email address or phone number is already registered',
+          error: 1,
         };
       }
     }
     console.error('Unknown error creating application');
     return {
       status: 'error',
-      message: 'An unknown error occurred',
+      error: 0,
     };
   }
 }

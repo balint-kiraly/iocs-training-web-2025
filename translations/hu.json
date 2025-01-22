@@ -168,6 +168,7 @@
     },
     "descriptions": {
       "optional": "Nem kötelező",
+      "address": "Add meg az állandó lakcímed.",
       "languages": "Add meg a nyelveket szóközzel elválasztva.",
       "availability": "Jelöld meg, mely hétvégéken érsz rá",
       "international": "A képzés során egy csoport angol nyelven fog indulni",
@@ -179,7 +180,7 @@
       "lastName": "Vezetéknév",
       "nickname": "Becenév",
       "email": "Email",
-      "phone": "+36 xx xxx xxxx",
+      "phone": "+36xxxxxxxxx",
       "city": "Város",
       "zipCode": "1234",
       "address": "Utca és házszám",
@@ -211,6 +212,13 @@
         "GlutenFree": "Gluténmentes",
         "Other": "Egyéb"
       }
+    },
+    "errors": {
+      "required": "Kötelező",
+      "title": "Hiba történt a jelentkezésed beküldésekor",
+      "report": "Ha ez továbbra is fennáll, vagy úgy gondolod, hogy hibás, kérjük, vedd fel a kapcsolatot a fejlesztővel a következő címen: ",
+      "0": "Ismeretlen hiba történt",
+      "1": "Ezzel az email címmel vagy telefonszámmal már küldtek be jelentkezést"
     }
   }
 }

@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { stringToDate } from '@/lib/utils';
 
 export const universities = ['SE', 'BME', 'ELTE', 'PPKE', 'BCE', 'Other'] as const;
+const universitiesBlacklist = [...universities, 'Semmelweis', 'SOTE', 'Pázmány', 'Corvinus', 'Other'];
 export const faculties = ['ÁOK', 'FOK', 'GYTK', 'ETK', 'EKK', 'PAK'] as const;
 export const letters = [
   'A',
@@ -52,13 +53,23 @@ export const formSchema = z
     firstName: z.string().nonempty(),
     lastName: z.string().nonempty(),
     nickname: z.string().optional(),
-    email: z.string().email(),
-    phone: z.string().regex(/^[+]36 [0-9]{2} [0-9]{3} [0-9]{4}$/),
+    email: z.string().nonempty().email(),
+    phone: z
+      .string()
+      .nonempty()
+      .regex(/^\+[1-9]\d{1,14}$/, {
+        message: 'Invalid. Use international phone number format, e.g., +1234567890',
+      }),
     city: z.string().nonempty(),
-    zipCode: z.string().regex(/^[0-9]{4}$/),
+    zipCode: z.string().nonempty(),
     address: z.string().nonempty(),
-    idNumber: z.string().regex(/^[0-9]{6}[A-Z]{2}$/),
-    studentId: z.string().regex(/^1[0-9]{9}$/),
+    idNumber: z.string().nonempty(),
+    studentId: z
+      .string()
+      .nonempty()
+      .regex(/^1[0-9]{9}$/, {
+        message: 'Invalid format. Must be 10 digits long and start with 1.',
+      }),
     birthDate: z
       .string()
       .regex(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/)
@@ -71,9 +82,19 @@ export const formSchema = z
     otherUniversity: z
       .string()
       .optional()
-      .refine((value) => {
-        return value === undefined || !universities.includes(value as (typeof universities)[number]);
-      }),
+      .refine(
+        (value) => {
+          return (
+            value === undefined ||
+            !universitiesBlacklist.some(
+              (blacklistedUniversity) => blacklistedUniversity.toLowerCase() === value.toLowerCase()
+            )
+          );
+        },
+        {
+          message: 'Select this university from the list.',
+        }
+      ),
     faculty: z.enum(faculties).optional(),
     letter: z.enum(letters),
     startYear: z
@@ -97,12 +118,15 @@ export const formSchema = z
       message: 'Rules must be accepted.',
     }),
   })
-  .refine((data) => data.university !== 'Other' || data.otherUniversity !== undefined, {
-    message: 'Please provide your university.',
-    path: ['otherUniversity'],
-  })
+  .refine(
+    (data) => data.university !== 'Other' || (data.otherUniversity !== undefined && data.otherUniversity !== ''),
+    {
+      message: 'Please provide your university.',
+      path: ['otherUniversity'],
+    }
+  )
   .refine((data) => data.university !== 'SE' || data.faculty !== undefined, {
-    message: 'Faculty must be provided for the university of SE.',
+    message: "Faculty must be provided for the university 'SE'.",
     path: ['faculty'],
   })
   .refine((data) => data.drivingLicense || data.likesDriving === undefined, {

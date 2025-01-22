@@ -3,7 +3,7 @@ import { AlertCircle, Check, LoaderCircle, Send } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { startTransition, useActionState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { z, ZodIssueCode } from 'zod';
 
 import submitApplication from '@/actions/submitApplication';
 import { FormAcceptanceSection } from '@/components/sections/form/FormAcceptanceSection';
@@ -18,16 +18,15 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
 import { ToastAction } from '@/components/ui/toast';
-import { useToast } from '@/hooks/use-toast';
+import { toast } from '@/hooks/use-toast';
 import { useRouter } from '@/i18n/routing';
 import { formSchema } from '@/lib/formValidation';
 
 export const ApplicationForm = () => {
   const text = useTranslations('ApplicationForm');
 
-  const [state, action, isPending] = useActionState(submitApplication, null);
+  const [state, action, isPending] = useActionState(submitApplication, { status: 'error', error: 0 });
   const router = useRouter();
-  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -62,6 +61,29 @@ export const ApplicationForm = () => {
     },
   });
 
+  useEffect(() => {
+    const customErrorMap: z.ZodErrorMap = (issue, ctx) => {
+      switch (issue.code) {
+        case ZodIssueCode.too_small:
+          if (issue.type === 'string') {
+            return { message: text('errors.required') };
+          }
+          break;
+        case ZodIssueCode.invalid_type:
+          if (issue.received === 'undefined' || issue.received === 'boolean') {
+            return { message: text('errors.required') };
+          }
+          break;
+        default:
+          return { message: ctx.defaultError };
+      }
+      // Fallback to the default error message
+      return { message: ctx.defaultError };
+    };
+
+    z.setErrorMap(customErrorMap);
+  }, [text]);
+
   function onSubmit(values: z.infer<typeof formSchema>) {
     startTransition(() => {
       action(values);
@@ -83,7 +105,7 @@ export const ApplicationForm = () => {
         });
       }, 1000);
     }
-  }, [router, state, toast]);
+  }, [router, state]);
 
   return (
     <div className='mx-auto w-full min-w-60 max-w-4xl p-10'>
@@ -101,11 +123,11 @@ export const ApplicationForm = () => {
             <>
               <Alert variant='destructive' className='mt-10'>
                 <AlertCircle className='h-4 w-4' />
-                <AlertTitle>Error submitting your application</AlertTitle>
-                <AlertDescription>{state.message}</AlertDescription>
+                <AlertTitle>{text('errors.title')}</AlertTitle>
+                <AlertDescription>{text(`errors.${state.error}`)}</AlertDescription>
               </Alert>
               <p className='mt-2 text-sm text-muted-foreground'>
-                If this keeps happening or you believe this is a mistake, please contact the developer at{' '}
+                {text('errors.report')}
                 <a href='mailto:balintkiraly.dev@gmail.com' className='font-medium text-primary underline'>
                   balintkiraly.dev@gmail.com
                 </a>

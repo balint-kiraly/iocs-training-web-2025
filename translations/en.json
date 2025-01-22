@@ -168,6 +168,7 @@
     },
     "descriptions": {
       "optional": "Optional",
+      "address": "Provide your permanent address.",
       "languages": "Enter the languages, separated by spaces.",
       "availability": "Please let us know on which weekends you are available.",
       "international": "In the training one group will be conducted in English.",
@@ -179,11 +180,11 @@
       "lastName": "Last Name",
       "nickname": "Nickname",
       "email": "Email",
-      "phone": "+36 xx xxx xxxx",
+      "phone": "+1234567890",
       "city": "City",
-      "zipCode": "1234",
+      "zipCode": "Zip Code",
       "address": "Street and Number",
-      "idNumber": "xxxxxxAB",
+      "idNumber": "ID Number",
       "studentId": "1xxxxxxxxx",
       "birthDate": "Pick a date",
       "birthPlace": "Place of Birth",
@@ -211,6 +212,13 @@
         "GlutenFree": "Gluten Free",
         "Other": "Other"
       }
+    },
+    "errors": {
+      "required": "Required",
+      "title": "Error submitting your application",
+      "report": "If this keeps happening or you believe this is a mistake, please contact the developer at ",
+      "0": "An unknown error occurred",
+      "1": "An application with this email address or phone number has already been submitted"
     }
   }
 }

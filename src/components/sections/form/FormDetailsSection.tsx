@@ -4,7 +4,7 @@ import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
 
 import { DatePicker } from '@/components/ui/date-picker';
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { formSchema } from '@/lib/formValidation';
 import { dateToString, stringToDate } from '@/lib/utils';
@@ -39,6 +39,7 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
                       <Input {...field} type='text' placeholder={text('placeholders.city')} />
                     </FormControl>
                     <FormMessage />
+                    <FormDescription>{text('descriptions.address')}</FormDescription>
                   </FormItem>
                 );
               }}
