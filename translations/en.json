@@ -5,7 +5,7 @@
     "keywords": "IÖCS, Instructor, Training, 2025, Community, Application, Semmelweis, University"
   },
   "Header": {
-    "title": "IÖCS Training 2025",
+    "title": "Instructor Training 2025",
     "home": "Home",
     "rules": "Rules",
     "contact": "Contact",
@@ -41,7 +41,8 @@
     "iocs": {
       "label": "IÖCS",
       "name": "Instruktor Öntevékeny Csoport",
-      "privacy-policy": "Privacy Policy"
+      "privacy-policy": "Privacy Policy",
+      "house-rules": "House Rules"
     },
     "links": {
       "label": "Quick Links",
@@ -86,11 +87,12 @@
       "button": "Download the rules"
     }
   },
-  "ContactsSection": {
-    "heading": "Contacts",
+  "ContactSection": {
+    "heading": "Contact",
     "title-training-organizer": "Training organizer",
     "title-FEB": "President of the Supervisory Board",
-    "title-IOCS": "President of the IÖCS"
+    "title-IOCS": "President of the IÖCS",
+    "send-message": "Send a message to us"
   },
   "FAQSection": {
     "heading": "Frequently Asked Questions",

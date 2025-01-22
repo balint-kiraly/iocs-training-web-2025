@@ -43,12 +43,12 @@ const Header = () => {
           <Link
             href='/'
             className={`
-              flex items-center gap-4 text-xl font-bold
+              flex items-center gap-4 text-lg font-bold
 
-              sm:text-2xl
+              sm:text-xl
             `}
           >
-            <Image src='/logo.png' alt='IÖCS logo' width={35} height={35} className='relative bottom-0.5' />
+            <Image src='/logo.png' alt='IÖCS logo' width={40} height={40} />
             {text('title')}
           </Link>
           <nav
