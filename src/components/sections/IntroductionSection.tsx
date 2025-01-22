@@ -8,7 +8,7 @@ const IntroductionSection = () => {
 
   return (
     <section id='groups' className=''>
-      <h1 className='pl-10 text-3xl font-bold'>{text('heading')}</h1>
+      <h1 className='pl-10 text-center text-3xl font-bold'>{text('heading')}</h1>
       <Gallery />
     </section>
   );

@@ -5,7 +5,7 @@
     "keywords": "IÖCS, Instruktor, Képzés, Instruktorképzés, 2025, Közösség, Jelentkezés, Semmelweis, Egyetem"
   },
   "Header": {
-    "title": "IÖCS Képzés 2025",
+    "title": "Instruktorképzés 2025",
     "home": "Főoldal",
     "rules": "Szabályzat",
     "contact": "Kapcsolat",
@@ -41,7 +41,8 @@
     "iocs": {
       "label": "IÖCS",
       "name": "Instruktor Öntevékeny Csoport",
-      "privacy-policy": "Adatvédelmi Nyilatkozat"
+      "privacy-policy": "Adatvédelmi Nyilatkozat",
+      "house-rules": "Házirend"
     },
     "links": {
       "label": "Linkek",
@@ -86,11 +87,12 @@
       "button": "Szabályzat letöltése"
     }
   },
-  "ContactsSection": {
-    "heading": "Kapcsolatok",
+  "ContactSection": {
+    "heading": "Kapcsolat",
     "title-training-organizer": "Képzésszervező",
-    "title-FEB": "Felügyelőbizottság Elnöke",
-    "title-IOCS": "Instruktor Öntevékeny Csoport Elnöke"
+    "title-FEB": "Felügyelőbizottság Elnök",
+    "title-IOCS": "Instruktor Öntevékeny Csoport Elnök",
+    "send-message": "Üzenj nekünk"
   },
   "FAQSection": {
     "heading": "Gyakran Ismételt Kérdések",

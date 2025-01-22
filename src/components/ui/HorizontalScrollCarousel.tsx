@@ -12,7 +12,7 @@ const HorizontalScrollCarousel = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ['end end', 'start start'],
+    offset: ['start end', 'end start'],
   });
 
   useEffect(() => {

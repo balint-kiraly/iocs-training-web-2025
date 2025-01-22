@@ -31,10 +31,10 @@ const Header = () => {
 
   return (
     <>
-      <div className='absolute left-0 top-0 z-20 h-36 w-screen bg-gradient-to-b from-primary to-transparent' />
+      <div className='absolute left-0 top-0 z-20 h-36 w-[100%] bg-gradient-to-b from-primary to-transparent' />
       <header
         className={`
-          fixed z-40 w-screen min-w-[300px] p-4 text-white transition-all duration-1000
+          fixed z-40 w-[100%] min-w-[300px] p-4 text-white transition-all duration-1000
 
           ${scrolled ? 'bg-primary shadow-lg' : `bg-transparent`}
         `}
@@ -43,12 +43,12 @@ const Header = () => {
           <Link
             href='/'
             className={`
-              flex items-center gap-4 text-xl font-bold
+              flex items-center gap-4 text-lg font-bold
 
-              sm:text-2xl
+              sm:text-xl
             `}
           >
-            <Image src='/logo.png' alt='IÖCS logo' width={35} height={35} className='relative bottom-0.5' />
+            <Image src='/logo.png' alt='IÖCS logo' width={40} height={40} />
             {text('title')}
           </Link>
           <nav
