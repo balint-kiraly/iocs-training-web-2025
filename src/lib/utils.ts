@@ -37,3 +37,7 @@ export function formatDateString(dateString: string): string {
   const [year, month, day] = dateString.split('-');
   return `${year}. ${String(month).padStart(2, '0')}. ${String(day).padStart(2, '0')}.`;
 }
+
+export function scrollToAnchor(anchor: string) {
+  document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });
+}
