@@ -14,7 +14,7 @@ interface FormOtherSectionProps {
   form: UseFormReturn<z.infer<typeof formSchema>>;
 }
 
-export const FormPreferencesSection: React.FC<FormOtherSectionProps> = ({ form }) => {
+export const FormLifestyleSkillsSection: React.FC<FormOtherSectionProps> = ({ form }) => {
   const text = useTranslations('ApplicationForm');
 
   const drivingLicense = form.watch('drivingLicense');
@@ -38,7 +38,17 @@ export const FormPreferencesSection: React.FC<FormOtherSectionProps> = ({ form }
               <FormItem className='flex flex-row items-center space-x-4 space-y-0'>
                 <FormLabel>{text('labels.drivingLicense')}</FormLabel>
                 <FormControl>
-                  <Switch checked={field.value} onCheckedChange={field.onChange} />
+                  <Switch
+                    checked={field.value}
+                    onCheckedChange={(checked) => {
+                      if (checked) {
+                        form.setValue('likesDriving', false);
+                      } else {
+                        form.setValue('likesDriving', undefined);
+                      }
+                      field.onChange(checked);
+                    }}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

@@ -12,8 +12,8 @@ import { FormContactSection } from '@/components/sections/form/FormContactSectio
 import { FormDetailsSection } from '@/components/sections/form/FormDetailsSection';
 import { FormEducationSection } from '@/components/sections/form/FormEducationSection';
 import { FormInternationalSection } from '@/components/sections/form/FormInternationalSection';
+import { FormLifestyleSkillsSection } from '@/components/sections/form/FormLifestyleSkillsSection';
 import { FormNameSection } from '@/components/sections/form/FormNameSection';
-import { FormPreferencesSection } from '@/components/sections/form/FormPreferencesSection';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
@@ -52,7 +52,7 @@ export const ApplicationForm = () => {
       startYear: undefined,
       academicYear: undefined,
       drivingLicense: false,
-      likesDriving: false,
+      likesDriving: undefined,
       diet: undefined,
       customDiet: undefined,
       languages: [],
@@ -93,7 +93,7 @@ export const ApplicationForm = () => {
           <FormContactSection form={form} />
           <FormDetailsSection form={form} />
           <FormEducationSection form={form} />
-          <FormPreferencesSection form={form} />
+          <FormLifestyleSkillsSection form={form} />
           <FormAvailabilitySection form={form} />
           <FormInternationalSection form={form} />
           <FormAcceptanceSection form={form} />
