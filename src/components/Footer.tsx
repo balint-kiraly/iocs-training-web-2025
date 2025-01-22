@@ -111,7 +111,7 @@ const Footer = () => {
         </div>
       </div>
       <div className='mt-20 text-center text-muted-foreground'>
-        <p>Developed with ❤️ by Bálint Kiráy & Tamás Nagy</p>
+        <p>Developed with ❤️ by Bálint Király & Tamás Nagy</p>
       </div>
     </footer>
   );

@@ -216,7 +216,7 @@
     "errors": {
       "required": "Kötelező",
       "title": "Hiba történt a jelentkezésed beküldésekor",
-      "report": "Ha ez továbbra is fennáll, vagy úgy gondolod, hogy hibás, kérjük, vedd fel a kapcsolatot a fejlesztővel a következő címen: ",
+      "support": "Ha ez továbbra is fennáll, vagy úgy gondolod, hogy hibás, kérjük, vedd fel a kapcsolatot a <link>fejlesztővel</link>.",
       "0": "Ismeretlen hiba történt",
       "1": "Ezzel az email címmel vagy telefonszámmal már küldtek be jelentkezést"
     }

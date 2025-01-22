@@ -10,6 +10,7 @@ type State =
   | {
       status: 'success' | 'error';
       error?: number;
+      message?: string;
     }
   | null
   | undefined;
@@ -37,17 +38,23 @@ export default async function submitApplication(
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       if (error.code === 'P2002') {
-        console.error('Error creating application (Unique constraint failed):', error.message);
         return {
           status: 'error',
           error: 1,
+          message: error.message,
         };
       }
+      return {
+        status: 'error',
+        error: 0,
+        message: error.message,
+      };
     }
     console.error('Unknown error creating application');
     return {
       status: 'error',
       error: 0,
+      message: 'Unknown error creating application',
     };
   }
 }

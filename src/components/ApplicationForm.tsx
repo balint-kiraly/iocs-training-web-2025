@@ -1,11 +1,12 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AlertCircle, Check, LoaderCircle, Send } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import { startTransition, useActionState, useEffect } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+import React, { startTransition, useActionState, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z, ZodIssueCode } from 'zod';
 
 import submitApplication from '@/actions/submitApplication';
+import { createSupportMailLink } from '@/actions/support';
 import { FormAcceptanceSection } from '@/components/sections/form/FormAcceptanceSection';
 import { FormAvailabilitySection } from '@/components/sections/form/FormAvailabilitySection';
 import { FormContactSection } from '@/components/sections/form/FormContactSection';
@@ -24,8 +25,9 @@ import { formSchema } from '@/lib/formValidation';
 
 export const ApplicationForm = () => {
   const text = useTranslations('ApplicationForm');
+  const locale = useLocale();
 
-  const [state, action, isPending] = useActionState(submitApplication, { status: 'error', error: 0 });
+  const [state, action, isPending] = useActionState(submitApplication, null);
   const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -107,6 +109,13 @@ export const ApplicationForm = () => {
     }
   }, [router, state]);
 
+  const [supportMailLink, setSupportMailLink] = useState<string | null>(null);
+  useEffect(() => {
+    if (state?.status === 'error' && state.message) {
+      createSupportMailLink(state.message, form.getValues(), locale).then(setSupportMailLink);
+    }
+  }, [state, locale, form]);
+
   return (
     <div className='mx-auto w-full min-w-60 max-w-4xl p-10'>
       <Form {...form}>
@@ -127,11 +136,21 @@ export const ApplicationForm = () => {
                 <AlertDescription>{text(`errors.${state.error}`)}</AlertDescription>
               </Alert>
               <p className='mt-2 text-sm text-muted-foreground'>
-                {text('errors.report')}
-                <a href='mailto:balintkiraly.dev@gmail.com' className='font-medium text-primary underline'>
-                  balintkiraly.dev@gmail.com
-                </a>
-                .
+                {text.rich('errors.support', {
+                  link: (chunks) =>
+                    supportMailLink ? (
+                      <a
+                        href={supportMailLink}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='font-medium text-primary underline'
+                      >
+                        {chunks}
+                      </a>
+                    ) : (
+                      <span className='font-medium text-primary'>{chunks}</span>
+                    ),
+                })}
               </p>
             </>
           )}

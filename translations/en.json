@@ -216,7 +216,7 @@
     "errors": {
       "required": "Required",
       "title": "Error submitting your application",
-      "report": "If this keeps happening or you believe this is a mistake, please contact the developer at ",
+      "support": "If the issue persists or you believe this is a mistake, please contact the <link>developer</link>.",
       "0": "An unknown error occurred",
       "1": "An application with this email address or phone number has already been submitted"
     }
