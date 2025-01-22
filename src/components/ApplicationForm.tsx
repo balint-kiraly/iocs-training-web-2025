@@ -105,7 +105,7 @@ export const ApplicationForm = () => {
             </Alert>
           )}
           <div className='mt-10 flex justify-end'>
-            <Button type='submit' disabled={isPending}>
+            <Button type='submit' variant='primary' disabled={isPending}>
               {text('labels.submit')}
               {!isPending && <Send />}
               {isPending && <LoaderCircle className='animate-spin' />}
