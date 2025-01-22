@@ -1,41 +1,56 @@
 'use client';
 
 import Player from '@vimeo/player';
+import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 
-export default function VimeoDefaultPlayer({ id }: Readonly<{ id: number }>) {
+export default function VimeoPlayer({ id, autoplay }: Readonly<{ id: number; autoplay: boolean }>) {
   const playerRef = useRef<HTMLDivElement>(null);
+  const fallbackImage = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const options = {
       id: id,
-      loop: false,
-      autoplay: false,
+      loop: autoplay,
+      autoplay: autoplay,
+      muted: autoplay,
       autopause: false,
       portrait: false,
       byline: false,
       title: false,
-      width: 640,
       speed: false,
       color: 'FFFFFF',
       dnt: true,
       responsive: true,
+      controls: !autoplay,
     };
 
     if (playerRef.current !== null) {
-      new Player(playerRef.current, options);
+      const player = new Player(playerRef.current, options);
+
+      player.on('play', () => {
+        if (fallbackImage.current !== null) {
+          fallbackImage.current.style.opacity = '0';
+        }
+      });
     }
-  }, [id]);
+  }, [autoplay, id]);
 
   return (
-    <div
-      className={`
-        relative mx-auto overflow-hidden rounded-2xl
+    <>
+      <Image
+        className={`
+          relative z-10 transition-opacity duration-1000
 
-        md:w-3/4
-      `}
-    >
-      <div ref={playerRef} className=''></div>
-    </div>
+          ${autoplay ? '' : 'hidden'}
+        `}
+        src='/landing-bg-placeholder.jpg'
+        ref={fallbackImage}
+        fill={true}
+        alt='Background fallback image'
+        style={{ objectFit: 'cover' }}
+      />
+      <div ref={playerRef}></div>
+    </>
   );
 }
