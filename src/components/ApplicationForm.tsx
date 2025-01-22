@@ -98,11 +98,20 @@ export const ApplicationForm = () => {
           <FormInternationalSection form={form} />
           <FormAcceptanceSection form={form} />
           {state?.status === 'error' && (
-            <Alert variant='destructive' className='mt-10'>
-              <AlertCircle className='h-4 w-4' />
-              <AlertTitle>Error submitting your application</AlertTitle>
-              <AlertDescription>{state.message}</AlertDescription>
-            </Alert>
+            <>
+              <Alert variant='destructive' className='mt-10'>
+                <AlertCircle className='h-4 w-4' />
+                <AlertTitle>Error submitting your application</AlertTitle>
+                <AlertDescription>{state.message}</AlertDescription>
+              </Alert>
+              <p className='mt-2 text-sm text-muted-foreground'>
+                If this keeps happening or you believe this is a mistake, please contact the developer at{' '}
+                <a href='mailto:balintkiraly.dev@gmail.com' className='font-medium text-primary underline'>
+                  balintkiraly.dev@gmail.com
+                </a>
+                .
+              </p>
+            </>
           )}
           <div className='mt-10 flex justify-end'>
             <Button type='submit' variant='primary' disabled={isPending}>

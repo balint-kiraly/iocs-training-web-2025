@@ -36,11 +36,13 @@ export default async function submitApplication(
     };
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
-      console.error('Error creating application:', error.message);
-      return {
-        status: 'error',
-        message: error.message,
-      };
+      if (error.code === 'P2002') {
+        console.error('Error creating application (Unique constraint failed):', error.message);
+        return {
+          status: 'error',
+          message: 'This email address or phone number is already registered',
+        };
+      }
     }
     console.error('Unknown error creating application');
     return {
