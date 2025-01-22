@@ -3,6 +3,7 @@
 import { Application, InternationalTraining, LanguageCertificate } from '@prisma/client';
 import { google, sheets_v4 } from 'googleapis';
 import { format } from 'date-fns';
+import { formatDateString } from '@/lib/utils';
 
 type SheetApplication = {
   name: string;
@@ -136,7 +137,7 @@ async function parseApplication(
     address: application.address,
     idNumber: application.idNumber,
     studentId: application.studentId,
-    birthDate: format(application.birthDate, 'yyyy. MM. dd.'),
+    birthDate: formatDateString(application.birthDate),
     birthPlace: application.birthPlace,
     mothersName: application.mothersName,
     university: application.university,

@@ -83,7 +83,7 @@ model Application {
   address               String
   idNumber              String
   studentId             String
-  birthDate             DateTime               @db.Date
+  birthDate             String
   birthPlace            String
   mothersName           String
   university            University
