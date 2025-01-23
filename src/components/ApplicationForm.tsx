@@ -100,7 +100,7 @@ export const ApplicationForm = () => {
           title: 'Application Submitted Successfully!',
           description: 'Save the date: February 13th, 2025',
           action: (
-            <ToastAction altText='Dismiss toast'>
+            <ToastAction altText='Dismiss Notification' className='text-primary'>
               <Check />
             </ToastAction>
           ),

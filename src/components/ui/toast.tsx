@@ -85,7 +85,7 @@ const ToastAction = React.forwardRef<
         group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground
         group-[.destructive]:focus:ring-destructive
 
-        hover:bg-secondary
+        hover:bg-accent
       `,
       className
     )}
