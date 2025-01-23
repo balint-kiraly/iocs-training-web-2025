@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { routing, usePathname, useRouter } from '@/i18n/routing';
 
-export const LanguageSwitcher = () => {
+export const LanguagePicker = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [, startTransition] = useTransition();
