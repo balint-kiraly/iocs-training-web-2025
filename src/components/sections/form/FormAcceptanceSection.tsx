@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
@@ -12,6 +13,8 @@ interface FormAcceptanceSectionProps {
 }
 
 export const FormAcceptanceSection: React.FC<FormAcceptanceSectionProps> = ({ form }) => {
+  const text = useTranslations('ApplicationForm');
+
   return (
     <>
       <div
@@ -31,13 +34,15 @@ export const FormAcceptanceSection: React.FC<FormAcceptanceSectionProps> = ({ fo
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <div className='space-y-1 leading-none'>
-                  <FormLabel>I accept the Rules of the Training</FormLabel>
+                  <FormLabel>{text('labels.acceptRules')}</FormLabel>
                   <FormDescription>
-                    I declare that I have read and accepted the 2025 Instructor Training Rules and consider them binding
-                    upon myself.{' '}
-                    <Link href='/rules' className='text-blue-500 underline'>
-                      Rules
-                    </Link>
+                    {text.rich('descriptions.acceptRules', {
+                      link: (chunks) => (
+                        <Link href='/rules' className='text-blue-500 underline'>
+                          {chunks}
+                        </Link>
+                      ),
+                    })}
                   </FormDescription>
                   <FormMessage />
                 </div>
@@ -55,13 +60,15 @@ export const FormAcceptanceSection: React.FC<FormAcceptanceSectionProps> = ({ fo
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <div className='space-y-1 leading-none'>
-                  <FormLabel>I accept the Privacy Policy</FormLabel>
+                  <FormLabel>{text('labels.acceptPrivacyPolicy')}</FormLabel>
                   <FormDescription>
-                    By submitting my application, I confirm that I have read and accepted the Data Protection Notice for
-                    the 2025 Instructor Training, the Instructor Volunteer Group, and the IÖCS Association.{' '}
-                    <Link href='/privacy-policy' className='text-blue-500 underline'>
-                      Privacy Policy
-                    </Link>
+                    {text.rich('descriptions.acceptPrivacyPolicy', {
+                      link: (chunks) => (
+                        <Link href='/privacy-policy' className='text-blue-500 underline'>
+                          {chunks}
+                        </Link>
+                      ),
+                    })}
                   </FormDescription>
                   <FormMessage />
                 </div>

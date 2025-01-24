@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { TagsInput } from 'react-tag-input-component';
@@ -13,13 +14,15 @@ interface FormOtherSectionProps {
   form: UseFormReturn<z.infer<typeof formSchema>>;
 }
 
-export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
+export const FormLifestyleSkillsSection: React.FC<FormOtherSectionProps> = ({ form }) => {
+  const text = useTranslations('ApplicationForm');
+
   const drivingLicense = form.watch('drivingLicense');
   const customDiet = form.watch('customDiet');
 
   return (
     <>
-      <h2 className='text-xl font-semibold'>Other</h2>
+      <h2 className='text-xl font-semibold'>{text('sections.preferences')}</h2>
       <div
         className={`
           mt-4 grid grid-cols-1 gap-x-10 gap-y-5
@@ -33,9 +36,19 @@ export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
           render={({ field }) => {
             return (
               <FormItem className='flex flex-row items-center space-x-4 space-y-0'>
-                <FormLabel>Do you have a driving licence?</FormLabel>
+                <FormLabel>{text('labels.drivingLicense')}</FormLabel>
                 <FormControl>
-                  <Switch checked={field.value} onCheckedChange={field.onChange} />
+                  <Switch
+                    checked={field.value}
+                    onCheckedChange={(checked) => {
+                      if (checked) {
+                        form.setValue('likesDriving', false);
+                      } else {
+                        form.setValue('likesDriving', undefined);
+                      }
+                      field.onChange(checked);
+                    }}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -49,7 +62,7 @@ export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
             render={({ field }) => {
               return (
                 <FormItem className='flex flex-row items-center space-x-4 space-y-0'>
-                  <FormLabel>Do you like driving?</FormLabel>
+                  <FormLabel>{text('labels.likesDriving')}</FormLabel>
                   <FormControl>
                     <Switch checked={drivingLicense && field.value} onCheckedChange={field.onChange} />
                   </FormControl>
@@ -67,7 +80,7 @@ export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>What is your diet?</FormLabel>
+                <FormLabel>{text('labels.diet')}</FormLabel>
                 <Select
                   onValueChange={(value) => {
                     if (value !== 'Other' && customDiet !== undefined) {
@@ -78,13 +91,13 @@ export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
                 >
                   <FormControl>
                     <SelectTrigger {...field}>
-                      <SelectValue placeholder='Select your diet' />
+                      <SelectValue placeholder={text('placeholders.diet')} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {diets.map((diet) => (
                       <SelectItem key={diet} value={diet}>
-                        {diet}
+                        {text(`options.diet.${diet}`)}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -101,13 +114,13 @@ export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
             render={({ field }) => {
               return (
                 <FormItem>
-                  <FormLabel>Custom Diet</FormLabel>
+                  <FormLabel>{text('labels.customDiet')}</FormLabel>
                   <FormControl>
                     <Input
                       value={field.value ?? ''}
                       onChange={field.onChange}
                       type='text'
-                      placeholder='Please provide your custom diet'
+                      placeholder={text('placeholders.customDiet')}
                     />
                   </FormControl>
                   <FormMessage />
@@ -124,19 +137,19 @@ export const FormOtherSection: React.FC<FormOtherSectionProps> = ({ form }) => {
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>What languages do you speak?</FormLabel>
+                <FormLabel>{text('labels.languages')}</FormLabel>
                 <FormControl>
                   <TagsInput
                     {...field}
-                    placeHolder='Enter languages'
-                    separators={[',', 'Enter']}
+                    placeHolder={text('placeholders.languages')}
+                    separators={[' ', 'Enter']}
                     classNames={{
                       input: 'text-sm border border-input placeholder:text-muted-foreground',
                       tag: 'text-sm px-2',
                     }}
                   />
                 </FormControl>
-                <FormDescription>Enter the languages, separated by commas.</FormDescription>
+                <FormDescription>{text('descriptions.languages')}</FormDescription>
                 <FormMessage />
               </FormItem>
             );

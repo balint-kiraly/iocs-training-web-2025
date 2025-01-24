@@ -1,9 +1,10 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
 
 import { DatePicker } from '@/components/ui/date-picker';
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { formSchema } from '@/lib/formValidation';
 import { dateToString, stringToDate } from '@/lib/utils';
@@ -13,9 +14,11 @@ interface FormDetailsSectionProps {
 }
 
 export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) => {
+  const text = useTranslations('ApplicationForm');
+
   return (
     <>
-      <h2 className='mb-4 text-xl font-semibold'>Personal Details</h2>
+      <h2 className='mb-4 text-xl font-semibold'>{text('sections.details')}</h2>
       <div
         className={`
           grid grid-cols-1 gap-x-10 gap-y-5
@@ -31,11 +34,12 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
               render={({ field }) => {
                 return (
                   <FormItem>
-                    <FormLabel>City</FormLabel>
+                    <FormLabel>{text('labels.city')}</FormLabel>
                     <FormControl>
-                      <Input {...field} type='text' placeholder='City' />
+                      <Input {...field} type='text' placeholder={text('placeholders.city')} />
                     </FormControl>
                     <FormMessage />
+                    <FormDescription>{text('descriptions.address')}</FormDescription>
                   </FormItem>
                 );
               }}
@@ -48,9 +52,9 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
               render={({ field }) => {
                 return (
                   <FormItem>
-                    <FormLabel>Zip Code</FormLabel>
+                    <FormLabel>{text('labels.zipCode')}</FormLabel>
                     <FormControl>
-                      <Input {...field} type='text' placeholder='1234' />
+                      <Input {...field} type='text' placeholder={text('placeholders.zipCode')} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -65,9 +69,9 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Address</FormLabel>
+                <FormLabel>{text('labels.address')}</FormLabel>
                 <FormControl>
-                  <Input {...field} type='text' placeholder='Street and house number' />
+                  <Input {...field} type='text' placeholder={text('placeholders.address')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -80,9 +84,9 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>ID Number</FormLabel>
+                <FormLabel>{text('labels.idNumber')}</FormLabel>
                 <FormControl>
-                  <Input {...field} type='text' placeholder='xxxxxxAB' />
+                  <Input {...field} type='text' placeholder={text('placeholders.idNumber')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -95,9 +99,9 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Student ID Number</FormLabel>
+                <FormLabel>{text('labels.studentId')}</FormLabel>
                 <FormControl>
-                  <Input {...field} type='text' placeholder='1xxxxxxxxx' />
+                  <Input {...field} type='text' placeholder={text('placeholders.studentId')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -109,11 +113,12 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
           name='birthDate'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Date of Birth</FormLabel>
+              <FormLabel>{text('labels.birthDate')}</FormLabel>
               <FormControl>
                 <DatePicker
                   value={field.value ? stringToDate(field.value) : undefined}
                   onChange={(value) => value && field.onChange(dateToString(value))}
+                  placeholder={text('placeholders.birthDate')}
                 />
               </FormControl>
               <FormMessage />
@@ -126,9 +131,9 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Place of Birth</FormLabel>
+                <FormLabel>{text('labels.birthPlace')}</FormLabel>
                 <FormControl>
-                  <Input {...field} type='text' placeholder='Place of Birth' />
+                  <Input {...field} type='text' placeholder={text('placeholders.birthPlace')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -141,9 +146,9 @@ export const FormDetailsSection: React.FC<FormDetailsSectionProps> = ({ form }) 
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Mother&#39;s Name</FormLabel>
+                <FormLabel>{text('labels.mothersName')}</FormLabel>
                 <FormControl>
-                  <Input {...field} type='text' placeholder="Mother's Name" />
+                  <Input {...field} type='text' placeholder={text('placeholders.mothersName')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

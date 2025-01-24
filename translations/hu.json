@@ -120,5 +120,105 @@
       "answer9": "Az IÖCS közössége támogató és barátságos. A tagok segítik, támogatják és inspirálják egymást.",
       "answer10": "Az IÖCS célja, hogy támogassa a diákokat tanulmányaik alatt és lehetőséget biztosítson számukra, hogy egy támogató közösség részévé váljanak."
     }
+  },
+  "ApplicationForm": {
+    "heading": "Jelentkezés",
+    "sections": {
+      "contact": "Kapcsolattartási adatok",
+      "details": "Személyes információk",
+      "education": "Tanulmányok",
+      "preferences": "Életmód és készségek",
+      "availability": "Ráérés",
+      "international": "Külföldi képzés"
+    },
+    "labels": {
+      "firstName": "Keresztnév",
+      "lastName": "Vezetéknév",
+      "nickname": "Becenév",
+      "email": "Email-cím",
+      "phone": "Telefonszám",
+      "city": "Város",
+      "zipCode": "Irányítószám",
+      "address": "Lakcím",
+      "idNumber": "Személyi igazolványszám",
+      "studentId": "Diákigazolvány száma",
+      "birthDate": "Születési dátum",
+      "birthPlace": "Születési hely",
+      "mothersName": "Anyja neve",
+      "university": "Egyetem",
+      "faculty": "Kar",
+      "otherUniversity": "Más egyetem",
+      "letter": "Betű",
+      "startYear": "Egyetemkezdés éve",
+      "academicYear": "Évfolyam",
+      "drivingLicense": "Van jogosítványod?",
+      "likesDriving": "Szeretsz vezetni?",
+      "diet": "Étrend",
+      "customDiet": "Egyedi étrend",
+      "languages": "Milyen nyelveken beszélsz?",
+      "availableAtWeekend1": "Március 1-3",
+      "availableAtWeekend2": "Március 22-24",
+      "international": "Szeretnél angol csoportban képződni?",
+      "motivation": "Motiváció",
+      "certificates": "Nyelvvizsgák",
+      "add-certificate": "Nyelvvizsga hozzáadása",
+      "acceptRules": "Elfogadom a képzés szabályzatát",
+      "acceptPrivacyPolicy": "Elfogadom az Adatvédelmi Tájékoztatót",
+      "submit": "Beküldés"
+    },
+    "descriptions": {
+      "optional": "Nem kötelező",
+      "address": "Add meg az állandó lakcímed.",
+      "languages": "Add meg a nyelveket szóközzel elválasztva.",
+      "availability": "Jelöld meg, mely hétvégéken érsz rá",
+      "international": "A képzés során egy csoport angol nyelven fog indulni",
+      "acceptRules": "Kijelentem, hogy elolvastam és elfogadom a 2025-ös Instruktorképzés <link>szabályzatát</link>, és azokat magamra nézve kötelezőnek tartom.",
+      "acceptPrivacyPolicy": "A jelentkezésem benyújtásával megerősítem, hogy elolvastam és elfogadom a 2025-ös Instruktorképzés, az Instruktor Öntevékeny Csoport és az IÖCS Egyesület <link>adatvédelmi tájékoztatóját</link>."
+    },
+    "placeholders": {
+      "firstName": "Keresztnév",
+      "lastName": "Vezetéknév",
+      "nickname": "Becenév",
+      "email": "Email",
+      "phone": "+36xxxxxxxxx",
+      "city": "Város",
+      "zipCode": "1234",
+      "address": "Utca és házszám",
+      "idNumber": "xxxxxxAB",
+      "studentId": "1xxxxxxxxx",
+      "birthDate": "Válassz egy dátumot",
+      "birthPlace": "Születési hely",
+      "mothersName": "Anyja leánykori neve",
+      "university": "Válaszd ki az egyetemed",
+      "faculty": "Válaszd ki a karod",
+      "otherUniversity": "Add meg az egyetemed nevét",
+      "letter": "Válassz",
+      "startYear": "Válassz",
+      "diet": "Válaszd ki az étrendedet",
+      "customDiet": "Add meg az egyedi étrendedet",
+      "languages": "Add meg a beszélt nyelveidet",
+      "motivation": "Miért szeretnél angol csoportban képződni?",
+      "language": "Nyelv",
+      "level": "Szint"
+    },
+    "options": {
+      "Other": "Egyéb",
+      "None": "Nincs",
+      "diet": {
+        "Normal": "Normál",
+        "Vegetarian": "Vegetáriánus",
+        "Vegan": "Vegán",
+        "LactoseFree": "Laktózmentes",
+        "GlutenFree": "Gluténmentes",
+        "Other": "Egyéb"
+      }
+    },
+    "errors": {
+      "required": "Kötelező",
+      "title": "Hiba történt a jelentkezésed beküldésekor",
+      "support": "Ha ez továbbra is fennáll, vagy úgy gondolod, hogy hibás, kérjük, vedd fel a kapcsolatot a <link>fejlesztővel</link>.",
+      "0": "Ismeretlen hiba történt",
+      "1": "Ezzel az email címmel vagy telefonszámmal már küldtek be jelentkezést"
+    }
   }
 }
