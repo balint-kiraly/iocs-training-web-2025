@@ -1,12 +1,16 @@
-import { useTranslations } from 'next-intl';
+'use client';
+
+import { useLocale, useTranslations } from 'next-intl';
 import React from 'react';
 
 const RulesPage = () => {
   const text = useTranslations('Rules');
+  const locale = useLocale();
+  const pdfPath = `/house-rules-${locale}.pdf`;
 
   return (
-    <main className='min-h-screen px-6 pt-20'>
-      <h1 className='mb-6 text-center text-3xl font-semibold'>{text('header')}</h1>
+    <main className='mx-auto min-h-screen max-w-screen-xl px-6 pt-20'>
+      <h1 className='relative z-30 mb-6 text-center text-3xl font-semibold'>{text('header')}</h1>
 
       <section className='mb-8'>
         <h2>
@@ -59,7 +63,7 @@ const RulesPage = () => {
 
       <section className='mt-10 text-center'>
         <a
-          href='/house-rules.pdf'
+          href={pdfPath}
           download
           className={`
             cursor-pointer rounded-lg bg-primary from-secondary to-transparent px-6 py-3 font-bold text-white shadow-lg

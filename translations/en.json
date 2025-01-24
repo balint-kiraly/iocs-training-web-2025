@@ -68,7 +68,7 @@
     "desc-databox5": "Donec elementum vehicula metus, eu iaculis tortor vulputate quis."
   },
   "Rules": {
-    "header": "Szabályzat",
+    "header": "Rules",
     "headings": {
       "goal": "Vivamus nec dapibus quam",
       "apply-1": "Proin at justo nisi",
@@ -115,7 +115,7 @@
       "apply-19": "Nam fermentum posuere ante nec finibus. Integer ac purus accumsan, suscipit erat quis, dictum orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque velit. Nulla maximus, turpis eu lobortis maximus, arcu arcu pretium metus, sit amet euismod sem quam vel lorem. Quisque bibendum ut nibh et maximus. Quisque eu finibus ante. Cras sagittis, lacus vitae lacinia consequat, quam justo condimentum odio, et lacinia tortor elit nec nunc.",
       "apply-20": "Donec eget viverra massa. Donec mollis magna ac ipsum vestibulum, at vehicula massa semper. Morbi vel ligula pellentesque, volutpat ex eget, egestas odio. Morbi sed lacus rutrum, sodales dolor vitae, ullamcorper metus. Maecenas placerat sed erat eget posuere. Sed tempus, erat ac suscipit varius, diam velit porttitor diam, dignissim lacinia magna mi non dui. In laoreet at eros vel euismod. Sed vehicula felis sit amet mauris condimentum, sit amet semper erat egestas. Nullam dui nulla, dictum at libero id, dignissim dignissim nisi. Nunc quis bibendum felis. Sed vulputate erat a ante ultricies, ut pellentesque est fermentum.",
       "ending": "Duis volutpat tellus ipsum, ut tempor turpis ullamcorper in. Ut vehicula, ante non venenatis scelerisque, ligula libero mattis enim, eget pretium eros ligula et eros. Aliquam erat volutpat. Fusce sit amet ullamcorper tellus. Cras id turpis consectetur, euismod dui vitae, interdum urna. Morbi sodales, purus nec dapibus pretium, ex dolor porttitor erat, eu sagittis leo sem eu turpis. Proin lacus est, auctor at nulla et, condimentum ultrices turpis. Donec scelerisque erat non feugiat pretium. Donec id massa ornare, tristique ligula id, volutpat erat. Quisque imperdiet porta leo, a aliquam urna.",
-      "button": "Szabályzat letöltése"
+      "button": "Download the rules"
     }
   },
   "ContactSection": {
