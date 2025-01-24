@@ -6,7 +6,7 @@ import React from 'react';
 const RulesPage = () => {
   const text = useTranslations('Rules');
   const locale = useLocale();
-  const pdfPath = `/house-rules-${locale}.pdf`;
+  const rulesPath = `/house-rules-${locale}.pdf`;
 
   return (
     <main className='mx-auto min-h-screen max-w-screen-xl px-6 pt-20'>
@@ -63,7 +63,7 @@ const RulesPage = () => {
 
       <section className='mt-10 text-center'>
         <a
-          href={pdfPath}
+          href={rulesPath}
           download
           className={`
             cursor-pointer rounded-lg bg-primary from-secondary to-transparent px-6 py-3 font-bold text-white shadow-lg

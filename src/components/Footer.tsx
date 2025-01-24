@@ -1,12 +1,14 @@
 import { Facebook, Instagram, Mail } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import React from 'react';
 
 import { Link } from '@/i18n/routing';
 
 const Footer = () => {
   const text = useTranslations('Footer');
-
+  const locale = useLocale();
+  const rulesPath = `/house-rules-${locale}.pdf`;
+  const privacyPath = `/privacy-policy-${locale}.pdf`;
   return (
     <footer className='bg-primary/20 p-8'>
       <div className='container mx-auto flex flex-wrap justify-between'>
@@ -23,12 +25,12 @@ const Footer = () => {
               <Link href='https://iocs.hu'>{text('iocs.name')}</Link>
             </li>
             <li>
-              <a href='/privacy-policy.pdf' download>
+              <a href={privacyPath} download>
                 {text('iocs.privacy-policy')}
               </a>
             </li>
             <li>
-              <a href='/house-rules.pdf' download>
+              <a href={rulesPath} download>
                 {text('iocs.house-rules')}
               </a>
             </li>
