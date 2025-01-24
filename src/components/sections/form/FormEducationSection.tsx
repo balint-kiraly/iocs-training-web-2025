@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
@@ -12,7 +13,9 @@ interface FormStudiesSectionProps {
   form: UseFormReturn<z.infer<typeof formSchema>>;
 }
 
-export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) => {
+export const FormEducationSection: React.FC<FormStudiesSectionProps> = ({ form }) => {
+  const text = useTranslations('ApplicationForm');
+
   const university = form.watch('university');
   const faculty = form.watch('faculty');
   const otherUniversity = form.watch('otherUniversity');
@@ -26,11 +29,11 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
         render={({ field }) => {
           return (
             <FormItem>
-              <FormLabel>Faculty</FormLabel>
+              <FormLabel>{text('labels.faculty')}</FormLabel>
               <Select onValueChange={field.onChange}>
                 <FormControl>
                   <SelectTrigger value={field.value ?? ''}>
-                    <SelectValue placeholder='Your Faculty' />
+                    <SelectValue placeholder={text('placeholders.faculty')} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -55,13 +58,13 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
         render={({ field }) => {
           return (
             <FormItem>
-              <FormLabel>Other University</FormLabel>
+              <FormLabel>{text('labels.otherUniversity')}</FormLabel>
               <FormControl>
                 <Input
                   value={field.value ?? ''}
                   onChange={field.onChange}
                   type='text'
-                  placeholder='Name Your University'
+                  placeholder={text('placeholders.otherUniversity')}
                 />
               </FormControl>
               <FormMessage />
@@ -76,7 +79,7 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
 
   return (
     <>
-      <h2 className='mb-4 text-xl font-semibold'>Studies</h2>
+      <h2 className='mb-4 text-xl font-semibold'>{text('sections.education')}</h2>
       <div
         className={`
           grid grid-cols-1 gap-x-10 gap-y-5
@@ -90,7 +93,7 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>University</FormLabel>
+                <FormLabel>{text('labels.university')}</FormLabel>
                 <Select
                   onValueChange={(value) => {
                     if (value !== 'Other' && otherUniversity !== undefined) {
@@ -104,13 +107,13 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
                 >
                   <FormControl>
                     <SelectTrigger {...field}>
-                      <SelectValue placeholder='Your University' />
+                      <SelectValue placeholder={text('placeholders.university')} />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     {universities.map((university) => (
                       <SelectItem key={university} value={university}>
-                        {university}
+                        {university === 'Other' ? text('options.Other') : university}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -128,17 +131,17 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
             render={({ field }) => {
               return (
                 <FormItem className='grow'>
-                  <FormLabel>Letter</FormLabel>
+                  <FormLabel>{text('labels.letter')}</FormLabel>
                   <Select onValueChange={field.onChange}>
                     <FormControl>
                       <SelectTrigger {...field}>
-                        <SelectValue placeholder='Choose' />
+                        <SelectValue placeholder={text('placeholders.letter')} />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
                       {letters.map((letter) => (
                         <SelectItem key={letter} value={letter}>
-                          {letter}
+                          {letter === 'None' ? text('options.None') : letter}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -154,11 +157,11 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
             render={({ field }) => {
               return (
                 <FormItem className='grow'>
-                  <FormLabel>Start Year</FormLabel>
+                  <FormLabel>{text('labels.startYear')}</FormLabel>
                   <Select onValueChange={(value) => field.onChange(Number(value))}>
                     <FormControl>
                       <SelectTrigger {...field}>
-                        <SelectValue placeholder='Choose' />
+                        <SelectValue placeholder={text('placeholders.startYear')} />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -184,7 +187,7 @@ export const FormStudiesSection: React.FC<FormStudiesSectionProps> = ({ form }) 
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Academic Year</FormLabel>
+                <FormLabel>{text('labels.academicYear')}</FormLabel>
                 <FormControl>
                   <div className='flex h-9 items-center gap-4'>
                     <Slider min={1} max={6} step={1} onValueChange={(v) => field.onChange(v[0])} />

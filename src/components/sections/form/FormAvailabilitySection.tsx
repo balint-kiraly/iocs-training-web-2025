@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
@@ -11,10 +12,12 @@ interface FormAvailabilitySectionProps {
 }
 
 export const FormAvailabilitySection: React.FC<FormAvailabilitySectionProps> = ({ form }) => {
+  const text = useTranslations('ApplicationForm');
+
   return (
     <>
-      <h2 className='text-xl font-semibold'>Your Availability</h2>
-      <p>Please mark the weekends when you are available</p>
+      <h2 className='text-xl font-semibold'>{text('sections.availability')}</h2>
+      <p>{text('descriptions.availability')}</p>
       <div
         className={`
           mt-8 grid grid-cols-1 gap-x-10 gap-y-5
@@ -31,7 +34,7 @@ export const FormAvailabilitySection: React.FC<FormAvailabilitySectionProps> = (
                 <FormControl>
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
-                <FormLabel>March 1-3</FormLabel>
+                <FormLabel>{text('labels.availableAtWeekend1')}</FormLabel>
                 <FormMessage />
               </FormItem>
             );
@@ -46,7 +49,7 @@ export const FormAvailabilitySection: React.FC<FormAvailabilitySectionProps> = (
                 <FormControl>
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
-                <FormLabel>March 22-24</FormLabel>
+                <FormLabel>{text('labels.availableAtWeekend2')}</FormLabel>
                 <FormMessage />
               </FormItem>
             );

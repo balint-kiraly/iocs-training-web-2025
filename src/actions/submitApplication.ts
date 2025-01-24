@@ -9,6 +9,7 @@ import { writeToSpreadsheet } from '@/actions/spreadsheetSync';
 type State =
   | {
       status: 'success' | 'error';
+      error?: number;
       message?: string;
     }
   | null
@@ -36,16 +37,24 @@ export default async function submitApplication(
     };
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
-      console.error('Error creating application:', error.message);
+      if (error.code === 'P2002') {
+        return {
+          status: 'error',
+          error: 1,
+          message: error.message,
+        };
+      }
       return {
         status: 'error',
+        error: 0,
         message: error.message,
       };
     }
     console.error('Unknown error creating application');
     return {
       status: 'error',
-      message: 'An unknown error occurred',
+      error: 0,
+      message: 'Unknown error creating application',
     };
   }
 }
@@ -90,7 +99,7 @@ export async function parseApplicationData(
     university: formData.university as University,
     otherUniversity: formData.university === 'Other' ? formData.otherUniversity : null,
     faculty: formData.university === 'SE' ? (formData.faculty === 'ÁOK' ? 'AOK' : formData.faculty) : null,
-    letter: formData.letter === 'J/EKK' ? 'EKK' : formData.letter === "Don't have one" ? null : formData.letter,
+    letter: formData.letter === 'J/EKK' ? 'EKK' : formData.letter === 'None' ? null : formData.letter,
     startYear: formData.startYear,
     academicYear: formData.academicYear,
     drivingLicence: formData.drivingLicense,

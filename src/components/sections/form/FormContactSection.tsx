@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
@@ -11,9 +12,11 @@ interface FormContactSectionProps {
 }
 
 export const FormContactSection: React.FC<FormContactSectionProps> = ({ form }) => {
+  const text = useTranslations('ApplicationForm');
+
   return (
     <>
-      <h2 className='mb-4 text-xl font-semibold'>Contact Information</h2>
+      <h2 className='mb-4 text-xl font-semibold'>{text('sections.contact')}</h2>
       <div
         className={`
           grid grid-cols-1 gap-x-10 gap-y-5
@@ -27,9 +30,9 @@ export const FormContactSection: React.FC<FormContactSectionProps> = ({ form }) 
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Email Address</FormLabel>
+                <FormLabel>{text('labels.email')}</FormLabel>
                 <FormControl>
-                  <Input {...field} type='email' placeholder='Email' />
+                  <Input {...field} type='email' placeholder={text('placeholders.email')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -42,9 +45,9 @@ export const FormContactSection: React.FC<FormContactSectionProps> = ({ form }) 
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel>Phone Number</FormLabel>
+                <FormLabel>{text('labels.phone')}</FormLabel>
                 <FormControl>
-                  <Input {...field} type='tel' placeholder='+36 xx xxx xxxx' />
+                  <Input {...field} type='tel' placeholder={text('placeholders.phone')} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
