@@ -1,17 +1,8 @@
 'use client';
 
 import { motion, useMotionValue } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from 'react';
-
-const imgs = [
-  { src: '/gallery-placeholder1.jpg' },
-  { src: '/gallery-placeholder2.jpg' },
-  { src: '/gallery-placeholder3.jpg' },
-  { src: '/gallery-placeholder4.jpg' },
-  { src: '/gallery-placeholder5.jpg' },
-  { src: '/gallery-placeholder6.jpg' },
-  { src: '/gallery-placeholder7.jpg' },
-];
 
 const ONE_SECOND = 500;
 const AUTO_DELAY = ONE_SECOND * 10;
@@ -24,7 +15,7 @@ const SPRING_OPTIONS = {
   damping: 50,
 };
 
-export const SwipeCarousel = () => {
+export const SwipeCarousel = ({ images }: { images: string[] }) => {
   const [imgIndex, setImgIndex] = useState(0);
   const dragX = useMotionValue(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -36,11 +27,11 @@ export const SwipeCarousel = () => {
 
       if (x === 0) {
         setImgIndex((prev) => {
-          return prev === imgs.length - 1 ? 0 : prev + 1;
+          return prev === images.length - 1 ? 0 : prev + 1;
         });
       }
     }, AUTO_DELAY);
-  }, [dragX]);
+  }, [dragX, images.length]);
 
   const stopAutoPlay = () => {
     if (intervalRef.current) {
@@ -62,13 +53,13 @@ export const SwipeCarousel = () => {
   const onDragEnd = () => {
     const x = dragX.get();
 
-    if (x <= -DRAG_BUFFER && imgIndex < imgs.length - 1) {
+    if (x <= -DRAG_BUFFER && imgIndex < images.length - 1) {
       setImgIndex((prev) => {
-        return (prev + 1) % imgs.length;
+        return (prev + 1) % images.length;
       });
     } else if (x >= DRAG_BUFFER && imgIndex > 0) {
       setImgIndex((prev) => {
-        return (prev - 1 + imgs.length) % imgs.length;
+        return (prev - 1 + images.length) % images.length;
       });
     }
 
@@ -77,14 +68,14 @@ export const SwipeCarousel = () => {
 
   const handlePrev = () => {
     setImgIndex((prev) => {
-      return (prev - 1 + imgs.length) % imgs.length;
+      return (prev - 1 + images.length) % images.length;
     });
     resetAutoPlay();
   };
 
   const handleNext = () => {
     setImgIndex((prev) => {
-      return (prev + 1) % imgs.length;
+      return (prev + 1) % images.length;
     });
     resetAutoPlay();
   };
@@ -111,20 +102,20 @@ export const SwipeCarousel = () => {
           active:cursor-grabbing
         `}
       >
-        <Images imgIndex={imgIndex} />
+        <Images images={images} imgIndex={imgIndex} />
       </motion.div>
 
-      <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} resetAutoPlay={resetAutoPlay} />
+      <Dots images={images} imgIndex={imgIndex} setImgIndex={setImgIndex} resetAutoPlay={resetAutoPlay} />
       <GradientEdges />
       <ArrowButtons onPrev={handlePrev} onNext={handleNext} />
     </div>
   );
 };
 
-const Images = ({ imgIndex }: { imgIndex: number }) => {
+const Images = ({ images, imgIndex }: { images: string[]; imgIndex: number }) => {
   return (
     <>
-      {imgs.map(({ src }, idx) => {
+      {images.map((src, idx) => {
         return (
           <motion.div
             key={idx}
@@ -148,17 +139,19 @@ const Images = ({ imgIndex }: { imgIndex: number }) => {
 };
 
 const Dots = ({
+  images,
   imgIndex,
   setImgIndex,
   resetAutoPlay,
 }: {
+  images: string[];
   imgIndex: number;
   setImgIndex: Dispatch<SetStateAction<number>>;
   resetAutoPlay: () => void;
 }) => {
   return (
     <div className='mt-4 flex w-full justify-center gap-2'>
-      {imgs.map((_, idx) => {
+      {images.map((_, idx) => {
         return (
           <button
             key={idx}
@@ -203,22 +196,24 @@ const ArrowButtons = ({ onPrev, onNext }: { onPrev: () => void; onNext: () => vo
       <button
         onClick={onPrev}
         className={`
-          absolute left-4 top-1/2 -translate-y-1/2 transform rounded-full bg-neutral-800 p-3 text-white
+          absolute left-4 top-1/2 -translate-y-1/2 transform rounded-full bg-black/50 p-2 text-white transition-colors
 
-          hover:bg-neutral-700
+          hover:bg-black/75
         `}
+        aria-label='Scroll left'
       >
-        ◀
+        <ChevronLeft className='h-6 w-6' />
       </button>
       <button
         onClick={onNext}
         className={`
-          absolute right-4 top-1/2 -translate-y-1/2 transform rounded-full bg-neutral-800 p-3 text-white
+          absolute right-4 top-1/2 -translate-y-1/2 transform rounded-full bg-black/50 p-2 text-white transition-colors
 
-          hover:bg-neutral-700
+          hover:bg-black/75
         `}
+        aria-label='Scroll right'
       >
-        ▶
+        <ChevronRight className='h-6 w-6' />
       </button>
     </>
   );

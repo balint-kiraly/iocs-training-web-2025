@@ -1,11 +1,13 @@
 import React from 'react';
 
-import HorizontalScrollCarousel from '@/components/ui/HorizontalScrollCarousel';
+import SwipeCarousel from '@/components/ui/Gallery';
 
 const GallerySection = () => {
+  const images = Array.from({ length: 12 }, (_, index) => `/images/gallery/image-${index + 1}.jpg`);
+
   return (
     <section>
-      <HorizontalScrollCarousel />
+      <SwipeCarousel images={images} />
     </section>
   );
 };
