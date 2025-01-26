@@ -16,7 +16,7 @@ export const ContactSection = () => {
       lastName: 'Sebeszta',
       role: text('title-training-organizer'),
       email: 'sebeszta.zsofia@iocs.hu',
-      phone: '+36301112222',
+      phone: '+36 30 276 9770',
       image: '/Sebicontact.jpeg',
     },
     {
@@ -25,7 +25,7 @@ export const ContactSection = () => {
       lastName: 'Holló',
       role: text('title-training-organizer'),
       email: 'hollo.gergo@iocs.hu',
-      phone: '+36302221111',
+      phone: '+36 70 305 6865',
       image: '/Gericontact.jpeg',
     },
     {
@@ -34,7 +34,7 @@ export const ContactSection = () => {
       lastName: 'Sisa',
       role: text('title-IOCS'),
       email: 'sisa.orsolya@iocs.hu',
-      phone: '+36303334444',
+      phone: '+36 30 285 8800',
       image: '/Sisacontact.jpeg',
     },
     {
@@ -43,7 +43,7 @@ export const ContactSection = () => {
       lastName: 'Viola',
       role: text('title-FEB'),
       email: 'viola.nora@iocs.hu',
-      phone: '+36304443333',
+      phone: '+36 30 889 4641',
       image: '/logo.png',
     },
   ];
