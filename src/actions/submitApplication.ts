@@ -26,12 +26,10 @@ export default async function submitApplication(
       where: { id: application.id },
       include: { internationalTraining: { include: { certificates: true } } },
     });
-    const sheetResponse = await writeToSpreadsheet(completeApplication!);
+    await writeToSpreadsheet(completeApplication!);
 
     return {
-      status: 'error',
-      error: 1,
-      message: sheetResponse,
+      status: 'success',
     };
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
