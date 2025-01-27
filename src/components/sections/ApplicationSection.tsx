@@ -11,7 +11,7 @@ const ApplicationSection = () => {
   const text = useTranslations('ApplicationSection');
 
   return (
-    <section className='px-10 py-40'>
+    <section className='px-10 py-48'>
       <Reveal>
         <Card
           className={`

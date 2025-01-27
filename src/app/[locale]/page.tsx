@@ -17,7 +17,7 @@ export default async function Home({ params }: Readonly<{ params: Promise<{ loca
     <main>
       <HeroSection />
       <InfoSection />
-      <div className='container mx-auto px-4'>
+      <div className='container mx-auto mt-20 px-4'>
         <div
           className={`
             flex flex-col gap-10
@@ -48,6 +48,7 @@ export default async function Home({ params }: Readonly<{ params: Promise<{ loca
       <ApplicationSection />
       <IntroductionSection />
       <ContactSection />
+      <div className='h-32' />
       <GallerySection />
     </main>
   );

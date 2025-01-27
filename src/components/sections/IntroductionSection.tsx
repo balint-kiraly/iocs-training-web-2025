@@ -22,7 +22,7 @@ const IntroductionSection = () => {
   ];
 
   return (
-    <section id='groups' className='mx-auto max-w-screen-lg px-10'>
+    <section id='groups' className='mx-auto mb-32 max-w-screen-lg px-10'>
       <h1 className='mb-10 text-center text-3xl font-bold'>{text('heading')}</h1>
       <VerticalCarousel images={images} />
     </section>
