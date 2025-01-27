@@ -112,7 +112,7 @@ export async function writeToSpreadsheet(
       values: [Object.values(parsedApplication)],
     },
   });
-  console.log(response);
+  throw new Error(response.statusText);
 }
 
 async function isSheetEmpty(service: sheets_v4.Sheets) {
