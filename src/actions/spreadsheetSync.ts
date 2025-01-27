@@ -73,8 +73,7 @@ export async function writeToSpreadsheet(
   }
 ) {
   if (!process.env.GOOGLE_CLIENT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_SHEET_ID) {
-    console.error('Missing Google credentials');
-    return;
+    throw new Error('Missing Google credentials');
   }
 
   const auth = new google.auth.GoogleAuth({
