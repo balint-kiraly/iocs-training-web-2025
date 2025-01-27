@@ -17,12 +17,38 @@ export default async function Home({ params }: Readonly<{ params: Promise<{ loca
     <main>
       <HeroSection />
       <InfoSection />
-      <PromoVideoSection />
-      <DetailsSection />
-      <GallerySection />
+      <div className='container mx-auto px-4'>
+        <div
+          className={`
+            flex flex-col gap-10
+
+            lg:flex-row
+          `}
+        >
+          <div
+            className={`
+              w-full
+
+              lg:w-3/5
+            `}
+          >
+            <PromoVideoSection />
+          </div>
+          <div
+            className={`
+              w-full
+
+              lg:w-2/5
+            `}
+          >
+            <DetailsSection />
+          </div>
+        </div>
+      </div>
       <ApplicationSection />
       <IntroductionSection />
       <ContactSection />
+      <GallerySection />
     </main>
   );
 }
