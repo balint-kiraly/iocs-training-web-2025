@@ -11,7 +11,7 @@ const ApplicationPage = () => {
   const text = useTranslations('ApplicationForm');
 
   return (
-    <main className='min-h-screen py-20 pt-40'>
+    <main className='min-h-screen py-20 pt-32'>
       <h1 className='relative z-30 text-center text-3xl font-semibold'>{text('heading')}</h1>
       <div className='mx-auto max-w-4xl px-10 pt-10'>
         <Alert className='bg-accent'>

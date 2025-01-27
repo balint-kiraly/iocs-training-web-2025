@@ -49,7 +49,7 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id='contacts' className={`mx-auto max-w-screen-2xl items-center px-4 py-10`}>
+    <section id='contacts' className={`mx-auto max-w-screen-2xl items-center px-4`}>
       <h1 className='mb-10 text-center text-3xl font-bold'>{text('heading')}</h1>
       <div
         className={`
