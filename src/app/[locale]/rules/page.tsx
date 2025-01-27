@@ -6,7 +6,7 @@ import React from 'react';
 const RulesPage = () => {
   const text = useTranslations('Rules');
   const locale = useLocale();
-  const rulesPath = `/house-rules-${locale}.pdf`;
+  const rulesPath = `/documents/rules/house-rules-${locale}.pdf`;
 
   return (
     <main className='mx-auto min-h-screen max-w-screen-xl px-6 pt-20'>

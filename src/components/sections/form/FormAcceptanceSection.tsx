@@ -1,11 +1,10 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
 
 import { Checkbox } from '@/components/ui/checkbox';
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Link } from '@/i18n/routing';
 import { formSchema } from '@/lib/formValidation';
 
 interface FormAcceptanceSectionProps {
@@ -14,6 +13,7 @@ interface FormAcceptanceSectionProps {
 
 export const FormAcceptanceSection: React.FC<FormAcceptanceSectionProps> = ({ form }) => {
   const text = useTranslations('ApplicationForm');
+  const locale = useLocale();
 
   return (
     <>
@@ -38,9 +38,9 @@ export const FormAcceptanceSection: React.FC<FormAcceptanceSectionProps> = ({ fo
                   <FormDescription>
                     {text.rich('descriptions.acceptRules', {
                       link: (chunks) => (
-                        <Link href='/rules' className='text-blue-500 underline'>
+                        <a href={`/documents/rules/house-rules-${locale}.pdf`} className='text-blue-500 underline'>
                           {chunks}
-                        </Link>
+                        </a>
                       ),
                     })}
                   </FormDescription>
@@ -64,9 +64,9 @@ export const FormAcceptanceSection: React.FC<FormAcceptanceSectionProps> = ({ fo
                   <FormDescription>
                     {text.rich('descriptions.acceptPrivacyPolicy', {
                       link: (chunks) => (
-                        <Link href='/privacy-policy' className='text-blue-500 underline'>
+                        <a href={`/documents/rules/house-rules-${locale}.pdf`} className='text-blue-500 underline'>
                           {chunks}
-                        </Link>
+                        </a>
                       ),
                     })}
                   </FormDescription>
