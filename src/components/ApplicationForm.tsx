@@ -46,7 +46,7 @@ export const ApplicationForm = () => {
       birthDate: undefined,
       birthPlace: '',
       mothersName: '',
-      university: undefined,
+      university: 'SE',
       otherUniversity: undefined,
       faculty: undefined,
       letter: undefined,
