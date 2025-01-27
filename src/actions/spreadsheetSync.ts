@@ -104,7 +104,7 @@ export async function writeToSpreadsheet(
     });
   }
 
-  await service.spreadsheets.values.append({
+  const response = await service.spreadsheets.values.append({
     spreadsheetId: process.env.GOOGLE_SHEET_ID!,
     range: 'Jelentkezések',
     valueInputOption: 'USER_ENTERED',
@@ -112,6 +112,7 @@ export async function writeToSpreadsheet(
       values: [Object.values(parsedApplication)],
     },
   });
+  console.log(response);
 }
 
 async function isSheetEmpty(service: sheets_v4.Sheets) {
