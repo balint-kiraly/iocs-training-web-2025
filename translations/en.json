@@ -154,6 +154,10 @@
   },
   "ApplicationForm": {
     "heading": "Application",
+    "alert": {
+      "title": "Lorem Ipsum!",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
     "sections": {
       "contact": "Contact Information",
       "details": "Personal Details",

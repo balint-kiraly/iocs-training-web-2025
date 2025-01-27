@@ -154,6 +154,10 @@
   },
   "ApplicationForm": {
     "heading": "Jelentkezés",
+    "alert": {
+      "title": "Lorem Ipsum!",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
     "sections": {
       "contact": "Kapcsolattartási adatok",
       "details": "Személyes információk",
