@@ -103,7 +103,7 @@ export async function writeToSpreadsheet(
     });
   }
 
-  service.spreadsheets.values.append({
+  await service.spreadsheets.values.append({
     spreadsheetId: process.env.GOOGLE_SHEET_ID!,
     range: 'Jelentkezések',
     valueInputOption: 'USER_ENTERED',
