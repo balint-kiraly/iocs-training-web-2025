@@ -133,7 +133,7 @@ export const ApplicationForm = () => {
               <Alert variant='destructive' className='mt-10'>
                 <AlertCircle className='h-4 w-4' />
                 <AlertTitle>{text('errors.title')}</AlertTitle>
-                <AlertDescription>{text(`errors.${state.error}`)}</AlertDescription>
+                <AlertDescription>{state.message}</AlertDescription>
               </Alert>
               <p className='mt-2 text-sm text-muted-foreground'>
                 {text.rich('errors.support', {

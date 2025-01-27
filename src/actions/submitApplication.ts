@@ -22,18 +22,16 @@ export default async function submitApplication(
   try {
     const parsedApplication = await parseApplicationData(formData);
     const application = await createApplication(parsedApplication);
-    prisma.application
-      .findFirst({
-        where: { id: application.id },
-        include: { internationalTraining: { include: { certificates: true } } },
-      })
-      .then((application) => {
-        if (application) {
-          writeToSpreadsheet(application);
-        }
-      });
+    const completeApplication = await prisma.application.findFirst({
+      where: { id: application.id },
+      include: { internationalTraining: { include: { certificates: true } } },
+    });
+    const sheetResponse = await writeToSpreadsheet(completeApplication!);
+
     return {
-      status: 'success',
+      status: 'error',
+      error: 1,
+      message: sheetResponse,
     };
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
