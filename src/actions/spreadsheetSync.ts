@@ -6,7 +6,8 @@ import { format } from 'date-fns';
 import { formatDateString } from '@/lib/utils';
 
 type SheetApplication = {
-  name: string;
+  lastName: string;
+  firstName: string;
   nickname?: string;
   email: string;
   phone: string;
@@ -36,7 +37,8 @@ type SheetApplication = {
 };
 
 const columnNames = [
-  'Név',
+  'Vezetéknév',
+  'Keresztnév',
   'Becenév',
   'E-mail cím',
   'Telefonszám',
@@ -128,7 +130,8 @@ async function parseApplication(
   }
 ): Promise<SheetApplication> {
   return {
-    name: application.lastName + ' ' + application.firstName,
+    lastName: application.lastName,
+    firstName: application.firstName,
     nickname: application.nickname ?? undefined,
     email: application.email,
     phone: "'" + application.phone,
