@@ -11,6 +11,7 @@ export const ContactSection = () => {
   const text = useTranslations('ContactSection');
   const contacts = [
     {
+      id: 1,
       title: '',
       firstName: 'Zsófia',
       lastName: 'Sebeszta',
@@ -20,6 +21,7 @@ export const ContactSection = () => {
       image: '/images/contact/Sebi.jpeg',
     },
     {
+      id: 2,
       title: '',
       firstName: 'Gergő',
       lastName: 'Holló',
@@ -29,6 +31,7 @@ export const ContactSection = () => {
       image: '/images/contact/Geri.jpeg',
     },
     {
+      id: 3,
       title: '',
       firstName: 'Orsolya',
       lastName: 'Sisa',
@@ -38,6 +41,7 @@ export const ContactSection = () => {
       image: '/images/contact/Sisa.jpeg',
     },
     {
+      id: 4,
       title: 'Dr.',
       firstName: 'Nóra Virág',
       lastName: 'Viola',
@@ -60,8 +64,8 @@ export const ContactSection = () => {
           xl:grid-cols-4
         `}
       >
-        {contacts.map((contact, index) => (
-          <Reveal key={index} delay={index * 0.2}>
+        {contacts.map((contact) => (
+          <Reveal key={contact.id} delay={contact.id * 0.2}>
             <ContactCard
               title={contact.title}
               firstName={contact.firstName}
@@ -77,7 +81,7 @@ export const ContactSection = () => {
       <Reveal>
         <Card
           className={`
-            mx-auto mt-10 flex w-fit flex-col items-center gap-8 p-6
+            mx-auto mt-10 flex w-fit flex-col items-center gap-8 bg-black p-6
 
             sm:flex-row
           `}

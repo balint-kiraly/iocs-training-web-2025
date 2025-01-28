@@ -3,18 +3,15 @@ import { useTranslations } from 'next-intl';
 import { Reveal } from '@/components/ui/Reveal';
 
 export default function InfoSection() {
-  const text = useTranslations('Details');
+  const text = useTranslations('Info');
 
   const infoCards = [
-    { title: text('title-databox1'), description: text('desc-databox1') },
-    { title: text('title-databox2'), description: text('desc-databox2') },
-    { title: text('title-databox3'), description: text('desc-databox3') },
-    {
-      title: text('title-databox4'),
-      description: text('desc-databox4'),
-    },
-    { title: text('title-databox5'), description: text('desc-databox5') },
-    { title: text('title-databox5'), description: text('desc-databox5') },
+    { id: 1, title: text('title-databox1'), description: text('desc-databox1') },
+    { id: 2, title: text('title-databox2'), description: text('desc-databox2') },
+    { id: 3, title: text('title-databox3'), description: text('desc-databox3') },
+    { id: 4, title: text('title-databox4'), description: text('desc-databox4') },
+    { id: 5, title: text('title-databox5'), description: text('desc-databox5') },
+    { id: 6, title: text('title-databox6'), description: text('desc-databox6') },
   ];
 
   return (
@@ -28,8 +25,8 @@ export default function InfoSection() {
           sm:grid-cols-2
         `}
       >
-        {infoCards.map((card, index) => (
-          <Reveal key={index} delay={index * 0.1}>
+        {infoCards.map((card) => (
+          <Reveal key={card.id} delay={card.id * 0.1}>
             <div
               className={`
                 group relative transform rounded-lg bg-white from-secondary to-fuchsia-500 p-4 shadow-md
