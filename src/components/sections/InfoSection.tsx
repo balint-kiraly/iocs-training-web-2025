@@ -3,19 +3,19 @@ import { useTranslations } from 'next-intl';
 import { Reveal } from '@/components/ui/Reveal';
 
 export default function InfoSection() {
-  const text = useTranslations('Details');
+  const text = useTranslations('Info');
 
   const infoCards = [
-    { title: text('title-databox1'), description: text('desc-databox1') },
-    { title: text('title-databox2'), description: text('desc-databox2') },
-    { title: text('title-databox3'), description: text('desc-databox3') },
-    {
-      title: text('title-databox4'),
-      description: text('desc-databox4'),
-    },
-    { title: text('title-databox5'), description: text('desc-databox5') },
-    { title: text('title-databox5'), description: text('desc-databox5') },
-  ];
+    { id: 1, title: text('title-databox1'), description: text('desc-databox1') },
+    { id: 2, title: text('title-databox2'), description: text('desc-databox2') },
+    { id: 3, title: text('title-databox3'), description: text('desc-databox3') },
+    { id: 4, title: text('title-databox4'), description: text('desc-databox4') },
+    { id: 5, title: text('title-databox5'), description: text('desc-databox5') },
+    { id: 6, title: text('title-databox6'), description: text('desc-databox6') },
+  ].map((card) => ({
+    ...card,
+    random: Math.random() * 10,
+  }));
 
   return (
     <section id='info' className={`flex flex-col items-center bg-gradient-to-b from-black to-background py-32`}>
@@ -28,8 +28,8 @@ export default function InfoSection() {
           sm:grid-cols-2
         `}
       >
-        {infoCards.map((card, index) => (
-          <Reveal key={index} delay={index * 0.1}>
+        {infoCards.map((card) => (
+          <Reveal key={card.id} delay={card.id * 0.1}>
             <div
               className={`
                 group relative transform rounded-lg bg-white from-secondary to-fuchsia-500 p-4 shadow-md
@@ -38,7 +38,7 @@ export default function InfoSection() {
                 hover:scale-105 hover:bg-gradient-to-r
               `}
               style={{
-                transform: `rotate(${getRandomRotation()}deg) translate(${getRandomOffset()}px, ${getRandomOffset()}px)`,
+                transform: `rotate(${getRandomRotation(card.id, card.random)}deg) translate(${getRandomOffset(card.id, card.random)}px, ${getRandomOffset(card.id, card.random, true)}px)`,
               }}
             >
               <h2
@@ -67,10 +67,11 @@ export default function InfoSection() {
   );
 }
 
-function getRandomRotation() {
-  return Math.random() * 6 - 3;
+function getRandomRotation(id: number, random: number) {
+  return (((id + random) * 7) % 15) - 7;
 }
 
-function getRandomOffset() {
-  return Math.random() * 10 - 5;
+function getRandomOffset(id: number, random: number, vertical = false) {
+  const base = vertical ? 10 : 15;
+  return (((id + random) * 3) % base) - base / 2;
 }

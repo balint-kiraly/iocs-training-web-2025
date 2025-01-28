@@ -11,7 +11,7 @@ const ApplicationSection = () => {
   const text = useTranslations('ApplicationSection');
 
   return (
-    <section className='px-10 py-40'>
+    <section className='px-10 py-48'>
       <Reveal>
         <Card
           className={`
@@ -26,7 +26,7 @@ const ApplicationSection = () => {
           </CardHeader>
           <CardContent className='w-fit p-0'>
             <Link href='/apply'>
-              <Button variant='primary' size='lg' className='text-lg'>
+              <Button variant='default' size='lg' className='text-lg'>
                 {text('cta')}
                 <Rocket />
               </Button>

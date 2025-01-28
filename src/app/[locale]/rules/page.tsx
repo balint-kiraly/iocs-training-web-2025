@@ -6,10 +6,10 @@ import React from 'react';
 const RulesPage = () => {
   const text = useTranslations('Rules');
   const locale = useLocale();
-  const rulesPath = `/house-rules-${locale}.pdf`;
+  const rulesPath = `/documents/rules/house-rules-${locale}.pdf`;
 
   return (
-    <main className='mx-auto min-h-screen max-w-screen-xl px-6 pt-20'>
+    <main className='mx-auto min-h-screen max-w-screen-xl px-6 pt-32'>
       <h1 className='relative z-30 mb-6 text-center text-3xl font-semibold'>{text('header')}</h1>
 
       <section className='mb-8'>

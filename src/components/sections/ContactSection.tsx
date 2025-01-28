@@ -11,45 +11,49 @@ export const ContactSection = () => {
   const text = useTranslations('ContactSection');
   const contacts = [
     {
+      id: 1,
       title: '',
       firstName: 'Zsófia',
       lastName: 'Sebeszta',
       role: text('title-training-organizer'),
       email: 'sebeszta.zsofia@iocs.hu',
-      phone: '+36301112222',
-      image: '/Sebicontact.jpeg',
+      phone: '+36 30 276 9770',
+      image: '/images/contact/Sebi.jpeg',
     },
     {
+      id: 2,
       title: '',
       firstName: 'Gergő',
       lastName: 'Holló',
       role: text('title-training-organizer'),
       email: 'hollo.gergo@iocs.hu',
-      phone: '+36302221111',
-      image: '/Gericontact.jpeg',
+      phone: '+36 70 305 6865',
+      image: '/images/contact/Geri.jpeg',
     },
     {
+      id: 3,
       title: '',
       firstName: 'Orsolya',
       lastName: 'Sisa',
       role: text('title-IOCS'),
       email: 'sisa.orsolya@iocs.hu',
-      phone: '+36303334444',
-      image: '/Sisacontact.jpeg',
+      phone: '+36 30 285 8800',
+      image: '/images/contact/Sisa.jpeg',
     },
     {
+      id: 4,
       title: 'Dr.',
       firstName: 'Nóra Virág',
       lastName: 'Viola',
       role: text('title-FEB'),
       email: 'viola.nora@iocs.hu',
-      phone: '+36304443333',
-      image: '/logo.png',
+      phone: '+36 30 889 4641',
+      image: '/images/contact/ViolaNori.jpeg',
     },
   ];
 
   return (
-    <section id='contacts' className={`mx-auto max-w-screen-2xl items-center px-4 py-10`}>
+    <section id='contacts' className={`mx-auto max-w-screen-2xl items-center px-4`}>
       <h1 className='mb-10 text-center text-3xl font-bold'>{text('heading')}</h1>
       <div
         className={`
@@ -60,8 +64,8 @@ export const ContactSection = () => {
           xl:grid-cols-4
         `}
       >
-        {contacts.map((contact, index) => (
-          <Reveal key={index} delay={index * 0.2}>
+        {contacts.map((contact) => (
+          <Reveal key={contact.id} delay={contact.id * 0.2}>
             <ContactCard
               title={contact.title}
               firstName={contact.firstName}
@@ -77,7 +81,7 @@ export const ContactSection = () => {
       <Reveal>
         <Card
           className={`
-            mx-auto mt-10 flex w-fit flex-col items-center gap-8 p-6
+            mx-auto mt-10 flex w-fit flex-col items-center gap-8 bg-black p-6
 
             sm:flex-row
           `}

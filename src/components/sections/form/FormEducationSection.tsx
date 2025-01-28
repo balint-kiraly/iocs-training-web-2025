@@ -104,10 +104,11 @@ export const FormEducationSection: React.FC<FormStudiesSectionProps> = ({ form }
                     }
                     field.onChange(value);
                   }}
+                  disabled
                 >
                   <FormControl>
                     <SelectTrigger {...field}>
-                      <SelectValue placeholder={text('placeholders.university')} />
+                      <SelectValue placeholder='SE' />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>

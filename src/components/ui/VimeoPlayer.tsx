@@ -44,7 +44,7 @@ export default function VimeoPlayer({ id, autoplay }: Readonly<{ id: number; aut
 
           ${autoplay ? '' : 'hidden'}
         `}
-        src='/landing-bg-placeholder.jpg'
+        src='/images/hero-bg-fallback.jpg'
         ref={fallbackImage}
         fill={true}
         alt='Background fallback image'

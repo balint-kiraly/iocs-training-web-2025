@@ -7,8 +7,8 @@ import { Link } from '@/i18n/routing';
 const Footer = () => {
   const text = useTranslations('Footer');
   const locale = useLocale();
-  const rulesPath = `/house-rules-${locale}.pdf`;
-  const privacyPath = `/privacy-policy-${locale}.pdf`;
+  const rulesPath = `/documents/rules/house-rules-${locale}.pdf`;
+  const privacyPath = `/documents/privacy/privacy-policy-${locale}.pdf`;
   return (
     <footer className='bg-primary/20 p-8'>
       <div className='container mx-auto flex flex-wrap justify-between'>

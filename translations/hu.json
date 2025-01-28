@@ -55,17 +55,34 @@
       "label": "Kövess Minket"
     }
   },
+  "Info": {
+    "title-databox1": "Első képzés időpontja, helyszíne",
+    "title-databox2": "Képzés hossza",
+    "title-databox3": "Képzések felépítése",
+    "title-databox4": "Képzéshétvége",
+    "title-databox5": "Anyagi vonzat",
+    "title-databox6": "Képzések gyakorisága",
+    "desc-databox1": "Február 13. 17:00, Nagyvárad Téri Elméleti tömb.",
+    "desc-databox2": "Az Instruktor képzés 7 hetet ölel fel, február 13-tól március 30-ig.",
+    "desc-databox3": "Minden képzésalkalmon számíthattok egy kötötteb, valamint egy kötetlenebb ismerkedős részre.",
+    "desc-databox4": "A képzés során két egész hétvégés alkalomra is sor kerül, tele jobbnál jobb programokkal.",
+    "desc-databox5": "Fontos tudnotok, hogy a hétvégék, valamint a képzéshez szükséges egyéb kellékek beszerzése, megalkotása anyagi vonzattal bír.",
+    "desc-databox6": "Minden héten, 1 képzés alkalomra invitálunk titeket, ami délután fog kezdődni és az esti órákban végződik."
+  },
   "Details": {
-    "title-databox1": "Nulla facilisi.",
-    "title-databox2": "Proin leo lacus",
-    "title-databox3": "Class aptent taciti sociosqu",
-    "title-databox4": "Sed ut",
-    "title-databox5": "nulla tellus",
-    "desc-databox1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque accumsan.",
-    "desc-databox2": "Vestibulum vel ante ullamcorper purus elementum elementum sed at nibh.",
-    "desc-databox3": "Pellentesque ut diam nisl. Nullam nec porta metus. ",
-    "desc-databox4": "In auctor commodo imperdiet.",
-    "desc-databox5": "Donec elementum vehicula metus, eu iaculis tortor vulputate quis."
+    "f-box-header": "Mire számíts?",
+    "s-box-header": "Mi az az IÖCS?",
+    "text": {
+      "f-box-p1": "A képzés során 7 hétig fogtok közösen fejest ugrani az IÖCS-be.",
+      "f-box-p2": "Heti egy talira kell számítani, körülbelül 17-18 órás kezdéssel.",
+      "f-box-p3": "A tali után mindig van after, ahol kötetlenebbül beszélgethettek.",
+      "f-box-p4": "A hét hét során két hétvége is lesz, ahol még mélyebbre tudjátok fűzni a kapcsolatotokat.",
+      "f-box-p5": "Mindeközben megtudhatjátok hogyan működik az IÖCS, milyen rendezvényeink vannak és milyen lehetőségeitek lesznek.",
+      "f-box-p6": "Gyere, hogy te is átéld az Instruktor Életérzést!",
+      "s-box-p1": "Az IÖCS, vagyis az Instruktor Öntevékeny Csoport, egy lelkes és összetartó közösség, amely az egyetemi élet színesebbé tételén dolgozik. ",
+      "s-box-p2": "Az instruktorok olyan elhivatott hallgatók, akik segítenek az új gólyák beilleszkedésében, emlékezetes programokat szerveznek és összekovácsolják a közösséget.",
+      "s-box-p3": "Ha csatlakozol, egy támogató, barátságos csapat tagja lehetsz, akik számára a közös élmények és a fejlődés a legfontosabb!"
+    }
   },
   "Rules": {
     "header": "Szabályzat",
@@ -119,7 +136,7 @@
     }
   },
   "ContactSection": {
-    "heading": "Kapcsolat",
+    "heading": "Kontaktok",
     "title-training-organizer": "Képzésszervező",
     "title-FEB": "Felügyelőbizottság Elnök",
     "title-IOCS": "Instruktor Öntevékeny Csoport Elnök",
@@ -154,6 +171,10 @@
   },
   "ApplicationForm": {
     "heading": "Jelentkezés",
+    "alert": {
+      "title": "Lorem Ipsum!",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
     "sections": {
       "contact": "Kapcsolattartási adatok",
       "details": "Személyes információk",

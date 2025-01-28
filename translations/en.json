@@ -55,17 +55,34 @@
       "label": "Follow Us"
     }
   },
+  "Info": {
+    "title-databox1": "Date and place of first training",
+    "title-databox2": "Length of training",
+    "title-databox3": "Structure of training courses",
+    "title-databox4": "Training weekend",
+    "title-databox5": "Financial contribution",
+    "title-databox6": "Frequency of training",
+    "desc-databox1": "13 February 17:00, Nagyvárad Téri Elméleti tömb.",
+    "desc-databox2": "The Instructor Training will last 7 weeks, from 13 February to 30 March.",
+    "desc-databox3": "In each training session, you can expect a more formal and an informal get-to-know-you part.",
+    "desc-databox4": "The training will also include two weekend-long sessions, packed with better and better activities.",
+    "desc-databox5": "It is important to know that there is a financial cost for the purchase and creation of the weekends and other supplies needed for the training.",
+    "desc-databox6": "Every week, you are invited to 1 training session, starting in the afternoon and ending in the evening."
+  },
   "Details": {
-    "title-databox1": "Nulla facilisi.",
-    "title-databox2": "Proin leo lacus",
-    "title-databox3": "Class aptent taciti sociosqu",
-    "title-databox4": "Sed ut",
-    "title-databox5": "nulla tellus",
-    "desc-databox1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque accumsan.",
-    "desc-databox2": "Vestibulum vel ante ullamcorper purus elementum elementum sed at nibh.",
-    "desc-databox3": "Pellentesque ut diam nisl. Nullam nec porta metus. ",
-    "desc-databox4": "In auctor commodo imperdiet.",
-    "desc-databox5": "Donec elementum vehicula metus, eu iaculis tortor vulputate quis."
+    "f-box-header": "What should you expect?",
+    "s-box-header": "What is the IÖCS?",
+    "text": {
+      "f-box-p1": "During the training you will dive into the IÖCS together for 7 weeks.",
+      "f-box-p2": "You should expect one session per week, starting around 17-18 hours.",
+      "f-box-p3": "After the Tali there is always an after where you can have a more informal chat.",
+      "f-box-p4": "There will also be two weekends during the week where you can deepen your relationship.",
+      "f-box-p5": "In the meantime, you can find out how the IÖCS works, what events we have and what opportunities you will have.",
+      "f-box-p6": "Come and experience the Instructor Experience yourself!",
+      "s-box-p1": "IÖCS, the Instructor Volunteer Group, is an enthusiastic and cohesive community working to make university life more colourful.",
+      "s-box-p2": "Instructors are dedicated students who help new freshmen settle in, organise memorable activities and bring the community together. ",
+      "s-box-p3": " When you join, you'll be part of a supportive, friendly team who value shared experiences and growth!"
+    }
   },
   "Rules": {
     "header": "Rules",
@@ -119,7 +136,7 @@
     }
   },
   "ContactSection": {
-    "heading": "Contact",
+    "heading": "Contacts",
     "title-training-organizer": "Training organizer",
     "title-FEB": "President of the Supervisory Board",
     "title-IOCS": "President of the IÖCS",
@@ -154,6 +171,10 @@
   },
   "ApplicationForm": {
     "heading": "Application",
+    "alert": {
+      "title": "Lorem Ipsum!",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
     "sections": {
       "contact": "Contact Information",
       "details": "Personal Details",

@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
-import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { LanguagePicker } from '@/components/ui/LanguagePicker';
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Link } from '@/i18n/routing';
 
@@ -48,7 +48,7 @@ const Header = () => {
               sm:text-xl
             `}
           >
-            <Image src='/logo.png' alt='IÖCS logo' width={40} height={40} />
+            <Image src='/images/logo.png' alt='IÖCS logo' width={40} height={40} />
             {text('title')}
           </Link>
           <nav
@@ -67,7 +67,7 @@ const Header = () => {
             </ul>
           </nav>
           <div className='flex items-center gap-1'>
-            <LanguageSwitcher />
+            <LanguagePicker />
             <Link
               href='/apply'
               className={`
