@@ -63,7 +63,7 @@ export default function InfoSection() {
           <Reveal key={card.id} delay={card.id * 0.1}>
             <div
               className={`
-                group relative max-w-80 transform rounded-lg bg-gradient-to-tr from-secondary to-fuchsia-500 p-6
+                group relative max-w-80 transform rounded-lg bg-gradient-to-tr from-secondary-dark to-fuchsia-500 p-6
                 text-center shadow-md transition-transform
               `}
               style={{
