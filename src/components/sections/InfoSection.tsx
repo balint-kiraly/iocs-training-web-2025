@@ -12,7 +12,10 @@ export default function InfoSection() {
     { id: 4, title: text('title-databox4'), description: text('desc-databox4') },
     { id: 5, title: text('title-databox5'), description: text('desc-databox5') },
     { id: 6, title: text('title-databox6'), description: text('desc-databox6') },
-  ];
+  ].map((card) => ({
+    ...card,
+    random: Math.random() * 10,
+  }));
 
   return (
     <section id='info' className={`flex flex-col items-center bg-gradient-to-b from-black to-background py-32`}>
@@ -35,7 +38,7 @@ export default function InfoSection() {
                 hover:scale-105 hover:bg-gradient-to-r
               `}
               style={{
-                transform: `rotate(${getRandomRotation()}deg) translate(${getRandomOffset()}px, ${getRandomOffset()}px)`,
+                transform: `rotate(${getRandomRotation(card.id, card.random)}deg) translate(${getRandomOffset(card.id, card.random)}px, ${getRandomOffset(card.id, card.random, true)}px)`,
               }}
             >
               <h2
@@ -64,10 +67,11 @@ export default function InfoSection() {
   );
 }
 
-function getRandomRotation() {
-  return Math.random() * 6 - 3;
+function getRandomRotation(id: number, random: number) {
+  return (((id + random) * 7) % 15) - 7;
 }
 
-function getRandomOffset() {
-  return Math.random() * 10 - 5;
+function getRandomOffset(id: number, random: number, vertical = false) {
+  const base = vertical ? 10 : 15;
+  return (((id + random) * 3) % base) - base / 2;
 }
