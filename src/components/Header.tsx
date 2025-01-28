@@ -48,7 +48,7 @@ const Header = () => {
               sm:text-xl
             `}
           >
-            <Image src='/logo.png' alt='IÖCS logo' width={40} height={40} />
+            <Image src='/images/logo.png' alt='IÖCS logo' width={40} height={40} />
             {text('title')}
           </Link>
           <nav
