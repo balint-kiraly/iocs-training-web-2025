@@ -26,8 +26,8 @@ export default function ContactCard({
   return (
     <Card
       className={`
-        relative mt-[20px] flex w-80 flex-col items-center rounded-lg bg-gradient-to-br from-primary to-secondary-dark
-        p-8 pt-[180px] text-center shadow-md transition-transform duration-300
+        relative mt-[20px] flex w-80 flex-col items-center rounded-lg bg-gradient-to-br from-primary to-secondary p-8
+        pt-[180px] text-center shadow-md transition-transform duration-300
 
         hover:-translate-y-2 hover:shadow-lg
       `}

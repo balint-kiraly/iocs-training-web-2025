@@ -15,7 +15,7 @@ const ApplicationSection = () => {
       <Reveal>
         <Card
           className={`
-            mx-auto flex w-fit flex-col items-start gap-8 border-none bg-secondary p-8
+            mx-auto flex w-fit flex-col items-start gap-8 border-none p-8
 
             sm:flex-row sm:items-center
           `}
@@ -26,7 +26,7 @@ const ApplicationSection = () => {
           </CardHeader>
           <CardContent className='w-fit p-0'>
             <Link href='/apply'>
-              <Button variant='light' size='lg' className='text-lg'>
+              <Button variant='secondary' size='lg' className='text-lg'>
                 {text('cta')}
                 <Rocket />
               </Button>
