@@ -86,7 +86,7 @@ const DropdownMenuContent = React.forwardRef<
       sideOffset={sideOffset}
       align={'end'}
       className={cn(
-        `z-50 min-w-[8rem] overflow-hidden rounded-md border bg-accent p-1 text-primary-foreground shadow-md`,
+        `z-50 min-w-[8rem] overflow-hidden rounded-md bg-background p-1 text-primary-foreground shadow-md`,
         `
           data-[side=bottom]:slide-in-from-top-2
 
