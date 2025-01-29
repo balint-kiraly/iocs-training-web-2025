@@ -15,18 +15,18 @@ const ApplicationSection = () => {
       <Reveal>
         <Card
           className={`
-            mx-auto flex w-fit flex-col items-start gap-8 p-8
+            mx-auto flex w-fit flex-col items-start gap-8 border-none p-8
 
             sm:flex-row sm:items-center
           `}
         >
           <CardHeader className='p-0'>
             <CardTitle className='text-2xl'>{text('heading')}</CardTitle>
-            <CardDescription className='text-lg'>{text('subheading')}</CardDescription>
+            <CardDescription className='text-lg text-foreground'>{text('subheading')}</CardDescription>
           </CardHeader>
           <CardContent className='w-fit p-0'>
             <Link href='/apply'>
-              <Button variant='default' size='lg' className='text-lg'>
+              <Button variant='secondary' size='lg' className='text-lg'>
                 {text('cta')}
                 <Rocket />
               </Button>

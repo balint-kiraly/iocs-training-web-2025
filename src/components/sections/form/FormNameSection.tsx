@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { z } from 'zod';
@@ -13,6 +13,7 @@ interface FormNameSectionProps {
 
 export const FormNameSection: React.FC<FormNameSectionProps> = ({ form }) => {
   const text = useTranslations('ApplicationForm');
+  const locale = useLocale();
 
   return (
     <>
@@ -23,36 +24,74 @@ export const FormNameSection: React.FC<FormNameSectionProps> = ({ form }) => {
           sm:grid-cols-2
         `}
       >
-        <FormField
-          control={form.control}
-          name='firstName'
-          render={({ field }) => {
-            return (
-              <FormItem>
-                <FormLabel>{text('labels.firstName')}</FormLabel>
-                <FormControl>
-                  <Input {...field} type='text' placeholder={text('placeholders.firstName')} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            );
-          }}
-        />
-        <FormField
-          control={form.control}
-          name='lastName'
-          render={({ field }) => {
-            return (
-              <FormItem>
-                <FormLabel>{text('labels.lastName')}</FormLabel>
-                <FormControl>
-                  <Input {...field} type='text' placeholder={text('placeholders.lastName')} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            );
-          }}
-        />
+        {locale === 'hu' ? (
+          <>
+            <FormField
+              control={form.control}
+              name='lastName'
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormLabel>{text('labels.lastName')}</FormLabel>
+                    <FormControl>
+                      <Input {...field} type='text' placeholder={text('placeholders.lastName')} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+            <FormField
+              control={form.control}
+              name='firstName'
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormLabel>{text('labels.firstName')}</FormLabel>
+                    <FormControl>
+                      <Input {...field} type='text' placeholder={text('placeholders.firstName')} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+          </>
+        ) : (
+          <>
+            <FormField
+              control={form.control}
+              name='firstName'
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormLabel>{text('labels.firstName')}</FormLabel>
+                    <FormControl>
+                      <Input {...field} type='text' placeholder={text('placeholders.firstName')} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+            <FormField
+              control={form.control}
+              name='lastName'
+              render={({ field }) => {
+                return (
+                  <FormItem>
+                    <FormLabel>{text('labels.lastName')}</FormLabel>
+                    <FormControl>
+                      <Input {...field} type='text' placeholder={text('placeholders.lastName')} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
+            />
+          </>
+        )}
+
         <FormField
           control={form.control}
           name='nickname'

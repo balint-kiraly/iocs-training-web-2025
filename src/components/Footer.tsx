@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Mail } from 'lucide-react';
+import { Facebook, Globe, Instagram } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import React from 'react';
 
@@ -69,16 +69,14 @@ const Footer = () => {
           `}
         >
           <h4 className='mb-4 text-xl font-bold'>{text('social.label')}</h4>
-          <div className='flex space-x-4'>
+          <div className='flex space-x-4 text-white'>
+            <a href='https://iocs.hu' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
+              <Globe className='h-6 w-6' />
+            </a>
             <a
               href='https://www.facebook.com/@instruktorok'
               target='_blank'
               rel='noopener noreferrer'
-              className={`
-                text-white
-
-                hover:text-blue-600
-              `}
               aria-label='Facebook'
             >
               <Facebook className='h-6 w-6' />
@@ -87,33 +85,24 @@ const Footer = () => {
               href='https://www.instagram.com/iocs_official/'
               target='_blank'
               rel='noopener noreferrer'
-              className={`
-                text-white
-
-                hover:text-orange-700
-              `}
               aria-label='Instagram'
             >
               <Instagram className='h-6 w-6' />
-            </a>
-            <a
-              href='mailto:info@iocs.hu'
-              target='_blank'
-              rel='noopener noreferrer'
-              className={`
-                text-white
-
-                hover:text-yellow-500
-              `}
-              aria-label='Instagram'
-            >
-              <Mail className='h-6 w-6' />
             </a>
           </div>
         </div>
       </div>
       <div className='mt-20 text-center text-muted-foreground'>
-        <p>Developed with ❤️ by Bálint Király & Tamás Nagy</p>
+        <p>
+          Developed with ❤️ by{' '}
+          <a className='hover:underline' href='https://github.com/balintking'>
+            Bálint Király
+          </a>{' '}
+          &{' '}
+          <a className='hover:underline' href='https://github.com/nagytamas8'>
+            Tamás Nagy
+          </a>
+        </p>
       </div>
     </footer>
   );
