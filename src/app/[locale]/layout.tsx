@@ -1,5 +1,6 @@
 import '../globals.css';
 
+import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 // eslint-disable-next-line camelcase
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -71,6 +72,7 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={translations}>
           <SpeedInsights />
+          <Analytics />
           <Header />
           <div className='relative'>{children}</div>
           <Toaster />
