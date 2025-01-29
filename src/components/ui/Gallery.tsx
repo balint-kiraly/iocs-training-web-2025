@@ -196,9 +196,9 @@ const ArrowButtons = ({ onPrev, onNext }: { onPrev: () => void; onNext: () => vo
       <button
         onClick={onPrev}
         className={`
-          absolute left-4 top-1/2 -translate-y-1/2 transform rounded-full bg-black/50 p-2 text-white transition-colors
+          absolute left-4 top-1/2 -translate-y-1/2 transform rounded-full bg-primary/50 p-2 text-white transition-colors
 
-          hover:bg-black/75
+          hover:bg-primary/75
         `}
         aria-label='Scroll left'
       >
@@ -207,9 +207,10 @@ const ArrowButtons = ({ onPrev, onNext }: { onPrev: () => void; onNext: () => vo
       <button
         onClick={onNext}
         className={`
-          absolute right-4 top-1/2 -translate-y-1/2 transform rounded-full bg-black/50 p-2 text-white transition-colors
+          absolute right-4 top-1/2 -translate-y-1/2 transform rounded-full bg-primary/50 p-2 text-white
+          transition-colors
 
-          hover:bg-black/75
+          hover:bg-primary/75
         `}
         aria-label='Scroll right'
       >
