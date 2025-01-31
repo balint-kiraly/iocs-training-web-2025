@@ -56,18 +56,30 @@
     }
   },
   "Info": {
-    "title-databox1": "Első képzés időpontja, helyszíne",
-    "title-databox2": "Képzés hossza",
-    "title-databox3": "Képzések felépítése",
-    "title-databox4": "Képzéshétvége",
-    "title-databox5": "Anyagi vonzat",
-    "title-databox6": "Képzések gyakorisága",
-    "desc-databox1": "Február 13. 17:00, Nagyvárad Téri Elméleti tömb.",
-    "desc-databox2": "Az Instruktorképzés 7 hetet ölel fel, február 13-tól március 30-ig.",
-    "desc-databox3": "Minden képzésalkalmon számíthattok egy kötöttebb, valamint egy kötetlenebb ismerkedős részre.",
-    "desc-databox4": "A képzés során két egész hétvégés alkalomra is sor kerül, tele jobbnál jobb programokkal.",
-    "desc-databox5": "Fontos tudnotok, hogy a hétvégék, valamint a képzéshez szükséges egyéb kellékek beszerzése, megalkotása anyagi vonzattal bír.",
-    "desc-databox6": "Minden héten, 1 képzésalkalomra invitálunk titeket, ami délután fog kezdődni és az esti órákban végződik."
+    "card-1": {
+      "title": "Első képzés időpontja, helyszíne",
+      "description": "<em>Február 13.</em> 17:00, Nagyvárad Téri Elméleti tömb."
+    },
+    "card-2": {
+      "title": "Képzés hossza",
+      "description": "Az Instruktorképzés <em>7 hetet</em> ölel fel, február 13-tól március 30-ig."
+    },
+    "card-3": {
+      "title": "Képzések felépítése",
+      "description": "Minden képzésalkalmon számíthattok egy <em>kötöttebb</em>, valamint egy <em>kötetlenebb</em> ismerkedős részre."
+    },
+    "card-4": {
+      "title": "Képzéshétvége",
+      "description": "A képzés során <em>két egész hétvégés alkalomra</em> is sor kerül, tele jobbnál jobb programokkal."
+    },
+    "card-5": {
+      "title": "Anyagi vonzat",
+      "description": "Fontos tudnotok, hogy a hétvégék, valamint a képzéshez szükséges egyéb kellékek beszerzése, megalkotása <em>anyagi vonzattal</em> bír."
+    },
+    "card-6": {
+      "title": "Képzések gyakorisága",
+      "description": "<em>Minden héten</em>, 1 képzésalkalomra invitálunk titeket, ami délután fog kezdődni és az esti órákban végződik."
+    }
   },
   "Details": {
     "f-box-header": "Mire számíts?",

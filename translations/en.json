@@ -56,18 +56,30 @@
     }
   },
   "Info": {
-    "title-databox1": "Date and place of first training",
-    "title-databox2": "Length of training",
-    "title-databox3": "Structure of training courses",
-    "title-databox4": "Training weekend",
-    "title-databox5": "Financial contribution",
-    "title-databox6": "Frequency of training",
-    "desc-databox1": "13 February 17:00, Nagyvárad Téri Elméleti tömb.",
-    "desc-databox2": "The Instructor Training will last 7 weeks, from 13 February to 30 March.",
-    "desc-databox3": "In each training session, you can expect a more formal and an informal get-to-know-you part.",
-    "desc-databox4": "The training will also include two weekend-long sessions, packed with better and better activities.",
-    "desc-databox5": "It is important to know that there is a financial cost for the purchase and creation of the weekends and other supplies needed for the training.",
-    "desc-databox6": "Every week, you are invited to 1 training session, starting in the afternoon and ending in the evening."
+    "card-1": {
+        "title": "Date and place of first training",
+        "description": "<em>13 February</em> 17:00, Nagyvárad Téri Elméleti tömb."
+    },
+    "card-2": {
+        "title": "Length of training",
+        "description": "The Instructor Training will last <em>7 weeks</em>, from 13 February to 30 March."
+    },
+    "card-3": {
+        "title": "Structure of training courses",
+        "description": "In each training session, you can expect a more <em>formal</em> and an <em>informal</em> get-to-know-you part."
+    },
+    "card-4": {
+        "title": "Training weekend",
+        "description": "The training will also include <em>two weekend-long sessions</em>, packed with better and better activities."
+    },
+    "card-5": {
+        "title": "Financial contribution",
+        "description": "It is important to know that there is a <em>financial cost</em> for the purchase and creation of the weekends and other supplies needed for the training."
+    },
+    "card-6": {
+        "title": "Frequency of training",
+        "description": "<em>Every week</em>, you are invited to 1 training session, starting in the afternoon and ending in the evening."
+    }
   },
   "Details": {
     "f-box-header": "What should you expect?",

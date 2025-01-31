@@ -10,38 +10,26 @@ export default function InfoSection() {
     {
       id: 1,
       icon: () => <Calendar className='h-10 w-10' />,
-      title: text('title-databox1'),
-      description: text('desc-databox1'),
     },
     {
       id: 2,
       icon: () => <Ruler className='h-10 w-10' />,
-      title: text('title-databox2'),
-      description: text('desc-databox2'),
     },
     {
       id: 3,
       icon: () => <Brain className='h-10 w-10' />,
-      title: text('title-databox3'),
-      description: text('desc-databox3'),
     },
     {
       id: 4,
       icon: () => <TicketCheck className='h-10 w-10' />,
-      title: text('title-databox4'),
-      description: text('desc-databox4'),
     },
     {
       id: 5,
       icon: () => <HandCoins className='h-10 w-10' />,
-      title: text('title-databox5'),
-      description: text('desc-databox5'),
     },
     {
       id: 6,
       icon: () => <AudioWaveform className='h-10 w-10' />,
-      title: text('title-databox6'),
-      description: text('desc-databox6'),
     },
   ].map((card) => ({
     ...card,
@@ -79,7 +67,7 @@ export default function InfoSection() {
                     group-hover:text-white
                   `}
                 >
-                  {card.title}
+                  {text(`card-${card.id}.title`)}
                 </h2>
                 <p
                   className={`
@@ -88,7 +76,9 @@ export default function InfoSection() {
                     group-hover:text-white
                   `}
                 >
-                  {card.description}
+                  {text.rich(`card-${card.id}.description`, {
+                    em: (chunks) => <em className='bg-secondary px-2 py-1 rounded text-nowrap'>{chunks}</em>,
+                  })}
                 </p>
               </div>
             </div>
