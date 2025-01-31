@@ -38,6 +38,15 @@ export function formatDateString(dateString: string): string {
   return `${year}. ${String(month).padStart(2, '0')}. ${String(day).padStart(2, '0')}.`;
 }
 
-export function scrollToAnchor(anchor: string) {
-  document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });
+export function scrollToAnchor(id: string, offset = 72) {
+  const element = document.getElementById(id);
+  if (!element) return;
+
+  const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+  const offsetPosition = elementPosition - offset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  });
 }
