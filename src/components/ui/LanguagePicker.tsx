@@ -40,7 +40,7 @@ export const LanguagePicker = () => {
       <DropdownMenuContent>
         <DropdownMenuLabel>{text('label')}</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup value={locale} onValueChange={onSelectChange} className='flex flex-col gap-1'>
+        <DropdownMenuRadioGroup value={locale} onValueChange={onSelectChange}>
           {routing.locales.map((locale) => (
             <DropdownMenuRadioItem key={locale} value={locale} className='cursor-pointer'>
               {text('language', { locale })}

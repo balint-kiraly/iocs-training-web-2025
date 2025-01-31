@@ -76,7 +76,7 @@ const Header = () => {
                 md:block
               `}
             >
-              <Button>
+              <Button variant='secondary'>
                 {text('apply')}
                 <Rocket />
               </Button>
