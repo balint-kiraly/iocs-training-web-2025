@@ -37,7 +37,7 @@ export default function InfoSection() {
   }));
 
   return (
-    <section id='info' className={`flex flex-col items-center bg-gradient-to-b from-black to-background py-32`}>
+    <section id='info' className={`flex flex-col items-center bg-gradient-to-b from-black to-background pb-36 pt-32`}>
       <div
         className={`
           relative grid grid-cols-1 gap-16 px-6

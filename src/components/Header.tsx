@@ -36,7 +36,7 @@ const Header = () => {
         className={`
           fixed z-40 w-[100%] min-w-[300px] p-4 text-white transition-all duration-1000
 
-          ${scrolled ? 'bg-primary shadow-lg' : `bg-transparent`}
+          ${scrolled ? 'backdrop-blur-md' : `bg-transparent`}
         `}
       >
         <div className='flex items-center justify-between'>
@@ -83,7 +83,7 @@ const Header = () => {
             </Link>
             <Sheet>
               <SheetTrigger asChild className='md:hidden'>
-                <Button>
+                <Button variant='secondary'>
                   <MenuIcon />
                 </Button>
               </SheetTrigger>

@@ -98,9 +98,9 @@ const VerticalCarousel: React.FC<VerticalCarouselProps> = ({ images, autoplayInt
       <div className={`absolute -bottom-14 left-0 right-0 z-10 flex items-center justify-center space-x-2`}>
         <button
           className={`
-            rounded-full bg-primary/50 p-2 text-white transition-colors
+            rounded-full bg-accent/50 p-2 text-white transition-colors
 
-            hover:bg-primary/75
+            hover:bg-accent/75
           `}
           onClick={scrollPrev}
           aria-label='Previous image'
@@ -120,9 +120,9 @@ const VerticalCarousel: React.FC<VerticalCarouselProps> = ({ images, autoplayInt
         </button>
         <button
           className={`
-            rounded-full bg-primary/50 p-2 text-white transition-colors
+            rounded-full bg-accent/50 p-2 text-white transition-colors
 
-            hover:bg-primary/75
+            hover:bg-accent/75
           `}
           onClick={scrollNext}
           aria-label='Next image'
