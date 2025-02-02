@@ -61,6 +61,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  ::selection {
+    @apply bg-secondary/90;
+    color: #7013f2;
+  }
 }
 
 /* Tag input component */
