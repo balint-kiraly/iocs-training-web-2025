@@ -71,7 +71,7 @@ export default function InfoSection() {
                 </h2>
                 <p
                   className={`
-                    mt-2 text-foreground
+                    mt-4 text-foreground
 
                     group-hover:text-white
                   `}

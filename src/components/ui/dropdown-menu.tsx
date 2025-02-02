@@ -181,14 +181,14 @@ const DropdownMenuRadioItem = React.forwardRef<
 
         data-[disabled]:pointer-events-none data-[disabled]:opacity-50
 
-        focus:bg-primary/20 focus:text-accent-foreground
+        focus:bg-secondary/70 focus:text-accent-foreground
       `,
       className
     )}
     {...props}
   >
     <DropdownMenuPrimitive.ItemIndicator className='absolute h-full w-full'>
-      <div className='h-full w-full rounded-sm bg-primary' />
+      <div className='h-full w-full rounded-sm bg-secondary' />
     </DropdownMenuPrimitive.ItemIndicator>
     <div className={`relative pl-4`}>{children}</div>
   </DropdownMenuPrimitive.RadioItem>
