@@ -77,7 +77,9 @@ export default function InfoSection() {
                   `}
                 >
                   {text.rich(`card-${card.id}.description`, {
-                    em: (chunks) => <em className='bg-secondary px-2 py-1 rounded text-nowrap'>{chunks}</em>,
+                    em: (chunks) => (
+                      <em className='bg-secondary px-2 py-1 rounded text-nowrap font-semibold'>{chunks}</em>
+                    ),
                   })}
                 </p>
               </div>

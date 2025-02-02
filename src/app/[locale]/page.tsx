@@ -48,11 +48,13 @@ export default async function Home({ params }: Readonly<{ params: Promise<{ loca
       </div>
       <ApplicationSection />
       <IntroductionSection />
+      <div className='h-16' />
       <ContactSection />
       <div className='h-32' />
       <GallerySection />
       <div className='h-32' />
       <FAQSection />
+      <div className='h-10' />
     </main>
   );
 }

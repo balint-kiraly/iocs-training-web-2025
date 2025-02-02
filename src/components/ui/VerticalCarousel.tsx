@@ -62,7 +62,7 @@ const VerticalCarousel: React.FC<VerticalCarouselProps> = ({ images, autoplayInt
   return (
     <div
       className={`
-        relative h-[calc(100vw/16*9)]
+        relative h-[calc(100vw/16*9)] max-h-[700px]
 
         xl:h-[calc(80vw/16*9)]
       `}
