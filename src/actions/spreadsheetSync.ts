@@ -149,7 +149,7 @@ async function parseApplication(
     academicYear: application.academicYear,
     drivingLicence: application.drivingLicence,
     likesDriving: application.likesDriving ?? undefined,
-    diet: application.diet,
+    diet: application.diet === 'Other' ? (application.customDiet ?? 'Other') : application.diet,
     languages: application.languages.sort().join(', '),
     availableAtWeekend1: application.availableAtWeekend1,
     availableAtWeekend2: application.availableAtWeekend2,
