@@ -3,7 +3,7 @@ import { stringToDate } from '@/lib/utils';
 
 export const universities = ['SE', 'BME', 'ELTE', 'PPKE', 'BCE', 'Other'] as const;
 const universitiesBlacklist = [...universities, 'Semmelweis', 'SOTE', 'Pázmány', 'Corvinus', 'Other'];
-export const faculties = ['ÁOK', 'FOK', 'GYTK', 'ETK', 'EKK', 'PAK'] as const;
+export const faculties = ['AOK', 'FOK', 'GYTK', 'ETK', 'EKK', 'PAK'] as const;
 export const letters = [
   'A',
   'B',

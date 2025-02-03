@@ -275,6 +275,14 @@
         "LactoseFree": "Lactose Free",
         "GlutenFree": "Gluten Free",
         "Other": "Other"
+      },
+      "faculty": {
+        "AOK": "Faculty of Medicine",
+        "FOK": "Faculty of Dentistry",
+        "GYTK": "Faculty of Pharmaceutical Sciences",
+        "ETK": "Faculty of Health Sciences",
+        "EKK": "Faculty of Health Public Services",
+        "PAK": "Pető András Faculty"
       }
     },
     "errors": {

@@ -254,6 +254,14 @@
         "LactoseFree": "Laktózmentes",
         "GlutenFree": "Gluténmentes",
         "Other": "Egyéb"
+      },
+      "faculty": {
+        "AOK": "ÁOK",
+        "FOK": "FOK",
+        "GYTK": "GYTK",
+        "ETK": "ETK",
+        "EKK": "EKK",
+        "PAK": "PAK"
       }
     },
     "errors": {

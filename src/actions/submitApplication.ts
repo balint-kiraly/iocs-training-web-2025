@@ -94,7 +94,7 @@ export async function parseApplicationData(
     mothersName: formData.mothersName,
     university: formData.university as University,
     otherUniversity: formData.university === 'Other' ? formData.otherUniversity : null,
-    faculty: formData.university === 'SE' ? (formData.faculty === 'ÁOK' ? 'AOK' : formData.faculty) : null,
+    faculty: formData.university === 'SE' ? formData.faculty : null,
     letter: formData.letter === 'J/EKK' ? 'EKK' : formData.letter === 'None' ? null : formData.letter,
     startYear: formData.startYear,
     academicYear: formData.academicYear,
