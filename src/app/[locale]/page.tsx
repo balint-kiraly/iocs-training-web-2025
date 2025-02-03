@@ -3,7 +3,6 @@ import { setRequestLocale } from 'next-intl/server';
 import ApplicationSection from '@/components/sections/ApplicationSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import DetailsSection from '@/components/sections/DetailsSection';
-import { FAQSection } from '@/components/sections/FAQSection';
 import GallerySection from '@/components/sections/GallerySection';
 import HeroSection from '@/components/sections/HeroSection';
 import InfoSection from '@/components/sections/InfoSection';
@@ -52,8 +51,6 @@ export default async function Home({ params }: Readonly<{ params: Promise<{ loca
       <ContactSection />
       <div className='h-32' />
       <GallerySection />
-      <div className='h-32' />
-      <FAQSection />
       <div className='h-10' />
     </main>
   );
