@@ -163,8 +163,7 @@
   "ApplicationForm": {
     "heading": "Jelentkezés",
     "alert": {
-      "title": "Lorem Ipsum!",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "text": "A 2025-ös Instruktorképzésre csak Semmelweis hallgatókat áll módunkban fogadni"
     },
     "sections": {
       "contact": "Kapcsolattartási adatok",

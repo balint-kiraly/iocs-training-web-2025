@@ -184,8 +184,7 @@
   "ApplicationForm": {
     "heading": "Application",
     "alert": {
-      "title": "Lorem Ipsum!",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "text": "We can only accept Semmelweis students for the 2025 Instructor Training."
     },
     "sections": {
       "contact": "Contact Information",
