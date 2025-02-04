@@ -5,10 +5,14 @@ import { formSchema } from '@/lib/formValidation';
 import { Diet, Prisma, University } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { writeToSpreadsheet } from '@/actions/spreadsheetSync';
+import { sendEmail } from '@/actions/mail';
+import { render } from '@react-email/render';
+import WelcomeEmail from '@/components/emails/welcome';
 
 type State =
   | {
-      status: 'success' | 'error';
+      status: 'success' | 'error' | 'initial';
+      locale: string;
       error?: number;
       message?: string;
     }
@@ -27,28 +31,53 @@ export default async function submitApplication(
       include: { internationalTraining: { include: { certificates: true } } },
     });
     await writeToSpreadsheet(completeApplication!);
+    await sendEmail({
+      to: application.email,
+      subject:
+        previousState?.locale === 'hu'
+          ? 'Jelentkezésed sikeresen rögzítettük!'
+          : 'Your application has been successfully submitted!',
+      html: await render(
+        WelcomeEmail({
+          name: application.nickname
+            ? application.nickname === ''
+              ? application.firstName
+              : application.nickname
+            : application.firstName,
+          locale: previousState?.locale || 'hu',
+        })
+      ),
+    });
 
     return {
       status: 'success',
+      locale: previousState?.locale || 'hu',
     };
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       if (error.code === 'P2002') {
         return {
           status: 'error',
+          locale: previousState?.locale || 'hu',
           error: 1,
           message: error.message,
         };
       }
       return {
         status: 'error',
+        locale: previousState?.locale || 'hu',
         error: 0,
         message: error.message,
       };
     }
+
+    prisma.application.deleteMany({
+      where: { email: formData.email },
+    });
     console.error('Unknown error creating application');
     return {
       status: 'error',
+      locale: previousState?.locale || 'hu',
       error: 0,
       message: 'Unknown error creating application',
     };
@@ -81,7 +110,7 @@ export async function parseApplicationData(
   return {
     firstName: formData.firstName,
     lastName: formData.lastName,
-    nickname: formData.nickname ?? null,
+    nickname: formData.nickname ? (formData.nickname === '' ? null : formData.nickname) : null,
     email: formData.email,
     phone: formData.phone,
     zipCode: parseInt(formData.zipCode, 10),
