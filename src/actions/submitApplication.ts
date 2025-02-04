@@ -5,6 +5,7 @@ import { formSchema } from '@/lib/formValidation';
 import { Diet, Prisma, University } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { writeToSpreadsheet } from '@/actions/spreadsheetSync';
+import { sendEmail } from '@/actions/mail';
 
 type State =
   | {
@@ -27,6 +28,14 @@ export default async function submitApplication(
       include: { internationalTraining: { include: { certificates: true } } },
     });
     await writeToSpreadsheet(completeApplication!);
+    await sendEmail({
+      to: application.email,
+      subject: 'Jelentkezésed sikeresen rögzítettük!',
+      html: `
+        <p>Kedves ${application.firstName}!</p>
+        <p>Köszönjük, hogy jelentkeztél a 2021-es Országos Mentőszolgálati Gépjárművezető Versenyre!</p>
+        <p>A jelentkezésed sikeresen rögzítettük az adatbázisunkban, adataidat az alábbiakban láthatod:</p>`,
+    });
 
     return {
       status: 'success',
@@ -46,6 +55,10 @@ export default async function submitApplication(
         message: error.message,
       };
     }
+
+    prisma.application.deleteMany({
+      where: { email: formData.email },
+    });
     console.error('Unknown error creating application');
     return {
       status: 'error',
