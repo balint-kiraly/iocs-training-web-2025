@@ -15,7 +15,7 @@ export async function sendEmail(options: SendMailOptions) {
     await mailingAxios.post('/api/send', {
       from: {
         name: process.env.EMAIL_FROM_NAME,
-        email: '',
+        email: process.env.EMAIL_FROM_ADDRESS,
       },
       to: options.to,
       subject: options.subject,
