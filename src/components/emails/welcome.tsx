@@ -85,7 +85,7 @@ export default function WelcomeEmail({ name, locale }: { name: string; locale: s
                 {hungarian ? (
                   <>
                     A megnyitó <strong>február 13-án, 17 órakor</strong> kezdődik. Arra szeretnénk kérni Téged, hogy{' '}
-                    <strong>16:45-re érkezz</strong> a<strong>Nagyvárad téri Elméleti Tömb Dísztermébe</strong>
+                    <strong>16:45-re érkezz</strong> a <strong>Nagyvárad téri Elméleti Tömb Dísztermébe</strong>
                     (1089 Budapest, Nagyvárad tér 4.), hogy a megnyitót időben tudjuk kezdeni.
                   </>
                 ) : (
@@ -135,16 +135,17 @@ export default function WelcomeEmail({ name, locale }: { name: string; locale: s
                     <>
                       Már nagyon várjuk, hogy találkozzunk{' '}
                       <strong>16:45-kor a Nagyvárad téri Elméleti Tömb Dísztermében</strong>! Addig is kövesd
-                      figyelemmel az IÖCS <Link href='https://www.facebook.com/iocs.hu'>Facebook</Link>, illetve{' '}
-                      <Link href='https://www.instagram.com/iocs.hu'>Instagram</Link> oldalát és az esemény
+                      figyelemmel az IÖCS <Link href='https://www.facebook.com/instruktorok'>Facebook</Link>, illetve{' '}
+                      <Link href='https://www.instagram.com/iocs_official'>Instagram</Link> oldalát és az esemény
                       bejegyzéseit!
                     </>
                   ) : (
                     <>
                       We can&#39;t wait to meet you at <strong>4:45 PM in the auditorium of the NET</strong>! Until
-                      then, please keep tabs on the <Link href='https://www.facebook.com/iocs.hu'>Facebook page</Link>{' '}
-                      of IÖCS and our <Link href='https://www.instagram.com/iocs.hu'>Instagram page</Link> as well as
-                      the event&#39;s posts!
+                      then, please keep tabs on the{' '}
+                      <Link href='https://www.facebook.com/instruktorok'>Facebook page</Link> of IÖCS and our{' '}
+                      <Link href='https://www.instagram.com/iocs_official'>Instagram page</Link> as well as the
+                      event&#39;s posts!
                     </>
                   )}
                 </Text>
