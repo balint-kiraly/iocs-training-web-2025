@@ -34,7 +34,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
       setMinutes(minutes);
       setSeconds(seconds);
 
-      if (hours === 19 && minutes === 40 && seconds === 0) {
+      if (hours === 12 && minutes === 40 && seconds === 0) {
         setIsRightTime(true);
         setTimeout(() => {
           setIsRightTime(false);
