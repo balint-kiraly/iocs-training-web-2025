@@ -40,7 +40,7 @@
   "Footer": {
     "iocs": {
       "label": "IÖCS",
-      "name": "Instruktor Öntevékeny Csoport",
+      "name": "Instructor Unprompted Group",
       "privacy-policy": "Privacy Policy",
       "house-rules": "House Rules"
     },
@@ -91,7 +91,7 @@
       "f-box-p4": "There will also be two weekends during the week where you can deepen your relationship.",
       "f-box-p5": "In the meantime, you can find out how the IÖCS works, what events we have and what opportunities you will have.",
       "f-box-p6": "Come and experience the Instructor Experience yourself!",
-      "s-box-p1": "IÖCS, the Instructor Volunteer Group, is an enthusiastic and cohesive community working to make university life more colourful.",
+      "s-box-p1": "IÖCS, the <em>Instructor Unprompted Group</em>, is an enthusiastic and cohesive community working to make university life more colourful.",
       "s-box-p2": "Instructors are dedicated students who help new freshmen settle in, organise memorable activities and bring the community together. ",
       "s-box-p3": " When you join, you'll be part of a supportive, friendly team who value shared experiences and growth!"
     }

@@ -16,7 +16,7 @@
     "language": "{locale, select, hu {Magyar} en {English} other {}}"
   },
   "HeroSection": {
-    "heading": "Várunk az\nInstruktorképzésen!",
+    "heading": "Várunk az Instruktorképzésen!",
     "heading-sm": "Várunk az Instruktor képzésen!",
     "subheading": "Légy részese egy felejthetetlen élménynek, és építs életre szóló kapcsolatokat.",
     "cta": "Jelentkezz Most",
