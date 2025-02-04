@@ -81,7 +81,7 @@ export const ContactSection = () => {
       <Reveal>
         <Card
           className={`
-            mx-auto mt-10 flex w-fit flex-col items-center gap-8 bg-black p-6
+            mx-auto mt-10 flex w-fit flex-col items-center gap-8 bg-background p-6
 
             sm:flex-row
           `}

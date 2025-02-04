@@ -147,6 +147,12 @@ export const FormLifestyleSkillsSection: React.FC<FormOtherSectionProps> = ({ fo
                       input: 'text-sm border border-input placeholder:text-muted-foreground',
                       tag: 'text-sm px-2',
                     }}
+                    onBlur={(event: { target: { value: string } }) => {
+                      const lastValue = event.target.value.trim();
+                      if (lastValue && !field.value.includes(lastValue)) {
+                        field.onChange([...field.value, lastValue]); // Append last input
+                      }
+                    }}
                   />
                 </FormControl>
                 <FormDescription>{text('descriptions.languages')}</FormDescription>

@@ -56,18 +56,30 @@
     }
   },
   "Info": {
-    "title-databox1": "Első képzés időpontja, helyszíne",
-    "title-databox2": "Képzés hossza",
-    "title-databox3": "Képzések felépítése",
-    "title-databox4": "Képzéshétvége",
-    "title-databox5": "Anyagi vonzat",
-    "title-databox6": "Képzések gyakorisága",
-    "desc-databox1": "Február 13. 17:00, Nagyvárad Téri Elméleti tömb.",
-    "desc-databox2": "Az Instruktor képzés 7 hetet ölel fel, február 13-tól március 30-ig.",
-    "desc-databox3": "Minden képzésalkalmon számíthattok egy kötötteb, valamint egy kötetlenebb ismerkedős részre.",
-    "desc-databox4": "A képzés során két egész hétvégés alkalomra is sor kerül, tele jobbnál jobb programokkal.",
-    "desc-databox5": "Fontos tudnotok, hogy a hétvégék, valamint a képzéshez szükséges egyéb kellékek beszerzése, megalkotása anyagi vonzattal bír.",
-    "desc-databox6": "Minden héten, 1 képzés alkalomra invitálunk titeket, ami délután fog kezdődni és az esti órákban végződik."
+    "card-1": {
+      "title": "Első képzés időpontja, helyszíne",
+      "description": "<em>Február 13.</em> 17:00, Nagyvárad Téri Elméleti tömb."
+    },
+    "card-2": {
+      "title": "Képzés hossza",
+      "description": "Az Instruktorképzés <em>7 hetet</em> ölel fel, február 13-tól március 30-ig."
+    },
+    "card-3": {
+      "title": "Képzések felépítése",
+      "description": "Minden képzésalkalmon számíthattok egy <em>kötöttebb</em>, valamint egy <em>kötetlenebb</em> ismerkedős részre."
+    },
+    "card-4": {
+      "title": "Képzéshétvége",
+      "description": "A képzés során <em>két egész hétvégés alkalomra</em> is sor kerül, tele jobbnál jobb programokkal."
+    },
+    "card-5": {
+      "title": "Anyagi vonzat",
+      "description": "Fontos tudnotok, hogy a hétvégék, valamint a képzéshez szükséges egyéb kellékek beszerzése, megalkotása <em>anyagi vonzattal</em> bír."
+    },
+    "card-6": {
+      "title": "Képzések gyakorisága",
+      "description": "<em>Minden héten</em>, 1 képzésalkalomra invitálunk titeket, ami délután fog kezdődni és az esti órákban végződik."
+    }
   },
   "Details": {
     "f-box-header": "Mire számíts?",
@@ -79,61 +91,40 @@
       "f-box-p4": "A hét hét során két hétvége is lesz, ahol még mélyebbre tudjátok fűzni a kapcsolatotokat.",
       "f-box-p5": "Mindeközben megtudhatjátok hogyan működik az IÖCS, milyen rendezvényeink vannak és milyen lehetőségeitek lesznek.",
       "f-box-p6": "Gyere, hogy te is átéld az Instruktor Életérzést!",
-      "s-box-p1": "Az IÖCS, vagyis az Instruktor Öntevékeny Csoport, egy lelkes és összetartó közösség, amely az egyetemi élet színesebbé tételén dolgozik. ",
+      "s-box-p1": "Az IÖCS, vagyis az <em>Instruktor Öntevékeny Csoport</em>, egy lelkes és összetartó közösség, amely az egyetemi élet színesebbé tételén dolgozik. ",
       "s-box-p2": "Az instruktorok olyan elhivatott hallgatók, akik segítenek az új gólyák beilleszkedésében, emlékezetes programokat szerveznek és összekovácsolják a közösséget.",
       "s-box-p3": "Ha csatlakozol, egy támogató, barátságos csapat tagja lehetsz, akik számára a közös élmények és a fejlődés a legfontosabb!"
     }
   },
   "Rules": {
-    "header": "Szabályzat",
-    "headings": {
-      "goal": "Vivamus nec dapibus quam",
-      "apply-1": "Proin at justo nisi",
-      "apply-2": "Lorem ipsum dolor sit amet",
-      "apply-3": "Consectetur adipiscing elit",
-      "apply-4": "Vestibulum ante ipsum primis in",
-      "apply-5": "Donec tempus accumsan metus",
-      "apply-6": "In gravida id velit",
-      "apply-7": "Phasellus vestibulum non",
-      "apply-8": "Sed mi enim",
-      "apply-9": "Sed hendrerit",
-      "apply-10": "Nam fermentum posuere",
-      "apply-11": "Eu facilisis metus diam vel leo",
-      "apply-12": "Tortor leo dictum velit",
-      "apply-13": "Duis volutpat tellus ipsum",
-      "apply-14": "Vestibulum ante",
-      "apply-15": "Praesent dui quam",
-      "apply-16": "Quisque finibus interdum mattis",
-      "apply-17": "Ut varius ante urna sagittis justo",
-      "apply-18": "Fusce tristique",
-      "apply-19": "Mi ipsum faucibus augue",
-      "apply-20": "Donec malesuada magna id augue pharetra"
+    "heading": "Részvételi Szabályok",
+    "greeting": "Kedves Képződők és Képzők!",
+    "generalInfo": "Mindannyiunk kulturált és kellemes szórakozása érdekében az alábbi főbb ismereteket és szabályokat az Instruktorképzés minden résztvevőjének be kell tartania, hogy egy felejthetetlen és kellemes élményekben gazdag képzésben vehessünk részt.",
+    "acceptance": "Minden résztvevő e dokumentumban foglalt szabályok elfogadásával vehet részt az Instruktorképzésben.",
+    "title": "Házirend",
+    "rules": {
+      "rule-1": "Ezen Részvételi szabályzat és házirend személyi hatálya az Instruktorképzésben résztvevő minden személyre kiterjed, így különösen az Instruktorképzésen részt vevőkre (továbbiakban: képződő), a képzés szervezésében, lebonyolításában részt vevő személyekre (instruktorok) és a szolgáltatókra (pl. biztonságért felelős személyek, büfé, fellépők, stb.), valamint a velük munkaviszonyban, vagy munkavégzésre irányuló egyéb jogviszonyban foglalkoztatott személyekre. Jelen Szabályzat területi hatálya a képzéshez kapcsolódó rendezvények teljes területére vonatkozik.",
+      "rule-2": "A szervezők a szabályokat mindannyiunk kulturált szórakozása és ismerkedése érdekében alkották meg, azonban a szervezők rendkívüli esetben korlátozhatnak, vagy megszüntethetnek minden olyan tevékenységet, - különös tekintettel a kábítószer fogyasztására, azzal való kereskedésre, - mely mások életét, egészségét, testi épségét veszélyezteti.",
+      "rule-3": "A teljes Instruktorképzés és a kapcsolódó rendezvények területére nem vihető be olyan eszköz, anyag, vagy bárminemű dolog, amely saját vagy mások életében, testi épségében, egészségében, vagy a résztvevők vagyontárgyaiban kárt okozhat, így különösen nem vihetők be: ütő-, szúró-, vágóeszközök, fegyverek vagy annak minősülő tárgyak, robbanás- vagy tűzveszélyes anyagok (pl. petárdák), mérgek, kábítószerek, stb. Ezen tárgyakat a szervezők jogosultak elkobozni, illetve ilyen tárgyakkal a belépés a rendezvény területére nem lehetséges.",
+      "rule-4": "Az Instruktorképzés alatti rendezvények őrzés-védelméről és biztosításáról a szervezők gondoskodnak. A teljes képzés ideje alatt bármiféle személyes tárgyat, felszerelést, ruhát, stb. a résztvevők saját felelősségükre hozhatnak magukkal és mindenki maga köteles gondoskodni értékei védelméről.",
+      "rule-5": "Az Instruktorképzés a szervezők és a többi résztvevő zártkörű, közösségi rendezvénye, amelyen megjeleníteni csak olyan bemutatókat, tájékoztatókat, plakátokat vagy más hasonló eszközöket és eseményeket lehet a szervezők engedélyével, amelyek kihelyezése/megtartása olyan szervezet érdekében történt, amely a közösséget támogatta és ezzel annak megvalósításához hozzájárult.",
+      "rule-6": "Az Instruktorképzés ideje alatt tűz-, balesetveszélyes, vagy az egészséget bármely módon veszélyeztető tevékenység nem végezhető.",
+      "rule-7": "Az Instruktorképzés ideje alatt igénybe vett helyszíneken lévő berendezéseket, eszközöket, stb. mindenki használhatja, azonban kizárólag saját felelősségére. A nem rendeltetésszerű használatból eredő károkat a használó köteles megtéríteni. Az eszközök, berendezések nem rendeltetés szerű használata, valamint az ennek során bekövetkező esetleges személyi sérülésekért, balesetekért, káreseményekért a szervezőket semmilyen felelősség nem terheli. Aki más, vagy a helyszínek értékeiben, berendezésében, eszközében jogellenesen kárt okoz, köteles azt megtéríteni.",
+      "rule-8": "Az Instruktorképzésen mindenki saját, szabad akaratából vesz részt, annak sem egésze, sem részei (pl. feladatok) senkire nézve nem kötelezőek. Amennyiben a képzés valamely szervezett programja a résztvevő meggyőződésével, értékrendjével ütközik, nem köteles részt venni benne. A programban nem szerepelnek olyan feladatok, amelyek a szexualitásra vonatkozó utalást tartalmaznak. Nem tekinthető önkéntesnek az a részvétel, amely csoportnyomás hatására alakul ki. A képzés bármikor abbahagyható, de a résztvevő ezt köteles jelezni a szervezőknek.",
+      "rule-9": "A programoknak, a résztvevők magatartásának és kommunikációjának összhangban kell állniuk az Egyetem értékrendjével, a Semmelweis Egyetem Etikai Kódexében (http://semmelweis.hu/jogigfoig/files/2017/12/Etikai_Kodex_hataly_2017XII09.pdf), az Instruktor Öntevékeny Csoport Szervezeti és Működési Szabályzatában (http://iocs.hu/magunkrol/szmsz), valamint Magyarország hatályos jogszabályaiban foglaltakkal (elérhetőek a www.njt.hu honlapon).",
+      "rule-10": "Az Instruktorképzés során vagy a képzést követően a képzés résztvevői panaszukkal, észrevételeikkel az Instruktor Öntevékeny Csoport vezetőségéhez fordulhatnak, személyesen vagy telefonon, e-mailben a vezetoseg@iocs.hu címen írásban. Ezen túlmenően az Egyetem Rektori Titkárságához (rektor@semmelweis-univ.hu, Budapest 1085, Üllői út 26. I. em. 101., 06 1 317 2400) is fordulhatnak akár anonim módon, névtelen bejelentéssel. Az Egyetem minden panaszt kivizsgál, szükség esetén az illetékes hatóságok bevonásával. Minden bejelentő adatát az IÖCS és az Egyetem bizalmasan kezeli, azt senkinek nem adja ki.",
+      "rule-11": "Az esetleges balesetekről, sérülésekről, rendkívüli eseményről a résztvevő haladéktalanul köteles értesíteni a helyszínen tartózkodó felelős szervezőt, vagy csoportvezetőt!",
+      "rule-12": "A Képzésben résztvevő köteles az akut, állandó, avagy időszakos betegségeit, allergiáját közölni, illetve az arra való gyógyszerezési útmutatást nyomtatott formában benyújtani. A Szervezők az adatokat szigorú titoktartással kezelik, a csapatvezetőn kívül harmadik személy számára tovább nem adják. A szabály betartására az esetleges vészhelyzetek megelőzése okán van szükség.",
+      "rule-13": "A Résztvevők tudomásul veszik, hogy a jelen Házirendben foglaltak be nem tartása, bűncselekmény vagy szabálysértés megalapozott gyanúja esetén a szükséges jogkövetkezmények levonásáig, legfeljebb annak idejére a biztonságért felelős személyek jogosultak az érintett Résztvevő feltartóztatására. Bűncselekmény esetén a tetten ért elkövetőt bárki elfoghatja és köteles értesíteni a rendőrséget. (ld. 1998. évi XIX. törvény 127. § (3) bek.) A Résztvevők kifejezetten elismerik, hogy a jelen pontban foglalt intézkedés velük szemben történő esetleges alkalmazása nem minősül a szabadsághoz, és a mozgáshoz való szabadságuk korlátozásának, vagy megsértésének.",
+      "rule-14": "Bármilyen normát és vagy jogszabályt sértő cselekmény esetén (a cselekmény elkövetéséhez képest 5 hónapon belül) az Egyetem a történtek miatt fegyelmi eljárást indít. A fegyelmi büntetés lehet: megrovás, szigorú megrovás, a térítési és juttatási szabályzatban meghatározott kedvezmények és juttatások - legfeljebb hat hónap időtartamra szóló - csökkentése, illetőleg megvonása, határozott időre - legfeljebb két félévre - szóló eltiltás a tanulmányok folytatásától, kizárás a felsőoktatási intézményből.",
+      "rule-15": "A biztonságért felelős személyek kábítószer birtoklásának, vagy fogyasztásának vagy más bűncselekmény elkövetésének gyanúja esetén átkutathatják a gyanúba keveredett személyt, és csomagját. Az eljárás során jelen kell lennie az érintettnek, az átvizsgálást végző erre illetékes biztonságért felelős személy(ek)nek, valamint Demeter Orsolya elnöknek.",
+      "rule-16": "A képzés ideje alatt olyan fénykép, hangfelvétel, film-, mozgóképfelvétel, videó készítése, tárolása, valamint közzététele bármely módon (ideértve csak példa jelleggel: internet, Facebook, Flickr, instagram, Tumblr, twitter, youtube, tiktok, stb.) tilos, amely bárkinek személyét, jogát, jogos érdekét sérti. Az ilyen jellegű fényképek, felvételek tárolása, közzététele a rendezvényt követően is tilos!",
+      "rule-17": "A fent írtak az Instruktorképzés minden résztvevőjére egyaránt, azonos mértékben vonatkoznak.",
+      "rule-18": "Nyilatkozom, hogy hozzájárulok, hogy rólam a rendezvényen hang- és képfelvétel készüljön, azokat a szervezők tárolják, működésükhöz felhasználják, az Egyetem számára átadják. A felvételek tárolásával, későbbi felhasználásával kapcsolatosan semmiféle térítésre nem tartok igényt.",
+      "rule-19": "Amennyiben olyan felvételről szerzek tudomást, amelyik személyemre vagy másra nézve sértő tartalommal bír, úgy e tényt haladéktalanul jelzem a rendezvény szervezőinek, hogy ők intézkedhessenek a bejelentéssel érintett tartalom megvizsgálásáról és szükség szerinti törléséről.",
+      "rule-20": "Az információs önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény (Infotv.) 65. § (3) a) szerint jelen adatkezelésről a NAIH nem vezet nyilvántartást."
     },
-    "text": {
-      "goal": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat, elit at faucibus lacinia, tortor leo dictum velit, ut varius ante urna sagittis justo. Ut ultrices neque ac odio rutrum bibendum. Fusce tristique, turpis non egestas molestie, mi ipsum faucibus augue, quis maximus urna arcu ac nisi. Vivamus nec tempus tortor. Proin ut sagittis turpis. Vestibulum feugiat porttitor tellus in elementum. Morbi ut mi tristique felis tempor consectetur. Aenean vitae cursus orci, at tempor felis. Maecenas suscipit quis mauris non luctus. Nullam faucibus quis massa sit amet dignissim. Quisque iaculis urna eget ante porta, quis interdum magna sagittis. Vivamus hendrerit ante nec dignissim faucibus.",
-      "apply-1": "Quisque tellus elit, consequat ut lectus ac, feugiat congue mi. Mauris ullamcorper fringilla massa, sit amet sollicitudin dolor tristique et. Mauris fermentum metus vel elit fermentum pulvinar. Mauris imperdiet feugiat arcu vitae gravida. Integer et ligula ac tortor eleifend consequat. Cras commodo interdum feugiat. Nunc ac sollicitudin erat. Vestibulum vel quam ornare, ultrices mauris vitae, fringilla ante. Quisque ac condimentum ex. Maecenas interdum, est et finibus finibus, ligula ipsum iaculis nulla, vitae porttitor urna nibh in justo. Sed a ante varius, posuere tellus at, bibendum mi. Nam et elit sit amet mauris tempor sagittis. Nullam rutrum finibus est, rutrum pulvinar ligula cursus in. Praesent varius massa quis purus volutpat rutrum. Curabitur fermentum orci nec gravida blandit. Suspendisse venenatis aliquet magna, eget congue ante ultrices sit amet.",
-      "apply-2": "Ut non ante augue. Donec tempus accumsan metus. In gravida id velit sit amet iaculis. Proin sit amet ligula ex. Quisque finibus interdum mattis. In sit amet justo in libero commodo luctus. In quis velit non ex porttitor congue. In et ligula in ipsum hendrerit ultrices. Morbi massa diam, condimentum nec ex quis, imperdiet consectetur quam. Curabitur a efficitur nibh. Aenean quis tempor leo. Fusce feugiat auctor tortor in ornare. Donec at rhoncus ante. Mauris eleifend nisl nec convallis accumsan. Pellentesque ut elementum metus.",
-      "apply-3": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce rhoncus dolor quis nunc porta, eget sagittis felis suscipit. Etiam euismod purus nisi, vestibulum lacinia nulla ornare et. Maecenas mi lacus, aliquet et egestas a, feugiat at felis. Nullam libero metus, commodo vel congue sed, placerat vel leo. Integer accumsan ut tortor eget hendrerit. Fusce vulputate tristique enim, et aliquet lectus volutpat id.",
-      "apply-4": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium tellus ac nisl feugiat mattis. Sed sagittis nulla eu urna feugiat bibendum. Phasellus consectetur mauris sapien, vel molestie neque consectetur non. Proin consequat condimentum metus at suscipit. Phasellus mauris massa, pulvinar vitae eleifend non, aliquet ac orci. Proin diam diam, ultricies vel urna sit amet, accumsan vulputate dolor. Nam porta sem ante, eget convallis urna sodales sed. Nulla bibendum cursus est, eu ultrices ex scelerisque nec.",
-      "apply-5": "Maecenas sollicitudin lectus lacinia consequat venenatis. Cras rutrum vel augue sed tristique. Mauris ut feugiat magna. Sed id purus sed turpis fermentum pharetra sit amet non massa. In hac habitasse platea dictumst. Proin vel odio id metus porttitor cursus non et turpis. Nulla faucibus enim at ligula blandit sollicitudin. Quisque ultrices porta dui, et convallis elit pretium eleifend. Pellentesque non ex accumsan, sollicitudin odio id, mattis quam. Proin congue orci augue. Etiam nisl leo, tincidunt varius tristique sed, tincidunt eu nisi. Integer non urna ut metus vestibulum posuere. Suspendisse ornare risus urna, quis tempor sem auctor sit amet.",
-      "apply-6": "Sed hendrerit lectus nec eros convallis, at vulputate lorem ornare. Aliquam et auctor purus. Quisque consequat tempor ultrices. Duis id urna non enim dignissim molestie. Proin in felis in libero consequat iaculis. Etiam vulputate mollis fringilla. Praesent nec hendrerit magna. Aenean volutpat vehicula velit vel tincidunt. Fusce non velit eu lorem tincidunt ullamcorper in elementum nibh. Phasellus mi enim, suscipit a tellus id, pharetra ullamcorper quam. Nunc at mi in mi mollis finibus. Integer pharetra erat quis accumsan feugiat. Maecenas dolor neque, tempor ut ex ac, molestie mollis arcu. Praesent blandit sem a justo fringilla volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-      "apply-7": "Sed mi enim, placerat in augue ut, tempor ullamcorper elit. Proin luctus quam tortor, sed hendrerit neque condimentum eget. Donec consectetur leo eget cursus facilisis. Nam sollicitudin dictum ante, sit amet porta nulla fringilla non. Morbi sit amet elementum neque. Quisque non sollicitudin augue. Curabitur rhoncus elementum dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed erat turpis. Nullam tincidunt neque eget venenatis tristique. Etiam a vulputate nisi. Maecenas maximus varius felis, id tristique nisi porttitor ac. Nam efficitur mi magna, id lacinia massa dapibus eu. Praesent faucibus odio mi, quis cursus erat suscipit at. Nam nec nisl ullamcorper, pulvinar mi a, convallis lectus.",
-      "apply-8": "Nam pretium enim quis imperdiet venenatis. Nulla interdum congue elementum. Phasellus dapibus, purus in pharetra imperdiet, eros erat sodales orci, sit amet bibendum elit ex eu tortor. Cras ullamcorper suscipit nibh sit amet volutpat. Cras vitae sollicitudin neque, sed ornare enim. Nam ut fermentum orci, quis eleifend diam. Nulla sodales nisi vel turpis iaculis, vel cursus purus facilisis. Nunc vitae ultrices elit. Ut vestibulum blandit purus, vitae fermentum mi faucibus eget. Sed eu convallis massa. Curabitur volutpat et dolor quis finibus. Mauris blandit porta dolor quis posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed mattis urna non accumsan condimentum. Phasellus posuere sapien nec odio dignissim, ac pretium ligula dictum. Proin vitae aliquam lorem, in egestas sapien.",
-      "apply-9": "Ut quis lorem vitae arcu facilisis aliquet vel a dolor. Morbi scelerisque magna scelerisque justo lacinia blandit. Vivamus condimentum rutrum pulvinar. Phasellus commodo maximus lobortis. Suspendisse lobortis aliquam ornare. Morbi a mi turpis. Etiam ultricies rutrum quam molestie feugiat. Pellentesque et lectus lorem. In accumsan ornare elementum.",
-      "apply-10": "Praesent quis tortor non arcu accumsan lacinia sit amet vitae nisi. Donec tincidunt feugiat orci, et vehicula mi elementum vel. Curabitur sed nulla sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin eget convallis urna. Integer ornare tempus sollicitudin. Proin interdum eget nunc at rutrum. Morbi aliquet metus a nibh bibendum, non bibendum purus rutrum. Morbi cursus volutpat tincidunt. Nam sed mi nunc. Aenean faucibus diam lobortis tempus cursus. Fusce a velit sagittis, finibus est mollis, vestibulum elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam in leo magna. Mauris urna nulla, ornare at lorem eget, posuere posuere metus.",
-      "apply-11": "Curabitur et tempus ligula. Curabitur accumsan aliquam mauris, at lobortis risus consequat vitae. Praesent dui quam, aliquet a diam ut, dapibus iaculis metus. Mauris gravida tempor quam et tincidunt. Vestibulum sed lorem eu ipsum volutpat finibus. Duis ut erat auctor, molestie orci sed, condimentum augue. Donec urna nibh, hendrerit nec ultricies ut, consectetur id velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam lacinia egestas nulla, et sagittis nibh consectetur vitae. Suspendisse quis sodales lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      "apply-12": "Etiam in blandit ante. Donec vulputate, diam et venenatis maximus, sem dolor ullamcorper nisi, eu facilisis metus diam vel leo. Nullam laoreet quam sit amet est sagittis rhoncus. Vivamus vel faucibus nulla, luctus vehicula turpis. Maecenas euismod eleifend lorem, ut lacinia tortor iaculis lacinia. Nulla in felis ligula. Donec ultricies nisl a magna blandit rhoncus. Etiam neque eros, luctus eu rutrum sed, dictum at erat. Fusce quis pretium turpis.",
-      "apply-13": "Phasellus vestibulum non tortor a bibendum. Morbi nec pulvinar lacus, ultricies facilisis mi. Sed fringilla facilisis tellus ut aliquam. Pellentesque a lectus felis. Aliquam ornare nulla vel tempor malesuada. Cras malesuada, massa ac elementum mollis, risus enim porttitor arcu, non gravida nunc dui sed metus. Suspendisse quam lectus, tempor ut nibh vitae, bibendum tempor nibh. Fusce id aliquet mauris, eu efficitur metus. Aliquam consectetur sed mauris eget tincidunt. In enim ipsum, convallis quis magna vitae, cursus venenatis tellus. Vivamus lobortis lacinia quam quis molestie. Phasellus eu odio gravida, varius magna cursus, lobortis odio. Cras lorem tortor, mollis in magna ut, posuere ornare felis. Aenean viverra eros arcu, sit amet mattis odio dignissim id.",
-      "apply-14": "Donec ut convallis nibh. In auctor risus nec augue interdum, id feugiat metus tincidunt. Mauris tincidunt, erat sit amet molestie dapibus, nulla justo pharetra tellus, nec dictum eros nisl sit amet arcu. Praesent libero magna, aliquet nec ornare in, pretium sit amet nisi. Sed nec congue ex. Duis dignissim vestibulum est. Phasellus sapien tortor, varius non commodo eget, ultricies a diam. Vivamus accumsan mollis pretium. Proin aliquam quam ligula, id luctus erat vulputate nec. Aenean consequat maximus libero ut placerat. Quisque volutpat varius augue quis facilisis. Curabitur facilisis pretium urna sit amet sollicitudin.",
-      "apply-15": "Ut ipsum turpis, interdum ac egestas id, luctus nec diam. Proin ultricies purus vitae lacus auctor tincidunt. Sed sollicitudin finibus sem eget bibendum. Donec malesuada magna id augue pharetra, eu interdum felis molestie. Nullam eget erat dictum ipsum placerat fringilla id quis odio. Proin sit amet ex nisl. Suspendisse quis est bibendum, pulvinar dui sed, ultricies orci. Etiam varius orci erat, eget condimentum velit ullamcorper ut. Maecenas finibus bibendum lectus.",
-      "apply-16": "Sed euismod ipsum non justo viverra auctor. In tincidunt interdum nisl, non convallis nunc pellentesque at. Maecenas sit amet dapibus lacus. Suspendisse quam ante, blandit ut consectetur ut, pretium non ante. Etiam eu porttitor velit. Phasellus tristique dapibus odio, a dapibus odio fringilla sed. Donec cursus luctus magna, non feugiat arcu semper malesuada. Mauris eget facilisis nunc, ut semper ipsum.",
-      "apply-17": "Cras ultricies vitae dui eget ultrices. Praesent fermentum pellentesque orci, in vehicula nulla accumsan suscipit. Nullam maximus fringilla mollis. Nulla quis orci blandit, vehicula massa eu, elementum ipsum. Maecenas nec tristique mauris, nec pulvinar nulla. Fusce euismod diam nec metus tincidunt, tincidunt fringilla orci iaculis. Integer sapien nisl, tincidunt at nisl eu, scelerisque suscipit mi.",
-      "apply-18": "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur rutrum magna ac gravida tempor. Cras vitae orci vitae nulla gravida consectetur luctus quis dui. Pellentesque sit amet purus in libero fringilla feugiat quis sed sapien. Nullam eu ligula condimentum, auctor mi non, varius ante. Aenean maximus dapibus lectus quis egestas. Vestibulum libero nisl, eleifend suscipit consectetur sed, semper quis nulla. Sed mattis, ligula id vehicula faucibus, sem dui semper diam, sit amet tristique nisl dolor ac ante. Curabitur viverra luctus ex quis tempor.",
-      "apply-19": "Nam fermentum posuere ante nec finibus. Integer ac purus accumsan, suscipit erat quis, dictum orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at neque velit. Nulla maximus, turpis eu lobortis maximus, arcu arcu pretium metus, sit amet euismod sem quam vel lorem. Quisque bibendum ut nibh et maximus. Quisque eu finibus ante. Cras sagittis, lacus vitae lacinia consequat, quam justo condimentum odio, et lacinia tortor elit nec nunc.",
-      "apply-20": "Donec eget viverra massa. Donec mollis magna ac ipsum vestibulum, at vehicula massa semper. Morbi vel ligula pellentesque, volutpat ex eget, egestas odio. Morbi sed lacus rutrum, sodales dolor vitae, ullamcorper metus. Maecenas placerat sed erat eget posuere. Sed tempus, erat ac suscipit varius, diam velit porttitor diam, dignissim lacinia magna mi non dui. In laoreet at eros vel euismod. Sed vehicula felis sit amet mauris condimentum, sit amet semper erat egestas. Nullam dui nulla, dictum at libero id, dignissim dignissim nisi. Nunc quis bibendum felis. Sed vulputate erat a ante ultricies, ut pellentesque est fermentum.",
-      "ending": "Duis volutpat tellus ipsum, ut tempor turpis ullamcorper in. Ut vehicula, ante non venenatis scelerisque, ligula libero mattis enim, eget pretium eros ligula et eros. Aliquam erat volutpat. Fusce sit amet ullamcorper tellus. Cras id turpis consectetur, euismod dui vitae, interdum urna. Morbi sodales, purus nec dapibus pretium, ex dolor porttitor erat, eu sagittis leo sem eu turpis. Proin lacus est, auctor at nulla et, condimentum ultrices turpis. Donec scelerisque erat non feugiat pretium. Donec id massa ornare, tristique ligula id, volutpat erat. Quisque imperdiet porta leo, a aliquam urna.",
-      "button": "Szabályzat letöltése"
-    }
+    "download": "Szabályzat Letöltése"
   },
   "ContactSection": {
     "heading": "Kontaktok",
@@ -172,8 +163,7 @@
   "ApplicationForm": {
     "heading": "Jelentkezés",
     "alert": {
-      "title": "Lorem Ipsum!",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "text": "A 2025-ös Instruktorképzésre csak Semmelweis hallgatókat áll módunkban fogadni"
     },
     "sections": {
       "contact": "Kapcsolattartási adatok",
@@ -263,6 +253,14 @@
         "LactoseFree": "Laktózmentes",
         "GlutenFree": "Gluténmentes",
         "Other": "Egyéb"
+      },
+      "faculty": {
+        "AOK": "ÁOK",
+        "FOK": "FOK",
+        "GYTK": "GYTK",
+        "ETK": "ETK",
+        "EKK": "EKK",
+        "PAK": "PAK"
       }
     },
     "errors": {
@@ -271,6 +269,10 @@
       "support": "Ha ez továbbra is fennáll, vagy úgy gondolod, hogy hibás, kérjük, vedd fel a kapcsolatot a <link>fejlesztővel</link>.",
       "0": "Ismeretlen hiba történt",
       "1": "Ezzel az email címmel vagy telefonszámmal már küldtek be jelentkezést"
+    },
+    "success": {
+      "title": "Sikeres Jelentkezés",
+      "description": "Hamarosan küldünk egy emailt a részletekről."
     }
   }
 }

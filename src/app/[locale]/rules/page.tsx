@@ -3,6 +3,8 @@
 import { useLocale, useTranslations } from 'next-intl';
 import React from 'react';
 
+import { Button } from '@/components/ui/button';
+
 const RulesPage = () => {
   const text = useTranslations('Rules');
   const locale = useLocale();
@@ -10,74 +12,43 @@ const RulesPage = () => {
 
   return (
     <main className='mx-auto min-h-screen max-w-screen-xl px-6 pt-32'>
-      <h1 className='relative z-30 mb-6 text-center text-3xl font-semibold'>{text('header')}</h1>
+      <h1 className='relative z-30 mb-10 text-center text-3xl font-semibold'>{text('heading')}</h1>
 
-      <section className='mb-8'>
-        <h2>
-          <ol className='mb-4 list-inside list-decimal text-2xl font-semibold'>
-            <li className={'ml-4 text-primary'}>{text('headings.goal')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.goal')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-1')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-1')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-2')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-2')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-3')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-3')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-4')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-4')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-5')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-5')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-6')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-6')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-7')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-7')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-8')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-8')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-9')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-9')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-10')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-10')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-11')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-11')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-12')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-12')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-13')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-13')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-14')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-14')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-15')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-15')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-16')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-16')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-17')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-17')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-18')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-18')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-19')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-19')}</p>
-            <li className={'ml-4 text-primary'}>{text('headings.apply-20')}</li>
-            <p className='text-w mb-10 ml-12 mr-12 mt-4 text-lg'>{text('text.apply-20')}</p>
-          </ol>
-        </h2>
-      </section>
+      <h2 className='mb-4 text-xl font-semibold'>{text('greeting')}</h2>
+      <p className='mb-2'>{text('generalInfo')}</p>
+      <p className='mb-10'>{text('acceptance')}</p>
 
-      <section className='mt-10 text-center'>
-        <a
-          href={rulesPath}
-          download
-          className={`
-            cursor-pointer rounded-lg bg-primary from-secondary to-transparent px-6 py-3 font-bold text-white shadow-lg
-            transition-all
+      <h2 className='mb-4 text-xl font-semibold'>{text('title')}</h2>
 
-            hover:bg-gradient-to-l
-          `}
-        >
-          {text('text.button')}
+      <ol
+        className={`
+          list-inside list-decimal space-y-4
+
+          marker:pr-4 marker:text-xl marker:font-bold marker:text-primary
+        `}
+      >
+        {Array.from({ length: 20 }).map((_, index) => (
+          <li key={index} className='break-words text-justify'>
+            {text(`rules.rule-${index + 1}`)}
+          </li>
+        ))}
+      </ol>
+
+      <div className='my-20 flex justify-center'>
+        <a href={rulesPath} download>
+          <Button
+            variant='secondary'
+            size='lg'
+            className={`
+              bg-gradient-to-r from-primary to-secondary font-bold transition-transform
+
+              hover:scale-105
+            `}
+          >
+            {text('download')}
+          </Button>
         </a>
-      </section>
-      <section className='mb-10 ml-12 mr-12 mt-10'>
-        <p className='text-lg font-semibold text-white'>{text('text.ending')}</p>
-      </section>
+      </div>
     </main>
   );
 };

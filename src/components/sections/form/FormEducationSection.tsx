@@ -39,7 +39,7 @@ export const FormEducationSection: React.FC<FormStudiesSectionProps> = ({ form }
                 <SelectContent>
                   {faculties.map((faculty) => (
                     <SelectItem key={faculty} value={faculty}>
-                      {faculty}
+                      {text(`options.faculty.${faculty}`)}
                     </SelectItem>
                   ))}
                 </SelectContent>

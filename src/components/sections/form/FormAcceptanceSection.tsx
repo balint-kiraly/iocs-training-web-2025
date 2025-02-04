@@ -64,7 +64,7 @@ export const FormAcceptanceSection: React.FC<FormAcceptanceSectionProps> = ({ fo
                   <FormDescription>
                     {text.rich('descriptions.acceptPrivacyPolicy', {
                       link: (chunks) => (
-                        <a href={`/documents/rules/house-rules-${locale}.pdf`} className='text-blue-500 underline'>
+                        <a href={`/documents/privacy/privacy-policy-${locale}.pdf`} className='text-blue-500 underline'>
                           {chunks}
                         </a>
                       ),

@@ -86,7 +86,10 @@ const DropdownMenuContent = React.forwardRef<
       sideOffset={sideOffset}
       align={'end'}
       className={cn(
-        `z-50 min-w-[8rem] overflow-hidden rounded-md border bg-accent p-1 text-primary-foreground shadow-md`,
+        `
+          z-50 min-w-[8rem] overflow-hidden rounded-md bg-background/80 p-1 text-primary-foreground shadow-md
+          backdrop-blur
+        `,
         `
           data-[side=bottom]:slide-in-from-top-2
 
@@ -178,16 +181,14 @@ const DropdownMenuRadioItem = React.forwardRef<
 
         data-[disabled]:pointer-events-none data-[disabled]:opacity-50
 
-        focus:bg-accent focus:text-accent-foreground
-
-        hover:bg-primary/30
+        focus:bg-secondary/70 focus:text-accent-foreground
       `,
       className
     )}
     {...props}
   >
     <DropdownMenuPrimitive.ItemIndicator className='absolute h-full w-full'>
-      <div className='h-full w-full rounded-sm bg-primary' />
+      <div className='h-full w-full rounded-sm bg-secondary' />
     </DropdownMenuPrimitive.ItemIndicator>
     <div className={`relative pl-4`}>{children}</div>
   </DropdownMenuPrimitive.RadioItem>

@@ -8,10 +8,11 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { LanguagePicker } from '@/components/ui/LanguagePicker';
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { Link } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 
 const Header = () => {
   const text = useTranslations('Header');
+  const path = usePathname();
 
   const navItems = ['home', 'rules', 'contact'];
 
@@ -36,7 +37,7 @@ const Header = () => {
         className={`
           fixed z-40 w-[100%] min-w-[300px] p-4 text-white transition-all duration-1000
 
-          ${scrolled ? 'bg-primary shadow-lg' : `bg-transparent`}
+          ${scrolled ? 'backdrop-blur-md' : `bg-transparent`}
         `}
       >
         <div className='flex items-center justify-between'>
@@ -61,7 +62,12 @@ const Header = () => {
             <ul className='flex space-x-8'>
               {navItems.map((item) => (
                 <li key={item}>
-                  <Link href={item === 'home' ? '/' : `/${item}`}>{text(item)}</Link>
+                  <Link
+                    href={item === 'home' ? '/' : `/${item}`}
+                    className={(item === 'home' ? '/' : `/${item}`) === path ? 'font-bold' : ''}
+                  >
+                    {text(item)}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -76,14 +82,14 @@ const Header = () => {
                 md:block
               `}
             >
-              <Button>
+              <Button variant='secondary'>
                 {text('apply')}
                 <Rocket />
               </Button>
             </Link>
             <Sheet>
               <SheetTrigger asChild className='md:hidden'>
-                <Button>
+                <Button variant='secondary'>
                   <MenuIcon />
                 </Button>
               </SheetTrigger>
@@ -94,7 +100,12 @@ const Header = () => {
                     {navItems.map((item) => (
                       <li key={item}>
                         <SheetClose asChild>
-                          <Link href={item === 'home' ? '/' : `/${item}`}>{text(item)}</Link>
+                          <Link
+                            href={item === 'home' ? '/' : `/${item}`}
+                            className={(item === 'home' ? '/' : `/${item}`) === path ? 'font-bold' : ''}
+                          >
+                            {text(item)}
+                          </Link>
                         </SheetClose>
                       </li>
                     ))}
