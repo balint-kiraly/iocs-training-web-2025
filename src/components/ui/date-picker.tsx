@@ -17,7 +17,8 @@ export const DatePicker = ({
   onChange: (newDate: Date | undefined) => void;
   placeholder?: string;
 }) => {
-  const years = Array.from({ length: new Date().getFullYear() - 1900 + 1 }, (_, i) => 1900 + i);
+  const currentYear = new Date().getFullYear();
+  const years = Array.from({ length: currentYear - 1900 + 1 }, (_, i) => currentYear - i);
   const today = new Date();
 
   const handleYearChange = (year: string) => {
