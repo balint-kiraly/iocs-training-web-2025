@@ -6,6 +6,8 @@ import { Diet, Prisma, University } from '@prisma/client';
 import { prisma } from '@/lib/prisma';
 import { writeToSpreadsheet } from '@/actions/spreadsheetSync';
 import { sendEmail } from '@/actions/mail';
+import { render } from '@react-email/render';
+import WelcomeEmail from '@/components/emails/welcome';
 
 type State =
   | {
@@ -31,10 +33,15 @@ export default async function submitApplication(
     await sendEmail({
       to: application.email,
       subject: 'Jelentkezésed sikeresen rögzítettük!',
-      html: `
-        <p>Kedves ${application.firstName}!</p>
-        <p>Köszönjük, hogy jelentkeztél a 2021-es Országos Mentőszolgálati Gépjárművezető Versenyre!</p>
-        <p>A jelentkezésed sikeresen rögzítettük az adatbázisunkban, adataidat az alábbiakban láthatod:</p>`,
+      html: await render(
+        WelcomeEmail({
+          name: application.nickname
+            ? application.nickname === ''
+              ? application.firstName
+              : application.nickname
+            : application.firstName,
+        })
+      ),
     });
 
     return {
@@ -94,7 +101,7 @@ export async function parseApplicationData(
   return {
     firstName: formData.firstName,
     lastName: formData.lastName,
-    nickname: formData.nickname ?? null,
+    nickname: formData.nickname ? (formData.nickname === '' ? null : formData.nickname) : null,
     email: formData.email,
     phone: formData.phone,
     zipCode: parseInt(formData.zipCode, 10),
