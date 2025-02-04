@@ -78,7 +78,7 @@ model Application {
   nickname              String?
   email                 String                 @unique
   phone                 String                 @unique
-  zipCode               Int
+  zipCode               String
   city                  String
   address               String
   idNumber              String

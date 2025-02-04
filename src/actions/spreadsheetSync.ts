@@ -134,7 +134,7 @@ async function parseApplication(
     nickname: application.nickname ?? undefined,
     email: application.email,
     phone: "'" + application.phone,
-    zipCode: application.zipCode.toString(),
+    zipCode: application.zipCode,
     city: application.city,
     address: application.address,
     idNumber: application.idNumber,

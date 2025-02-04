@@ -113,7 +113,7 @@ export async function parseApplicationData(
     nickname: formData.nickname ? (formData.nickname === '' ? null : formData.nickname) : null,
     email: formData.email,
     phone: formData.phone,
-    zipCode: parseInt(formData.zipCode, 10),
+    zipCode: formData.zipCode,
     city: formData.city,
     address: formData.address,
     idNumber: formData.idNumber,
