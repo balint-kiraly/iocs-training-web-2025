@@ -97,8 +97,8 @@ export const ApplicationForm = () => {
       router.push('/');
       setTimeout(() => {
         toast({
-          title: 'Application Submitted Successfully!',
-          description: 'Save the date: February 13th, 2025',
+          title: text('success.title'),
+          description: text('success.description'),
           action: (
             <ToastAction altText='Dismiss Notification' className='text-primary'>
               <Check />
@@ -107,7 +107,7 @@ export const ApplicationForm = () => {
         });
       }, 1000);
     }
-  }, [router, state]);
+  }, [router, state, text]);
 
   const [supportMailLink, setSupportMailLink] = useState<string | null>(null);
   useEffect(() => {

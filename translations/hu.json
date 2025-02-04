@@ -270,6 +270,10 @@
       "support": "Ha ez továbbra is fennáll, vagy úgy gondolod, hogy hibás, kérjük, vedd fel a kapcsolatot a <link>fejlesztővel</link>.",
       "0": "Ismeretlen hiba történt",
       "1": "Ezzel az email címmel vagy telefonszámmal már küldtek be jelentkezést"
+    },
+    "success": {
+      "title": "Sikeres Jelentkezés",
+      "description": "Hamarosan küldünk egy emailt a részletekről."
     }
   }
 }
