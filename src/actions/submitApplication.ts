@@ -74,7 +74,7 @@ export default async function submitApplication(
     prisma.application.deleteMany({
       where: { email: formData.email },
     });
-    console.error('Unknown error creating application');
+    console.error('Unknown error creating application', error);
     return {
       status: 'error',
       locale: previousState?.locale || 'hu',
