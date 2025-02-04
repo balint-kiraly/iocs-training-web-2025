@@ -27,7 +27,7 @@ export const ApplicationForm = () => {
   const text = useTranslations('ApplicationForm');
   const locale = useLocale();
 
-  const [state, action, isPending] = useActionState(submitApplication, null);
+  const [state, action, isPending] = useActionState(submitApplication, { status: 'initial', locale: locale });
   const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({

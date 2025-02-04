@@ -11,7 +11,8 @@ import WelcomeEmail from '@/components/emails/welcome';
 
 type State =
   | {
-      status: 'success' | 'error';
+      status: 'success' | 'error' | 'initial';
+      locale: string;
       error?: number;
       message?: string;
     }
@@ -32,7 +33,10 @@ export default async function submitApplication(
     await writeToSpreadsheet(completeApplication!);
     await sendEmail({
       to: application.email,
-      subject: 'Jelentkezésed sikeresen rögzítettük!',
+      subject:
+        previousState?.locale === 'hu'
+          ? 'Jelentkezésed sikeresen rögzítettük!'
+          : 'Your application has been successfully submitted!',
       html: await render(
         WelcomeEmail({
           name: application.nickname
@@ -40,24 +44,28 @@ export default async function submitApplication(
               ? application.firstName
               : application.nickname
             : application.firstName,
+          locale: previousState?.locale || 'hu',
         })
       ),
     });
 
     return {
       status: 'success',
+      locale: previousState?.locale || 'hu',
     };
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       if (error.code === 'P2002') {
         return {
           status: 'error',
+          locale: previousState?.locale || 'hu',
           error: 1,
           message: error.message,
         };
       }
       return {
         status: 'error',
+        locale: previousState?.locale || 'hu',
         error: 0,
         message: error.message,
       };
@@ -69,6 +77,7 @@ export default async function submitApplication(
     console.error('Unknown error creating application');
     return {
       status: 'error',
+      locale: previousState?.locale || 'hu',
       error: 0,
       message: 'Unknown error creating application',
     };
