@@ -1,5 +1,7 @@
+'use client';
+
 import { zodResolver } from '@hookform/resolvers/zod';
-import { AlertCircle, Check, LoaderCircle, Send } from 'lucide-react';
+import { AlertCircle, Check, Info, LoaderCircle, Send } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import React, { startTransition, useActionState, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -23,9 +25,17 @@ import { toast } from '@/hooks/use-toast';
 import { useRouter } from '@/i18n/routing';
 import { formSchema } from '@/lib/formValidation';
 
-export const ApplicationForm = () => {
+export const ApplicationForm = ({ deadline }: { deadline: Date | null }) => {
   const text = useTranslations('ApplicationForm');
   const locale = useLocale();
+
+  const [hasDeadlinePassed, setHasDeadlinePassed] = useState(false);
+
+  useEffect(() => {
+    if (deadline) {
+      setHasDeadlinePassed(new Date() > deadline);
+    }
+  }, [deadline]);
 
   const [state, action, isPending] = useActionState(submitApplication, { status: 'initial', locale: locale });
   const router = useRouter();
@@ -116,53 +126,84 @@ export const ApplicationForm = () => {
     }
   }, [state, locale, form]);
 
-  return (
-    <div className='mx-auto w-full min-w-60 max-w-4xl p-10'>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
-          <FormNameSection form={form} />
-          <FormContactSection form={form} />
-          <FormDetailsSection form={form} />
-          <FormEducationSection form={form} />
-          <FormLifestyleSkillsSection form={form} />
-          <FormAvailabilitySection form={form} />
-          <FormInternationalSection form={form} />
-          <FormAcceptanceSection form={form} />
-          {state?.status === 'error' && (
-            <>
-              <Alert variant='destructive' className='mt-10'>
-                <AlertCircle className='h-4 w-4' />
-                <AlertTitle>{text('errors.title')}</AlertTitle>
-                <AlertDescription>{text(`errors.${state.error}`)}</AlertDescription>
-              </Alert>
-              <p className='mt-2 text-sm text-muted-foreground'>
-                {text.rich('errors.support', {
-                  link: (chunks) =>
-                    supportMailLink ? (
-                      <a
-                        href={supportMailLink}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='font-medium text-primary underline'
-                      >
-                        {chunks}
-                      </a>
-                    ) : (
-                      <span className='font-medium text-primary'>{chunks}</span>
-                    ),
-                })}
-              </p>
-            </>
-          )}
-          <div className='mt-10 flex justify-end'>
-            <Button type='submit' variant='primary' disabled={isPending}>
-              {text('labels.submit')}
-              {!isPending && <Send />}
-              {isPending && <LoaderCircle className='animate-spin' />}
-            </Button>
-          </div>
-        </form>
-      </Form>
+  return hasDeadlinePassed ? (
+    <div className='mx-auto max-w-4xl px-10 pt-10'>
+      <Alert
+        className={`
+          flex items-center bg-accent p-6
+
+          [&>svg]:static [&>svg]:text-accent-foreground/80
+
+          [&>svg+div]:translate-y-0
+        `}
+      >
+        <Info className='top-10 h-4 w-4 shrink-0' />
+        <AlertDescription className='text-accent-foreground/80'>{text('deadlinePassed')}</AlertDescription>
+      </Alert>
     </div>
+  ) : (
+    <>
+      <div className='mx-auto max-w-4xl px-10 pt-10'>
+        <Alert
+          className={`
+            flex items-center bg-accent p-6
+
+            [&>svg]:static [&>svg]:text-accent-foreground/80
+
+            [&>svg+div]:translate-y-0
+          `}
+        >
+          <Info className='top-10 h-4 w-4 shrink-0' />
+          <AlertDescription className='text-accent-foreground/80'>{text('alert.text')}</AlertDescription>
+        </Alert>
+      </div>
+      <div className='mx-auto w-full min-w-60 max-w-4xl p-10'>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)}>
+            <FormNameSection form={form} />
+            <FormContactSection form={form} />
+            <FormDetailsSection form={form} />
+            <FormEducationSection form={form} />
+            <FormLifestyleSkillsSection form={form} />
+            <FormAvailabilitySection form={form} />
+            <FormInternationalSection form={form} />
+            <FormAcceptanceSection form={form} />
+            {state?.status === 'error' && (
+              <>
+                <Alert variant='destructive' className='mt-10'>
+                  <AlertCircle className='h-4 w-4' />
+                  <AlertTitle>{text('errors.title')}</AlertTitle>
+                  <AlertDescription>{text(`errors.${state.error}`)}</AlertDescription>
+                </Alert>
+                <p className='mt-2 text-sm text-muted-foreground'>
+                  {text.rich('errors.support', {
+                    link: (chunks) =>
+                      supportMailLink ? (
+                        <a
+                          href={supportMailLink}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='font-medium text-primary underline'
+                        >
+                          {chunks}
+                        </a>
+                      ) : (
+                        <span className='font-medium text-primary'>{chunks}</span>
+                      ),
+                  })}
+                </p>
+              </>
+            )}
+            <div className='mt-10 flex justify-end'>
+              <Button type='submit' variant='primary' disabled={isPending}>
+                {text('labels.submit')}
+                {!isPending && <Send />}
+                {isPending && <LoaderCircle className='animate-spin' />}
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </div>
+    </>
   );
 };

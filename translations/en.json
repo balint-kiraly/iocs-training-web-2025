@@ -165,6 +165,7 @@
     "alert": {
       "text": "We can only accept Semmelweis students for the 2025 Instructor Training."
     },
+    "deadlinePassed": "The application deadline has passed. Unfortunately, we are no longer accepting applications.",
     "sections": {
       "contact": "Contact Information",
       "details": "Personal Details",

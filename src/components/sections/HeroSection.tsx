@@ -58,7 +58,7 @@ const HeroSection = () => {
 
       <div className='flex flex-col items-center'>
         <Reveal delay={0.2}>
-          <Countdown targetDate={process.env.COUNTDOWN_TARGET ?? new Date().toDateString()} />
+          <Countdown targetDate={process.env.APPLICATION_DEADLINE ?? new Date().toDateString()} />
         </Reveal>
 
         <div className='mb-[5vh] mt-4 flex flex-wrap items-center justify-center gap-4'>
