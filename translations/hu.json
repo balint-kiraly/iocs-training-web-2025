@@ -24,6 +24,7 @@
   },
   "Countdown": {
     "heading": "A képzésig hátra van",
+    "over": "A képzés elkezdődött!",
     "days": "nap",
     "hours": "óra",
     "minutes": "perc",

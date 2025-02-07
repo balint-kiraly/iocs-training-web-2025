@@ -15,14 +15,22 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   const [started, setStarted] = useState(false);
   const [isRightTime, setIsRightTime] = useState(false);
 
-  const target = new Date(targetDate).getTime();
-
   const text = useTranslations('Countdown');
 
   useEffect(() => {
+    const target = new Date(targetDate);
+
     const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const difference = target - now;
+      const now = new Date();
+
+      if (now.getHours() === 4 && now.getMinutes() === 20 && now.getSeconds() === 0) {
+        setIsRightTime(true);
+        setTimeout(() => {
+          setIsRightTime(false);
+        }, 1000);
+      }
+
+      const difference = target.getTime() - now.getTime();
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -34,25 +42,18 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
       setMinutes(minutes);
       setSeconds(seconds);
 
-      if (hours === 12 && minutes === 40 && seconds === 0) {
-        setIsRightTime(true);
-        setTimeout(() => {
-          setIsRightTime(false);
-        }, 1000);
-      }
-
       if (difference < 0) {
         clearInterval(timer);
         setStarted(true);
       }
     }, 1000);
     return () => clearInterval(timer);
-  }, [target]);
+  }, [targetDate]);
 
   return (
     <div className='flex flex-col items-center gap-4'>
       {started ? (
-        <div className='col-span-4 row-span-2'>The Training has begun!</div>
+        <div className='col-span-4 row-span-2 mb-6 text-2xl'>{text('over')}</div>
       ) : (
         <>
           <h3 className='text-2xl'>{text('heading')}</h3>

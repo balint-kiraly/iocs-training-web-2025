@@ -24,6 +24,7 @@
   },
   "Countdown": {
     "heading": "The training starts in",
+    "over": "The training has begun!",
     "days": "days",
     "hours": "hours",
     "minutes": "minutes",
