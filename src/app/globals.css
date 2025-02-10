@@ -116,12 +116,30 @@
 }
 
 @keyframes glitch {
-  0% { transform: translate(0); opacity: 1; }
-  20% { transform: translate(-3px, 3px); opacity: 0.8; }
-  40% { transform: translate(3px, -3px); opacity: 0.6; }
-  60% { transform: translate(-3px, 3px); opacity: 0.8; }
-  80% { transform: translate(3px, -3px); opacity: 1; }
-  100% { transform: translate(0); opacity: 1; }
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-3px, 3px);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translate(3px, -3px);
+    opacity: 0.6;
+  }
+  60% {
+    transform: translate(-3px, 3px);
+    opacity: 0.8;
+  }
+  80% {
+    transform: translate(3px, -3px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
 }
 
 .animate-glitch {
