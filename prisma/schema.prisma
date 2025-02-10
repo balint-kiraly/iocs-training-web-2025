@@ -118,3 +118,10 @@ model LanguageCertificate {
   internationalTraining   InternationalTraining    @relation(fields: [internationalTrainingId], references: [id], onDelete: Cascade)
   internationalTrainingId Int
 }
+
+model ViktimActivity {
+  id          Int        @id @default(autoincrement())
+  content     String
+  approved    Boolean    @default(false)
+  createdAt   DateTime   @default(now())
+}
