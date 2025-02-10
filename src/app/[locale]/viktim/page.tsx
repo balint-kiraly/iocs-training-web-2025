@@ -120,15 +120,14 @@ export default function ViktimPage() {
       <Reveal delay={0.3}>
         <div className='mt-10 w-full max-w-lg text-center'>
           <p className='mb-2 text-lg text-gray-300'>
-            Van egy jó programötleted?
-            <br /> Oszd meg, hátha mások is kedvet kapnak hozzá:
+            Van egy jó programötleted? Oszd meg, hátha mások is kedvet kapnak hozzá:
           </p>
           <div className='flex gap-2'>
             <Input
               type='text'
               value={userIdea}
               onChange={(e) => setUserIdea(e.target.value)}
-              placeholder="Pl. 'Készíts Soba™ tésztát 🍝'"
+              placeholder="Pl. 'Készíts Soba™ tésztaételt 🍝'"
               className='min-w-60 flex-1 rounded-lg border border-gray-700 bg-gray-900 p-3 text-white'
             />
             <Button onClick={handleSubmit} variant='light' className='drop-shadow-[0_0_5px_#f0f]'>
