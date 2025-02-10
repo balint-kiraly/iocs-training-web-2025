@@ -24,6 +24,7 @@
   },
   "Countdown": {
     "heading": "A képzésig hátra van",
+    "over": "A képzés elkezdődött!",
     "days": "nap",
     "hours": "óra",
     "minutes": "perc",
@@ -165,6 +166,7 @@
     "alert": {
       "text": "A 2025-ös Instruktorképzésre csak Semmelweis hallgatókat áll módunkban fogadni"
     },
+    "deadlinePassed": "A jelentkezési határidő lejárt. Sajnos már nem tudsz jelentkezni.",
     "sections": {
       "contact": "Kapcsolattartási adatok",
       "details": "Személyes információk",
