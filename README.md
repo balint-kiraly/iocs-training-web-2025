@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IÖCS Training Program – Bilingual Event Promotion Platform
 
-## Getting Started
+A bilingual event promotion **website and application platform** for the **2025 IÖCS training program**, built with **Next.js**.
 
-First, run the development server:
+Supports **English 🇬🇧 and Hungarian 🇭🇺** via `next-intl`.  
+Handles **form submissions, email notifications**, and syncs data to a **Google Sheet** and a **PostgreSQL** database.
+
+📄 **Specification** can be found in [`docs/specification.md`](docs/specification.md)
+
+---
+
+## 🚀 Getting Started
+
+To get the project up and running locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and visit [localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌍 Features
 
-## Learn More
+- ✨ **Bilingual Interface** – Translations powered by [`next-intl`](https://github.com/amannn/next-intl)
+- 📧 **Email Service** – Integrated via [`kir-mail`](https://github.com/kir-dev/kir-mail)
+- 🗄️ **PostgreSQL Database** – Managed via Prisma ORM
+- 🧾 **Google Sheet Sync** – Submissions are synced to a shared sheet
+- 🎥 **Hero Video Background** – Plays a Vimeo promo video
+- ⏳ **Dynamic Countdown** – Closes form after deadline
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Copy `.env.example` to `.env` and fill in your credentials:
 
-## Deploy on Vercel
+| Variable | Description |
+|---------|-------------|
+| `APPLICATION_DEADLINE` | Date after which form closes and countdown ends |
+| `PROMO_VIDEO_VIMEO_ID` | Vimeo video ID to play in hero section |
+| `DEVELOPER_EMAIL` | Error contact shown on unknown submission failures |
+| `APP_URL` | URL of the deployed app (used in emails) |
+| `POSTGRES_PRISMA_URL` | Prisma PostgreSQL connection URL |
+| `POSTGRES_URL_NON_POOLING` | Alternative PostgreSQL connection string |
+| `GOOGLE_CLIENT_EMAIL` | Service account email for Google Sheets API |
+| `GOOGLE_PRIVATE_KEY` | Private key for the service account |
+| `GOOGLE_SHEET_ID` | Google Sheet ID where applications are synced |
+| `EMAIL_HOST` | Kir-Mail host endpoint |
+| `EMAIL_API_KEY` | Kir-Mail API key |
+| `EMAIL_FROM_NAME` | Sender name for email notifications |
+| `EMAIL_FROM_ADDRESS` | Sender email address |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Acknowledgements
+
+- 💌 Email magic powered by [Kir-Dev](https://kir-dev.hu)
+
+---
+
+## 📣 Contributing
+
+Feel free to fork, use this in the following years or as a starter for other events. Let’s build something awesome together.
+
+---
+
+## 📜 License
+
+MIT – see [LICENSE](LICENSE) for details.

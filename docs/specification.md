@@ -3,6 +3,9 @@
 ## Overview
 This web application is a bilingual platform designed to engage potential participants, provide information about the training, and facilitate applications. The site emphasizes modern design, usability, and responsiveness.
 
+> [!WARNING]
+> This is a v.0 specification and may not reflect the final design or features.
+
 ---
 
 ## Pages and Content
