@@ -95,7 +95,7 @@ const Footer = () => {
       <div className='mt-20 text-center text-muted-foreground'>
         <p>
           Developed with ❤️ by{' '}
-          <a className='hover:underline' href='https://github.com/balintking'>
+          <a className='hover:underline' href='https://github.com/balint-kiraly'>
             Bálint Király
           </a>{' '}
           &{' '}
